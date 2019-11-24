@@ -319,8 +319,7 @@ Press space to continue""" % self.score)
 					self.quit()
 				elif event.type == pygame.KEYDOWN:
 					for key in key_actions:
-						if event.key == eval("pygame.K_"
-						+key):
+						if event.key == eval("pygame.K_" +key):
 							key_actions[key]()
 					
 			dont_burn_my_cpu.tick(maxfps)

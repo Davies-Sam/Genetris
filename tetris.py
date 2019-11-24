@@ -1,66 +1,12 @@
-#!/usr/bin/env python2
-#-*- coding: utf-8 -*-
-
-# NOTE FOR WINDOWS USERS:
-# You can download a "exefied" version of this game at:
-# http://hi-im.laria.me/progs/tetris_py_exefied.zip
-# If a DLL is missing or something like this, write an E-Mail (me@laria.me)
-# or leave a comment on this gist.
-
-# Very simple tetris implementation
-# 
-# Control keys:
-#       Down - Drop stone faster
-# Left/Right - Move stone
-#         Up - Rotate Stone clockwise
-#     Escape - Quit game
-#          P - Pause game
-#     Return - Instant drop
-#
-# Have fun!
-
-# Copyright (c) 2010 "Laria Carolin Chabowski"<me@laria.me>
-# 
-# Permission is hereby granted, free of charge, to any person obtaining a copy
-# of this software and associated documentation files (the "Software"), to deal
-# in the Software without restriction, including without limitation the rights
-# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-# copies of the Software, and to permit persons to whom the Software is
-# furnished to do so, subject to the following conditions:
-# 
-# The above copyright notice and this permission notice shall be included in
-# all copies or substantial portions of the Software.
-# 
-# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
-
 from random import randrange as rand
+from gui import Gui
 import pygame, sys
 
-# The configuration
 cell_size =	18
 cols =		10
 rows =		22
 maxfps = 	30
 
-colors = [
-(0,   0,   0  ),
-(255, 85,  85),
-(100, 200, 115),
-(120, 108, 245),
-(255, 140, 50 ),
-(50,  120, 52 ),
-(146, 202, 73 ),
-(150, 161, 218 ),
-(35,  35,  35) # Helper color for background grid
-]
-
-# Define the shapes of the single parts
 tetris_shapes = [
 	[[1, 1, 1],
 	 [0, 1, 0]],
@@ -134,6 +80,7 @@ class TetrisApp(object):
 		                                             # events, so we
 		                                             # block them.
 		self.next_stone = tetris_shapes[rand(len(tetris_shapes))]
+		self.gui=Gui()
 		self.init_game()
 	
 	def new_stone(self):
@@ -154,47 +101,6 @@ class TetrisApp(object):
 		self.score = 0
 		self.lines = 0
 		pygame.time.set_timer(pygame.USEREVENT+1, 1000)
-	#move to gui
-	def disp_msg(self, msg, topleft):
-		x,y = topleft
-		for line in msg.splitlines():
-			self.screen.blit(
-				self.default_font.render(
-					line,
-					False,
-					(255,255,255),
-					(0,0,0)),
-				(x,y))
-			y+=14
-	#move to gui
-	def center_msg(self, msg):
-		for i, line in enumerate(msg.splitlines()):
-			msg_image =  self.default_font.render(line, False,
-				(255,255,255), (0,0,0))
-		
-			msgim_center_x, msgim_center_y = msg_image.get_size()
-			msgim_center_x //= 2
-			msgim_center_y //= 2
-		
-			self.screen.blit(msg_image, (
-			  self.width // 2-msgim_center_x,
-			  self.height // 2-msgim_center_y+i*22))
-	#move to gui
-	def draw_matrix(self, matrix, offset):
-		off_x, off_y  = offset
-		for y, row in enumerate(matrix):
-			for x, val in enumerate(row):
-				if val:
-					pygame.draw.rect(
-						self.screen,
-						colors[val],
-						pygame.Rect(
-							(off_x+x) *
-							  cell_size,
-							(off_y+y) *
-							  cell_size, 
-							cell_size,
-							cell_size),0)
 	
 	def add_cl_lines(self, n):
 		linescores = [0, 40, 100, 300, 1200]
@@ -286,32 +192,8 @@ class TetrisApp(object):
 		
 		dont_burn_my_cpu = pygame.time.Clock()
 		while 1:
-			self.screen.fill((0,0,0))
-			if self.gameover:
-				self.center_msg("""Game Over!\nYour score: %d
-Press space to continue""" % self.score)
-			else:
-				if self.paused:
-					self.center_msg("Paused")
-				else:
-					pygame.draw.line(self.screen,
-						(255,255,255),
-						(self.rlim+1, 0),
-						(self.rlim+1, self.height-1))
-					self.disp_msg("Next:", (
-						self.rlim+cell_size,
-						2))
-					self.disp_msg("Score: %d\n\nLevel: %d\
-\nLines: %d" % (self.score, self.level, self.lines),
-						(self.rlim+cell_size, cell_size*5))
-					self.draw_matrix(self.bground_grid, (0,0))
-					self.draw_matrix(self.board, (0,0))
-					self.draw_matrix(self.stone,
-						(self.stone_x, self.stone_y))
-					self.draw_matrix(self.next_stone,
-						(cols+1,2))
-			pygame.display.update()
-			
+			self.gui.nextFrame(self)	
+			## pass the ai class our board, stone, next stone, stone location, weights, and self ##
 			for event in pygame.event.get():
 				if event.type == pygame.USEREVENT+1:
 					self.drop(False)

@@ -154,7 +154,7 @@ class TetrisApp(object):
 		self.score = 0
 		self.lines = 0
 		pygame.time.set_timer(pygame.USEREVENT+1, 1000)
-	
+	#move to gui
 	def disp_msg(self, msg, topleft):
 		x,y = topleft
 		for line in msg.splitlines():
@@ -166,7 +166,7 @@ class TetrisApp(object):
 					(0,0,0)),
 				(x,y))
 			y+=14
-	
+	#move to gui
 	def center_msg(self, msg):
 		for i, line in enumerate(msg.splitlines()):
 			msg_image =  self.default_font.render(line, False,
@@ -179,7 +179,7 @@ class TetrisApp(object):
 			self.screen.blit(msg_image, (
 			  self.width // 2-msgim_center_x,
 			  self.height // 2-msgim_center_y+i*22))
-	
+	#move to gui
 	def draw_matrix(self, matrix, offset):
 		off_x, off_y  = offset
 		for y, row in enumerate(matrix):

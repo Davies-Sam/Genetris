@@ -57,12 +57,7 @@ class Gui():
 		x,y = topleft
 		for line in msg.splitlines():
 			self.screen.blit(
-				self.default_font.render(
-					line,
-					False,
-					(255,255,255),
-					(0,0,0)),
-				(x,y))
+				self.default_font.render(line,False,(255,255,255),(0,0,0)),(x,y))
 			y+=14
     
     def center_msg(self, msg):
@@ -74,25 +69,14 @@ class Gui():
 			msgim_center_x //= 2
 			msgim_center_y //= 2
 		
-			self.screen.blit(msg_image, (
-			  self.width // 2-msgim_center_x,
-			  self.height // 2-msgim_center_y+i*22))
+			self.screen.blit(msg_image, (self.width // 2-msgim_center_x, self.height // 2-msgim_center_y+i*22))
 
     def draw_matrix(self, matrix, offset):
 		off_x, off_y  = offset
 		for y, row in enumerate(matrix):
 			for x, val in enumerate(row):
 				if val:
-					pygame.draw.rect(
-						self.screen,
-						colors[val],
-						pygame.Rect(
-							(off_x+x) *
-							  cell_size,
-							(off_y+y) *
-							  cell_size, 
-							cell_size,
-							cell_size),0)
+					pygame.draw.rect(self.screen,colors[val],pygame.Rect( (off_x+x) * cell_size,(off_y+y) *cell_size, cell_size, cell_size), 0 )
 
     def nextFrame(self, game):
         self.screen.fill((0,0,0))
@@ -102,20 +86,12 @@ class Gui():
             if game.paused:
                 self.center_msg("Paused")
             else:
-                pygame.draw.line(self.screen,
-                    (255,255,255),
-                    (self.rlim+1, 0),
-                    (self.rlim+1, self.height-1))
-                self.disp_msg("Next:", (
-                    self.rlim+cell_size,
-                    2))
-                self.disp_msg("Score: %d\n\nLevel: %d\ \nLines: %d" % (game.score, game.level, game.lines),
-                    (self.rlim+cell_size, cell_size*5))
+                pygame.draw.line(self.screen,(255,255,255), (self.rlim+1, 0), (self.rlim+1, self.height-1))
+                self.disp_msg("Next:", (self.rlim+cell_size,2))
+                self.disp_msg("Score: %d\n\nLevel: %d\ \nLines: %d" % (game.score, game.level, game.lines), (self.rlim+cell_size, cell_size*5))
                 self.draw_matrix(self.bground_grid, (0,0))
                 self.draw_matrix(game.board, (0,0))
-                self.draw_matrix(game.stone,
-                    (game.stone_x, game.stone_y))
-                self.draw_matrix(game.next_stone,
-                    (cols+1,2))
+                self.draw_matrix(game.stone,(game.stone_x, game.stone_y))
+                self.draw_matrix(game.next_stone, (cols+1,2))
         pygame.display.update()
         

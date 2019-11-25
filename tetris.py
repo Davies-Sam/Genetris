@@ -71,8 +71,7 @@ class TetrisApp(object):
 		self.rlim = cell_size*cols
 		self.bground_grid = [[ 8 if x%2==y%2 else 0 for x in xrange(cols)] for y in xrange(rows)]
 		
-		self.default_font =  pygame.font.Font(
-			pygame.font.get_default_font(), 12)
+		self.default_font =  pygame.font.Font(pygame.font.get_default_font(), 12)
 		
 		self.screen = pygame.display.set_mode((self.width, self.height))
 		pygame.event.set_blocked(pygame.MOUSEMOTION) # We do not need
@@ -80,7 +79,9 @@ class TetrisApp(object):
 		                                             # events, so we
 		                                             # block them.
 		self.next_stone = tetris_shapes[rand(len(tetris_shapes))]
-		self.gui=Gui()
+		self.gui = Gui()
+		self.printed=False
+		
 		self.init_game()
 	
 	def new_stone(self):
@@ -164,6 +165,14 @@ class TetrisApp(object):
 			new_stone = rotate_clockwise(self.stone)
 			if not check_collision(self.board, new_stone, (self.stone_x, self.stone_y)):
 				self.stone = new_stone
+
+	def print_board(self):
+		i=0
+		if not self.printed:
+			for row in self.board:	
+				print(self.board[i])
+				print('\n')
+				i+=1
 	
 	def toggle_pause(self):
 		self.paused = not self.paused
@@ -190,7 +199,16 @@ class TetrisApp(object):
 		
 		dont_burn_my_cpu = pygame.time.Clock()
 		while 1:
-			self.gui.nextFrame(self)	
+			self.gui.nextFrame(self)
+			#print(self.stone_x, self.stone_y) 
+			#pause the game to get a printout of the board
+			if self.paused:
+				self.print_board()
+				self.printed = True
+			else:
+				self.printed = False
+			if self.gameover:
+				return
 			## pass the ai class our board, stone, next stone, stone location, weights, and self #
 			for event in pygame.event.get():
 				if event.type == pygame.USEREVENT+1:

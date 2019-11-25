@@ -124,7 +124,7 @@ class TetrisApp(object):
 			                       (new_x, self.stone_y)):
 				self.stone_x = new_x
 	def quit(self):
-		self.center_msg("Exiting...")
+		self.gui.center_msg("Exiting...")
 		pygame.display.update()
 		sys.exit()
 	
@@ -162,9 +162,7 @@ class TetrisApp(object):
 	def rotate_stone(self):
 		if not self.gameover and not self.paused:
 			new_stone = rotate_clockwise(self.stone)
-			if not check_collision(self.board,
-			                       new_stone,
-			                       (self.stone_x, self.stone_y)):
+			if not check_collision(self.board, new_stone, (self.stone_x, self.stone_y)):
 				self.stone = new_stone
 	
 	def toggle_pause(self):
@@ -193,7 +191,7 @@ class TetrisApp(object):
 		dont_burn_my_cpu = pygame.time.Clock()
 		while 1:
 			self.gui.nextFrame(self)	
-			## pass the ai class our board, stone, next stone, stone location, weights, and self ##
+			## pass the ai class our board, stone, next stone, stone location, weights, and self #
 			for event in pygame.event.get():
 				if event.type == pygame.USEREVENT+1:
 					self.drop(False)

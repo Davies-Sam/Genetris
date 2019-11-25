@@ -1,4 +1,4 @@
-1) move the GUI update components into a separate file Created: 11/24  Completed: 11/24 SD
+1) move the GUI update components into a separate file. Created: 11/24  Completed: 11/24 SD
 2) make the GUI optional - meaning allow the game to run without the visuals. - this will greatly speed up test times. Created: 11/24  Completed: 
-3) Create a file containing to contain our AI class and outline its requirements. 
+3) Create a file containing to contain our AI class and outline its requirements. Created: 11/24 Completed:
     

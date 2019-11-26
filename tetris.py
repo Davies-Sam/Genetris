@@ -30,9 +30,7 @@ tetris_shapes = [
 ]
 
 def rotate_clockwise(shape):
-	return [ [ shape[y][x]
-			for y in xrange(len(shape)) ]
-		for x in xrange(len(shape[0]) - 1, -1, -1) ]
+	return [ [ shape[y][x] for y in xrange(len(shape)) ] for x in xrange(len(shape[0]) - 1, -1, -1) ]
 
 def check_collision(board, shape, offset):
 	off_x, off_y = offset
@@ -57,8 +55,7 @@ def join_matrixes(mat1, mat2, mat2_off):
 	return mat1
 
 def new_board():
-	board = [ [ 0 for x in xrange(cols) ]
-			for y in xrange(rows) ]
+	board = [ [ 0 for x in xrange(cols) ] for y in xrange(rows) ]
 	board += [[ 1 for x in xrange(cols)]]
 	return board
 
@@ -90,9 +87,7 @@ class TetrisApp(object):
 		self.stone_x = int(cols / 2 - len(self.stone[0])/2)
 		self.stone_y = 0
 		
-		if check_collision(self.board,
-		                   self.stone,
-		                   (self.stone_x, self.stone_y)):
+		if check_collision(self.board,self.stone,(self.stone_x, self.stone_y)):
 			self.gameover = True
 	
 	def init_game(self):
@@ -120,9 +115,7 @@ class TetrisApp(object):
 				new_x = 0
 			if new_x > cols - len(self.stone[0]):
 				new_x = cols - len(self.stone[0])
-			if not check_collision(self.board,
-			                       self.stone,
-			                       (new_x, self.stone_y)):
+			if not check_collision(self.board, self.stone, (new_x, self.stone_y)):
 				self.stone_x = new_x
 	def quit(self):
 		self.gui.center_msg("Exiting...")
@@ -133,20 +126,14 @@ class TetrisApp(object):
 		if not self.gameover and not self.paused:
 			self.score += 1 if manual else 0
 			self.stone_y += 1
-			if check_collision(self.board,
-			                   self.stone,
-			                   (self.stone_x, self.stone_y)):
-				self.board = join_matrixes(
-				  self.board,
-				  self.stone,
-				  (self.stone_x, self.stone_y))
+			if check_collision(self.board,self.stone,(self.stone_x, self.stone_y)):
+				self.board = join_matrixes( self.board, self.stone, (self.stone_x, self.stone_y))
 				self.new_stone()
 				cleared_rows = 0
 				while True:
 					for i, row in enumerate(self.board[:-1]):
 						if 0 not in row:
-							self.board = remove_row(
-							  self.board, i)
+							self.board = remove_row(self.board, i)
 							cleared_rows += 1
 							break
 					else:

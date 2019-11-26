@@ -2,7 +2,8 @@
 Training an AI to play Tetris using a Genetic Algorithm 
 
 
-#References 
+# References
+
 http://www.cs.uml.edu/ecg/uploads/AIfall10/eshahar_rwest_GATetris.pdf
 
 https://ieeexplore.ieee.org/document/8247067

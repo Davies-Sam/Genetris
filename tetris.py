@@ -63,22 +63,30 @@ class TetrisApp(object):
 	def __init__(self):
 		pygame.init()
 		pygame.key.set_repeat(250,25)
+		#cell_size is the height and the width of our squares.
+		#set width of our window, with 6 extra columns for the HUD info
 		self.width = cell_size*(cols+6)
+		#set height of our window 
 		self.height = cell_size*rows
+		#set the right edge of our playing board
 		self.rlim = cell_size*cols
+		#create a grey&black checkerboard. grey if x,y are the same after %2. black otherwise
 		self.bground_grid = [[ 8 if x%2==y%2 else 0 for x in xrange(cols)] for y in xrange(rows)]
-		
+		#sets font for the HUD
 		self.default_font =  pygame.font.Font(pygame.font.get_default_font(), 12)
-		
+		#create a window for the game to use
 		self.screen = pygame.display.set_mode((self.width, self.height))
 		pygame.event.set_blocked(pygame.MOUSEMOTION) # We do not need
 		                                             # mouse movement
 		                                             # events, so we
 		                                             # block them.
+		#our next shape is randomly selected from our shapes list
 		self.next_stone = tetris_shapes[rand(len(tetris_shapes))]
+		#create a gui object to allow visualization
 		self.gui = Gui()
+		#this is for step checking purposes
 		self.printed=False
-		
+		#create the board
 		self.init_game()
 	
 	def new_stone(self):

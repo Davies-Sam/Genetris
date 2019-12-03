@@ -29,9 +29,11 @@ tetris_shapes = [
 	 [7, 7]]
 ]
 
+#rotates the pieces clockwise
 def rotate_clockwise(shape):
 	return [ [ shape[y][x] for y in xrange(len(shape)) ] for x in xrange(len(shape[0]) - 1, -1, -1) ]
 
+#checks that no pieces are overlapping
 def check_collision(board, shape, offset):
 	off_x, off_y = offset
 	for cy, row in enumerate(shape):
@@ -43,10 +45,12 @@ def check_collision(board, shape, offset):
 				return True
 	return False
 
+#removes a row from the board
 def remove_row(board, row):
 	del board[row]
 	return [[0 for i in xrange(cols)]] + board
-	
+
+#adds a placed piece to the board
 def join_matrixes(mat1, mat2, mat2_off):
 	off_x, off_y = mat2_off
 	for cy, row in enumerate(mat2):
@@ -54,8 +58,10 @@ def join_matrixes(mat1, mat2, mat2_off):
 			mat1[cy+off_y-1	][cx+off_x] += val
 	return mat1
 
+#create the board
 def new_board():
 	board = [ [ 0 for x in xrange(cols) ] for y in xrange(rows) ]
+	#next line not needed, just there for clarity (adds a base row to the grid)
 	board += [[ 1 for x in xrange(cols)]]
 	return board
 
@@ -74,7 +80,6 @@ class TetrisApp(object):
 		self.bground_grid = [[ 8 if x%2==y%2 else 0 for x in xrange(cols)] for y in xrange(rows)]
 		#sets font for the HUD
 		self.default_font =  pygame.font.Font(pygame.font.get_default_font(), 12)
-		#create a window for the game to use
 		#next line not needed, gui will create the window for us
 		#self.screen = pygame.display.set_mode((self.width, self.height))
 		pygame.event.set_blocked(pygame.MOUSEMOTION) # We do not need
@@ -83,6 +88,7 @@ class TetrisApp(object):
 		                                             # block them.
 		#our next shape is randomly selected from our shapes list
 		self.next_stone = tetris_shapes[rand(len(tetris_shapes))]
+		#set the gui boolean to the initialization value
 		self.visuals = visuals
 		#create a gui object to allow visualization
 		if self.visuals:
@@ -97,14 +103,15 @@ class TetrisApp(object):
 		self.stone = self.next_stone[:]
 		#randomize a new next stone
 		self.next_stone = tetris_shapes[rand(len(tetris_shapes))]
-		#set the x coord of the shape (top left corner)
+		#set the x coord of the shape (top left corner) to the center of a row
 		self.stone_x = int(cols / 2 - len(self.stone[0])/2)
-		#
+		#set the y coord of the shape to the top row
 		self.stone_y = 0
-		
+		#if a new piece can't fit on the board - game over
 		if check_collision(self.board,self.stone,(self.stone_x, self.stone_y)):
 			self.gameover = True
 	
+	#initialize the game values
 	def init_game(self):
 		self.board = new_board()
 		self.new_stone()
@@ -113,7 +120,8 @@ class TetrisApp(object):
 		self.lines = 0
 		
 		pygame.time.set_timer(pygame.USEREVENT+1, 1000)
-	
+
+	#manages scoring for line clears and level
 	def add_cl_lines(self, n):
 		linescores = [0, 40, 100, 300, 1200]
 		self.lines += n
@@ -123,7 +131,8 @@ class TetrisApp(object):
 			newdelay = 1000-50*(self.level-1)
 			newdelay = 100 if newdelay < 100 else newdelay
 			pygame.time.set_timer(pygame.USEREVENT+1, newdelay)
-	
+
+	#manages shifting pieces to the left or right
 	def move(self, delta_x):
 		if not self.gameover and not self.paused:
 			new_x = self.stone_x + delta_x
@@ -133,11 +142,13 @@ class TetrisApp(object):
 				new_x = cols - len(self.stone[0])
 			if not check_collision(self.board, self.stone, (new_x, self.stone_y)):
 				self.stone_x = new_x
+	# ESC ends the game
 	def quit(self):
 		self.gui.center_msg("Exiting...")
 		pygame.display.update()
 		sys.exit()
-	
+
+	#manages the falling of the pieces
 	def drop(self, manual):
 		if not self.gameover and not self.paused:
 			self.score += 1 if manual else 0
@@ -157,18 +168,21 @@ class TetrisApp(object):
 				self.add_cl_lines(cleared_rows)
 				return True
 		return False
-	
+
+	#manages instant piece placement
 	def insta_drop(self):
 		if not self.gameover and not self.paused:
 			while(not self.drop(True)):
 				pass
-	
+
+	#executes a valid piece rotation
 	def rotate_stone(self):
 		if not self.gameover and not self.paused:
 			new_stone = rotate_clockwise(self.stone)
 			if not check_collision(self.board, new_stone, (self.stone_x, self.stone_y)):
 				self.stone = new_stone
 
+	#for planning purposes
 	def print_board(self):
 		i=0
 		if not self.printed:
@@ -176,15 +190,17 @@ class TetrisApp(object):
 				print(self.board[i])
 				print('\n')
 				i+=1
-	
+	#P to pause
 	def toggle_pause(self):
 		self.paused = not self.paused
-	
+
+	#Start a game
 	def start_game(self):
 		if self.gameover:
 			self.init_game()
 			self.gameover = False
-	
+
+	#Contains keybindings and the game loop
 	def run(self):
 		key_actions = {
 			'ESCAPE':	self.quit,
@@ -204,7 +220,7 @@ class TetrisApp(object):
 		while 1:
 			if self.visuals:
 				self.gui.nextFrame(self)
-			print(self.stone_x, self.stone_y) 
+			#print(self.stone_x, self.stone_y) 
 			#print(len(self.stone[0]))
 			#pause the game to get a printout of the board
 			if self.paused:

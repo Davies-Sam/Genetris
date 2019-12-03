@@ -56,19 +56,15 @@ class Gui():
     def disp_msg(self, msg, topleft):
 		x,y = topleft
 		for line in msg.splitlines():
-			self.screen.blit(
-				self.default_font.render(line,False,(255,255,255),(0,0,0)),(x,y))
+			self.screen.blit(self.default_font.render(line,False,(255,255,255),(0,0,0)),(x,y))
 			y+=14
     
     def center_msg(self, msg):
 		for i, line in enumerate(msg.splitlines()):
-			msg_image =  self.default_font.render(line, False,
-				(255,255,255), (0,0,0))
-		
+			msg_image =  self.default_font.render(line, False, (255,255,255), (0,0,0))		
 			msgim_center_x, msgim_center_y = msg_image.get_size()
 			msgim_center_x //= 2
-			msgim_center_y //= 2
-		
+			msgim_center_y //= 2		
 			self.screen.blit(msg_image, (self.width // 2-msgim_center_x, self.height // 2-msgim_center_y+i*22))
 
     def draw_matrix(self, matrix, offset):
@@ -88,7 +84,7 @@ class Gui():
             else:
                 pygame.draw.line(self.screen,(255,255,255), (self.rlim+1, 0), (self.rlim+1, self.height-1))
                 self.disp_msg("Next:", (self.rlim+cell_size,2))
-                self.disp_msg("Score: %d\n\nLevel: %d\ \nLines: %d" % (game.score, game.level, game.lines), (self.rlim+cell_size, cell_size*5))
+                self.disp_msg("Score: %d\n\nLevel: %d \nLines: %d" % (game.score, game.level, game.lines), (self.rlim+cell_size, cell_size*5))
                 self.draw_matrix(self.bground_grid, (0,0))
                 self.draw_matrix(game.board, (0,0))
                 self.draw_matrix(game.stone,(game.stone_x, game.stone_y))

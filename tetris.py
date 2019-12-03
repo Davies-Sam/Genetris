@@ -60,7 +60,7 @@ def new_board():
 	return board
 
 class TetrisApp(object):
-	def __init__(self):
+	def __init__(self,visuals):
 		pygame.init()
 		pygame.key.set_repeat(250,25)
 		#cell_size is the height and the width of our squares.
@@ -75,24 +75,31 @@ class TetrisApp(object):
 		#sets font for the HUD
 		self.default_font =  pygame.font.Font(pygame.font.get_default_font(), 12)
 		#create a window for the game to use
-		self.screen = pygame.display.set_mode((self.width, self.height))
+		#next line not needed, gui will create the window for us
+		#self.screen = pygame.display.set_mode((self.width, self.height))
 		pygame.event.set_blocked(pygame.MOUSEMOTION) # We do not need
 		                                             # mouse movement
 		                                             # events, so we
 		                                             # block them.
 		#our next shape is randomly selected from our shapes list
 		self.next_stone = tetris_shapes[rand(len(tetris_shapes))]
+		self.visuals = visuals
 		#create a gui object to allow visualization
-		self.gui = Gui()
+		if self.visuals:
+			self.gui = Gui()
 		#this is for step checking purposes
 		self.printed=False
 		#create the board
 		self.init_game()
 	
 	def new_stone(self):
+		#set the new stone to a shallow copy of next stone
 		self.stone = self.next_stone[:]
+		#randomize a new next stone
 		self.next_stone = tetris_shapes[rand(len(tetris_shapes))]
+		#set the x coord of the shape (top left corner)
 		self.stone_x = int(cols / 2 - len(self.stone[0])/2)
+		#
 		self.stone_y = 0
 		
 		if check_collision(self.board,self.stone,(self.stone_x, self.stone_y)):
@@ -104,6 +111,7 @@ class TetrisApp(object):
 		self.level = 1
 		self.score = 0
 		self.lines = 0
+		
 		pygame.time.set_timer(pygame.USEREVENT+1, 1000)
 	
 	def add_cl_lines(self, n):
@@ -194,8 +202,10 @@ class TetrisApp(object):
 		
 		dont_burn_my_cpu = pygame.time.Clock()
 		while 1:
-			self.gui.nextFrame(self)
-			#print(self.stone_x, self.stone_y) 
+			if self.visuals:
+				self.gui.nextFrame(self)
+			print(self.stone_x, self.stone_y) 
+			#print(len(self.stone[0]))
 			#pause the game to get a printout of the board
 			if self.paused:
 				self.print_board()
@@ -218,5 +228,6 @@ class TetrisApp(object):
 			dont_burn_my_cpu.tick(maxfps)
 
 if __name__ == '__main__':
-	App = TetrisApp()
+	#give tetrisapp true for visuals, false for none
+	App = TetrisApp(True)
 	App.run()

@@ -12,7 +12,7 @@ https://codemyroad.wordpress.com/2013/04/14/tetris-ai-the-near-perfect-player/
 
 https://luckytoilet.wordpress.com/2011/05/27/coding-a-tetris-ai-using-a-genetic-algorithm/
 
-https://github.com/TheTOXIN/Project_Tetris/blob/master/Project_Tetris/Field.cpp
+https://github.com/TheTOXIN/Project_Tetris/blob/master/Project_Tetris
 
 https://github.com/s-ilioukhina/tetris-genetic-algorithm
 

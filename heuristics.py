@@ -15,10 +15,10 @@ def TotalHeight(board):
     height = len(board) -1
     width = len(board[1])
     #go row by row and check for a non empty board block
-    for col, row in enumerate(board):
-        for cell in row:
+    for rowNum, rowElements in enumerate(board):
+        for cell in rowElements:
             if cell != 0:
-                return height - col 
+                return height - rowNum 
 
 #returns the heights a single column
 def ColumnHeight(board, col):
@@ -33,7 +33,7 @@ def ColumnHeight(board, col):
 #returns an array of all the column heights
 def AllHeights(board):
     heights = []
-    height = len(board)
+    height = len(board) -1
     width = len(board[1])
     #for every column get its height
     for x in range (0, width):
@@ -42,7 +42,7 @@ def AllHeights(board):
 
 #returns the sum of the column height differences
 def Bumpiness(board):
-    height = len(board)
+    height = len(board) -1
     width = len(board[1])
     heights = AllHeights(board)
     result = 0
@@ -74,11 +74,15 @@ def LinesCleared(board):
     height = len(board) - 1 
     width = len(board[1])
     cleared = 0
+    #if a row has no zeros, it will be cleared
     for x in range(0,height):
         if 0 not in board[x]:
             cleared += 1
     return cleared
 
+#This is the 'main' function of the file, the only one to be called externally.
+#It will return the score of a placement by checking the weighted heuristics
+#On the board and weights that is passed to this utility function.
 def Utility_Function(board, weights):
     #get the heurstics
     height = TotalHeight(board)
@@ -93,24 +97,3 @@ def Utility_Function(board, weights):
     #sum the weighted heurstics to get the score of a piece placement
     score = wHeight + wBump + wHoles + wCleared
     return score
-
-            
-
-
-
-
-
-
-
-
-
-                
-
-
-
-
-
-
-
-
-        

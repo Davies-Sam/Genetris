@@ -225,6 +225,10 @@ class TetrisApp(object):
 			#pause the game to get a printout of the board
 			if self.paused:
 				self.print_board()
+				#print(list(enumerate(self.board)))
+				#for x in range(0, 23):
+				#	print(self.board[x])
+				#print(len(self.board))
 				self.printed = True
 			else:
 				self.printed = False

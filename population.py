@@ -25,6 +25,7 @@ def init_pop():
     #for each organism in the population
     for i in range(0, num_of_organisms):
         #create the 4 genes + attach them to list
+        #the order is Height, Bumpiness, Holes, LinesCleared
         for j in range(0, 4):
             organism.append(BitArray(bin = random.randint(-128, 127)))
         #append the organism to the population

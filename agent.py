@@ -24,12 +24,7 @@ from tetris import check_collision, cols, rotate_clockwise
 
 class Agent(object):
     #################################################################################
-    #local vars
-
-    #need to store the best_config that we find
-
-
-    #################################################################################
+        #################################################################################
     #initialize the AI agent with the current organism's heuristics
     def __init__(self, tetris, heuristics):
         self.tetris = tetris
@@ -41,10 +36,9 @@ class Agent(object):
         #when we work on a different organism
         self.heuristics = heuristics
         
-
-
     #################################################################################
     #finds the best move from all possible moves. calls rotations_per_piece()
+    @staticmethod
     def find_best_move(self):
         all_moves = []
         piece = self.tetris.stone
@@ -94,6 +88,7 @@ class Agent(object):
     #################################################################################
     #This def is called by the GA which, in turn, calls the rest of the Agent
     #sub-fcns.
+    @staticmethod
     def update_board(self):
         tetris = self.tetris
         
@@ -133,6 +128,7 @@ class Agent(object):
     #################################################################################
     #This definition calculates the number of times we can rotate a piece without
     #getting a duplicate configuration, depends on which piece we are looking at
+    @staticmethod
     def rotations_per_piece(self, piece):
         #pieces contains a list of each configuration
         pieces = [piece]

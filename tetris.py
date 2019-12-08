@@ -161,6 +161,8 @@ class TetrisApp(object):
 				while True:
 					for i, row in enumerate(self.board[:-1]):
 						if 0 not in row:
+							print("\nlines cleared:") 
+							print(heuristics.LinesCleared(self.board))
 							self.board = remove_row(self.board, i)
 							cleared_rows += 1
 							break
@@ -191,6 +193,14 @@ class TetrisApp(object):
 				print(self.board[i])
 				print('\n')
 				i+=1
+			print("\nTotal Height:") 
+			print(heuristics.TotalHeight(self.board))
+			print("\nBumpiness:") 
+			print(heuristics.Bumpiness(self.board))
+			#print(heuristics.AllHeights(self.board))
+			print("\nHole created:") 
+			print(heuristics.HolesCreated(self.board))
+			
 	#P to pause
 	def toggle_pause(self):
 		self.paused = not self.paused
@@ -230,9 +240,6 @@ class TetrisApp(object):
 				#for x in range(0, 23):
 				#	print(self.board[x])
 				#print(len(self.board[1]))
-				#print(heuristics.TotalHeight(self.board))
-				#print(heuristics.Bumpiness(self.board))
-				#print(heuristics.AllHeights(self.board))
 				self.printed = True
 			else:
 				self.printed = False

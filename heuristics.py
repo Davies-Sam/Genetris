@@ -37,6 +37,10 @@ def AllHeights(board):
     #for every column get its height
     for x in range (0, width):
         heights.append(ColumnHeight(board, x))
+    #initialize the columns with no pieces yet to 0
+    for x in range (0, width):
+        if heights[x] == None:
+            heights[x] = 0
     return heights    
 
 #returns the sum of the column height differences
@@ -61,11 +65,13 @@ def HolesCreated(board):
     height = len(board) - 1 
     width = len(board[1])
     holes = 0
-    for col, row in enumerate(board):
-        for cell in row:
+    for row, rowElements in enumerate(board):
+        x=0
+        for cell in rowElements:
             #if the height of the column is > height of 0 cell, we know we have a hole
-            if cell == 0 and ColumnHeight(col) > (height - row):   
+            if cell == 0 and ColumnHeight(board, x) > (height - row):   
                 holes += 1
+            x += 1
     return holes
 
 #Ponder: LinesCleared might be emergent behavior from following the other heuristics

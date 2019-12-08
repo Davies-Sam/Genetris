@@ -15,6 +15,8 @@ import random
 #global to keep track of the number of organisms
 _num_of_organisms = 100
 
+
+
 def init_pop():
 
     #init population with a seed

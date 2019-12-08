@@ -14,19 +14,33 @@ the higheest score using the weightings. We wil rotate and sweep over the column
 #that piece
 import heuristics
 
-
 #file that holds and initializes our population
 import population
 
 #import functions and the number of columns
 from tetris import check_collision, cols, rotate_clockwise
 
+#pass an organism
 
 class Agent(object):
     #################################################################################
     #local vars
 
+    #need to store the best_config that we find
 
+
+    #################################################################################
+    #initialize the AI agent with the current organism's heuristics
+    def __init__(self, tetris, heuristics):
+        self.tetris = tetris
+        self.best_move = None
+
+        self.instant_play = True
+
+        #this var will contain the heuristics of a single organism, will be updated
+        #when we work on a different organism
+        self.heuristics = heuristics
+        
 
 
     #################################################################################
@@ -74,18 +88,35 @@ class Agent(object):
         #max_util has the utility of the best board state
         #best_board_state contains x_coord, rotation of the piece, and how the board
         #will look after the piece is placed on the current board
+        self.best_move = best_board_state
         return best_board_state
 
     #################################################################################
-    #This def both rotates and places the piece on the current board
-    #returns the new board configuration
+    #This def is called by the GA which, in turn, calls the rest of the Agent
+    #sub-fcns.
     def update_board(self):
         tetris = self.tetris
+        
+        #calculate the best config for the piece
+        #move = [x_coord, rotation, new_board]
+        move = self.find_best_move()
 
-        #need to rotate piece as mnay times it says to in best_board_state
-        #then place piece there
+        #lock so we are working on something that is running
+        tetris.lock.acquire()
 
-        move = 
+        #rotate the piece until it is in the config we want
+        for r in range(move[1]):
+            tetris.stone = rotate_clockwise(tetris.stone)
+
+        #move the piece over to the correct column
+        tetris.move_to(move[0])
+
+        #if we are still playing, not paused
+        if self.instant_play:
+            tetris.stone_y = self.top_of_column(move[0], tetris.stone)
+
+        #free the board
+        tetris.lock.release()
 
     #################################################################################
     #this function finds how far down the piece needs to go before a collision

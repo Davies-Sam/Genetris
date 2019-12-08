@@ -1,6 +1,7 @@
 from random import randrange as rand
 from gui import Gui
 import pygame, sys
+import heuristics
 
 cell_size =	18
 cols =		10
@@ -228,7 +229,10 @@ class TetrisApp(object):
 				#print(list(enumerate(self.board)))
 				#for x in range(0, 23):
 				#	print(self.board[x])
-				#print(len(self.board))
+				#print(len(self.board[1]))
+				#print(heuristics.TotalHeight(self.board))
+				#print(heuristics.Bumpiness(self.board))
+				#print(heuristics.AllHeights(self.board))
 				self.printed = True
 			else:
 				self.printed = False

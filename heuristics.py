@@ -26,8 +26,7 @@ def ColumnHeight(board, col):
     width = len(board[1])
     #for every row in the column check for non empty board block
     for x in range (0, height):
-        if(board[x][col] != 1):
-            #we subtract 1 because layer 22 is the base layer used for debugging (all 1's)
+        if(board[x][col] != 0):
             return height - x 
 
 #returns an array of all the column heights

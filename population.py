@@ -10,7 +10,7 @@ from agent import Agent
 #from bitstring import BitArray
 from enum import Enum
 import heuristics
-
+import numpy
 
 ################################################################################
   #bitarray is annoying! we will represent the weights in decimal
@@ -20,7 +20,7 @@ import heuristics
 def RandomOrganism():
     nums = []
     for j in range(0, 4):
-        a = random.randint(-128,127)
+        a = random.randint(0, 255)
         nums.append(a)
     organism = Organism(nums)
     return organism
@@ -53,14 +53,14 @@ class Organism(object):
 ###################################################################################
 class GA(object):
     def __init__(self):
-        self._num_of_organisms = 2
-        self._survivors = 98
-        self._new_organisms = self._num_of_organisms - self._survivors
-        self._mutation_rate = 20
-        self._convergence_threshold = 85
+        self.num_of_organisms = 2
+        self.survivors = 98
+        self.new_organisms = self.num_of_organisms - self.survivors
+        self.mutation_rate = .2
+        self.convergence_threshold = 85
 
         #initialize the population
-        self.population = InitPop(self._num_of_organisms)
+        self.population = InitPop(self.num_of_organisms)
       
         #keep track of which organism in the population we are working on
         self.current_organism = 0
@@ -80,6 +80,9 @@ class GA(object):
 
     #start running the game
     def Run(self):
+        a = Organism([9,32,4,222])
+        self.mutate(a,20)
+        print(a.heuristics)
         self.app.run()
 
     #This def 
@@ -87,7 +90,7 @@ class GA(object):
         self.current_organism += 1
         #if we have worked on every organism in the current population, get the next
         #generation
-        if self.current_organism >= self._num_of_organisms:
+        if self.current_organism >= self.num_of_organisms:
             self.current_organism = 0
             self.NextGeneration()
 
@@ -110,7 +113,7 @@ class GA(object):
         pop = self.population
         #check each organism in the population and see if the genes in the population
         #are close to each other (have similar values)
-        return all(all(pop[0].heuristics[f]-self._convergence_threshold < weights < pop[0].heuristics[f] + self._convergence_threshold for f, weights in current_organism.heuristics.items()) for organism in pop)
+        return all(all(pop[0].heuristics[f]-self.convergence_threshold < weights < pop[0].heuristics[f] + self.convergence_threshold for f, weights in current_organism.heuristics.items()) for organism in pop)
 
     #this def takes the current population, removes the worst two organisms and 
     #re-produces two new ones to add to the population
@@ -121,31 +124,31 @@ class GA(object):
             print("The Population has converged on generation %s\n", self.current_generation)
         #else the population has not converged, remove two worst organisms
         #create two new children to add to the next generation
-        print("CURRENT GENERATION: %s" % self._current_generation)
+        print("CURRENT GENERATION: %s" % self.current_generation)
         #to get average fitness, sum up the total_fitness for each organism/chromosome
         #then divide by _num_of_organisms
-        print("AVERAGE FITNESS: %s", (sum([]) / self._num_of_organisms))
+        print("AVERAGE FITNESS: %s", (sum([]) / self.num_of_organisms))
         #increment the generation
         self.current_generation += 1
         #create the new population with only the survivors
-        new_pop = self.SelectSurvivors(self._survivors, self._selection)
+        new_pop = self.SelectSurvivors(self.survivors, self.selection)
         """
         #rethink this approach - we should create 2 new, evaluate them, and then check against the worst 2 organisms
         if they are better than the bottom 2, replace the bottom 2 with them """     
         
         #create the new organisms to add to the new_pop
-        for a in range(self._new_organisms):
+        for a in range(self.new_organisms):
             #select two parents
-            parents = self._selection(2, self._selection)
+            parents = self.selection(2, self.selection)
             #create the new organisms and add them to the new_pop
-            new_pop.append(self._crossover(parents[0], parents[1], self._crossover))
+            new_pop.append(self.crossover(parents[0], parents[1], self.crossover))
         #go through the new organism's bits and apply the chance to mutate
         #right now we do this once
         for organism in new_pop:
-            self.mutation(organism, self._mutation_rate)
+            self.mutation(organism, self.mutation_rate)
         #check to make sure we have the correct number of organisms in the new
         #population
-        assert len(new_pop) == len(self._population), "ERROR: new population doesnt have enough organisms"
+        assert len(new_pop) == len(self.population), "ERROR: new population doesnt have enough organisms"
         self.population = new_pop
 
 
@@ -153,6 +156,7 @@ class GA(object):
     def SelectSurvivors(self):
         #sort the population by Organism.fitness
         #chop off the bottom 2
+        #sort(self.population, lambda x: x.fitness)
         return
        
     
@@ -163,11 +167,8 @@ class GA(object):
 
     #takes two parents and does uniform crossover
     #returns an Organism
-    def crossover_fcn(self, parent1, parent2):
-        the_heuristic = {}
-        for fcn, a in parent1.heursistics.items():
-            the_heuristic[fun] = random.choice((c1, c2)).heuristics[fun]
-        return Organism[the_heuristic]
+    def Crossover(self, parent1, parent2):
+        return
 
 
     #We need a mutation function - will convert the numbers to binary then operate and convert back. "int(0b010101)" will go from binary to to decimal
@@ -175,40 +176,16 @@ class GA(object):
         #after an organism is created, apply the mutation chance
     #chromosome is an array of 4 ints
     #returns the weights as a list of four ints
-    def mutate(self, chromosome, mutation_chance):
-        weights = []
-        genes = 0
-        #convert all 4 weights into bit strings that are stored in one list
-        while genes < 4:
-
-            weights.append((chromosome[genes] >> bit) & 1 for bit in range(8 -1, -1, -1))
-            genes += 1
-
-        #for each weight/bit list, iterate through it and apply mutation chance
-        #weights = [weight, weight, weight, weight]
-        for weight in weights:
-            #ex. weight = ['0', '1', '0', .. , '0']
-            for bit in weight:
-                if randint(0, int(mutation_chance)) == 0:
-                    if weight[bit] == '0':
-                        weight[bit] = '1'
-                    else:
-                        weight[bit] = '0'
-
-        #convert back to int and return it
-        new_weights = []
-        genes = 0
-        while genes < 4:
-            #converting the list of bit chars into one char string of bits
-            temp = ''.join(weights[genes])
-            #convert binary string to int
-            temp = int(temp, 2)
-            new_weights.append(temp)
-            genes += 1
-
-        #return the same type as chromosome
-        return new_weights
-
+    def mutate(self, organism, mutation_chance):
+        randomNew = RandomOrganism()
+        for num, weight in enumerate(organism.heuristics):
+            temp = list(numpy.binary_repr(weight, width=8))
+            temp2 = list(numpy.binary_repr(randomNew.heuristics[num], width=8))
+            for i in range(0,len(temp)):
+                if random.uniform(0,1) > (1 - self.mutation_rate):
+                    temp[i] = temp2[i]
+            organism.heuristics[num] = int(''.join(str(i) for i in temp), 2)
+                    
   
 if __name__ == "__main__":
     GA().Run()

@@ -200,6 +200,7 @@ class TetrisApp(object):
 				print(self.board[i])
 				print('\n')
 				i+=1
+			"""
 			print("\nTotal Height:") 
 			print(heuristics.TotalHeight(self.board))
 			print("\nBumpiness:") 
@@ -214,6 +215,7 @@ class TetrisApp(object):
 				print("NEXT")
 				
 			#print(int(-0b1101111))
+			"""
 			
 	#P to pause
 	def toggle_pause(self):

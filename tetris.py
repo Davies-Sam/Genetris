@@ -69,7 +69,7 @@ def new_board():
 	return board
 
 class TetrisApp(object):
-	def __init__(self, Genetics, visuals):
+	def __init__(self, Genetics):
 		pygame.init()
 		pygame.key.set_repeat(250,25)
 		self.genetics = Genetics
@@ -94,10 +94,11 @@ class TetrisApp(object):
 		#our next shape is randomly selected from our shapes list
 		self.next_stone = tetris_shapes[rand(len(tetris_shapes))]
 		#set the gui boolean to the initialization value
-		self.visuals = visuals
+		self.visuals = True
 		#create a gui object to allow visualization
 		if self.visuals:
 			self.gui = Gui()
+		self.ai = None
 		#this is for step checking purposes
 		self.printed=False
 		#create the board
@@ -169,7 +170,7 @@ class TetrisApp(object):
 					for i, row in enumerate(self.board[:-1]):
 						if 0 not in row:
 							print("\nlines cleared:") 
-							print(heuristics.LinesCleared(self.board))
+							#print(heuristics.LinesCleared(self.board))
 							self.board = remove_row(self.board, i)
 							cleared_rows += 1
 							break
@@ -283,7 +284,9 @@ class TetrisApp(object):
 			dont_burn_my_cpu.tick(maxfps)
 
 if __name__ == '__main__':
+	from agent import Agent
 	#give tetrisapp true for visuals, false for none
-	App = TetrisApp(None,True)
-	#the game now prints your score. 
-	print(App.run())
+	App = TetrisApp()
+	App.ai = Agent(App)
+	App.run()
+	

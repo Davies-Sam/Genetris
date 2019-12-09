@@ -105,11 +105,9 @@ class Agent(object):
 
         #move the piece over to the correct column
         tetris.move_to(move[0])
-
         #if we are still playing, not paused
         if self.instant_play:
             tetris.stone_y = self.top_of_column(move[0], tetris.stone)
-
         #free the board
         tetris.lock.release()
 

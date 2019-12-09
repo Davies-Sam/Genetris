@@ -58,21 +58,16 @@ class GA(object):
         self.new_organisms = self.num_of_organisms - self.survivors
         self.mutation_rate = .2
         self.convergence_threshold = 85
-
         #initialize the population
-        self.population = InitPop(self.num_of_organisms)
-      
+        self.population = InitPop(self.num_of_organisms)   
         #keep track of which organism in the population we are working on
         self.current_organism = 0
         #keeps track of what generation we are on
         self.current_generation = 0
-
         #get the current organism
         self.currentOrganism = self.population[self.current_organism]
-
         #GA gets the application
         self.app = TetrisApp(self, True)
-
         #GA gets our agent, which needs the organism 
         #so it can access weights of the organism
         self.ai = Agent(self.app)
@@ -94,10 +89,11 @@ class GA(object):
         c = self.Crossover(a,b)
         print(c.heuristics)
         """
-        
+        """ pruning test
         self.SelectSurvivors()
         for i in self.population:
             print(i.heuristics)
+        """
         
         self.app.run()
 
@@ -125,19 +121,20 @@ class GA(object):
         self.app.start_game()
 
     #check if the population has converged
+    """
     def PopConvergenced(self):
         pop = self.population
         #check each organism in the population and see if the genes in the population
         #are close to each other (have similar values)
-        return all(all(pop[0].heuristics[f]-self.convergence_threshold < weights < pop[0].heuristics[f] + self.convergence_threshold for f, weights in current_organism.heuristics.items()) for organism in pop)
-
+        return all(all(pop[0].heuristics[f]-self.convergence_threshold < weights < pop[0].heuristics[f] + self.convergence_threshold for f, weights in self.current_organism.heuristics.items()) for organism in pop)
+    """
     #this def takes the current population, removes the worst two organisms and 
     #re-produces two new ones to add to the population
     def NextGeneration(self):
         #if the population has converged, dont need another generation, print out
         #the genes and weights for each organism in the converged population
-        if self.PopConvergenced():
-            print("The Population has converged on generation %s\n", self.current_generation)
+        #if self.PopConvergenced():
+        #    print("The Population has converged on generation %s\n", self.current_generation)
         #else the population has not converged, remove two worst organisms
         #create two new children to add to the next generation
         print("CURRENT GENERATION: %s" % self.current_generation)
@@ -151,20 +148,28 @@ class GA(object):
         """
         #rethink this approach - we should create 2 new, evaluate them, and then check against the worst 2 organisms
         if they are better than the bottom 2, replace the bottom 2 with them """     
-        
+        print("after pruning:")
+        print(len(self.population))
         #create the new organisms to add to the new_pop
-        for a in range(0, self.new_organisms):
-            #select two parents
-            parents = random.sample(self.population)
-            #create the new organisms and add them to the new_pop
-            self.population.append(self.crossover(parents[0], parents[1], self.crossover))
+        
+        #select two parents
+        parents = random.sample(self.population, 2)
+        #create the new organisms and add them to the new_pop
+        a = self.Crossover(parents[0],parents[1])
+        b = self.Crossover(parents[0],parents[1])
+        self.mutate(a, self.mutation_rate)
+        self.mutate(b, self.mutation_rate)
+        self.population.append(a)
+        self.population.append(b)
         #go through the new organism's bits and apply the chance to mutate
+        print("after reproduction:")
+        print(len(self.population))
       
-        for a in range(0, self.new_organisms):
-            self.mutation(self.population[a], self.mutation_rate)
+
         #check to make sure we have the correct number of organisms in the new
         #population
-        assert 100 == len(self.population), "ERROR: new population doesnt have enough organisms"
+       
+        #assert 2 == len(self.population), "ERROR: new population doesnt have enough organisms"
 
 
     #Will return the survivors of a population, will return self.survivors number of organisms 
@@ -190,7 +195,6 @@ class GA(object):
             else:
                 weights.append(parent2.heuristics[i])
         return Organism(weights)
-
 
     #We need a mutation function - will convert the numbers to binary then operate and convert back. "int(0b010101)" will go from binary to to decimal
 

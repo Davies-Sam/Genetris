@@ -12,18 +12,17 @@ from enum import Enum
 import heuristics
 
 
-
-
 ################################################################################
   #bitarray is annoying! we will represent the weights in decimal
     #when the crossover and mutation operations are done
     #we will convert into binary format "bin(num)", operate, and convert back!
 
 def RandomOrganism():
-    organism = []
+    nums = []
     for j in range(0, 4):
         a = random.randint(-128,127)
-        organism.append(a)
+        nums.append(a)
+    organism = Organism(nums)
     return organism
 
 #initialize the entire population
@@ -41,8 +40,7 @@ def InitPop(populationSize):
     return population
 
 class Organism(object):
-    def __init__(self, heurisitcs):
-        
+    def __init__(self, heurisitcs): 
         self.heuristics = heurisitcs 
         self.fitness = 0
 
@@ -71,7 +69,7 @@ class GA(object):
 
         #get the current organism
         self.currentOrganism = self.population[self.current_organism]
-        
+
         #GA gets the application
         self.app = TetrisApp(self, True)
 
@@ -99,7 +97,7 @@ class GA(object):
     #handles when a game we are testing the current organism on ends
     def GameOver(self, current_score):
         organism = self.population[self.current_organism]
-        organism.fitness += current_score
+        organism.fitness = current_score
 
         #load the next organism into the algo
         self.NextAI()

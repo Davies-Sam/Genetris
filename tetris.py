@@ -116,7 +116,7 @@ class TetrisApp(object):
 		if check_collision(self.board,self.stone,(self.stone_x, self.stone_y)):
 			self.gameover = True
 			#need to return the score of an organism 
-			# can be handled in the game loop
+			self.genetics.GameOver(self.score)
 		self.piecesPlaced += 1
 	
 	#initialize the game values
@@ -206,14 +206,13 @@ class TetrisApp(object):
 			print(heuristics.Bumpiness(self.board))
 			#print(heuristics.AllHeights(self.board))
 			print("\nHole created:") 
-			print(heuristics.HolesCreated(self.board))
-			"""
+			print(heuristics.HolesCreated(self.board))		
 			test = population.InitPop(2)
 			for i in test:
-				for num in i:
-					print(bin(num))
+				for x in i.heuristics:
+					print(x)
 				print("NEXT")
-				"""
+				
 			#print(int(-0b1101111))
 			
 	#P to pause
@@ -251,13 +250,7 @@ class TetrisApp(object):
 				#needs to be tested
 				#unsure how to access the current genetics that the tetris app is imbued with
 				# this needs to be finished tomorrow.
-				self.genetics.currentOrganism.fitness = self.score
-				#or
-				population.GA.currentOrganism.fitness = self.score
-				self.genetics.GameOver()
-				#or
-				population.GA.GameOver() 
-				return
+			 	#don't return. the GA will start a new game upon gameover.
 			if self.visuals:
 				self.gui.nextFrame(self)
 			#print(self.stone_x, self.stone_y) 
@@ -288,6 +281,6 @@ class TetrisApp(object):
 
 if __name__ == '__main__':
 	#give tetrisapp true for visuals, false for none
-	App = TetrisApp(True)
+	App = TetrisApp(None,True)
 	#the game now prints your score. 
 	print(App.run())

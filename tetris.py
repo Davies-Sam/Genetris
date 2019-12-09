@@ -2,6 +2,7 @@ from random import randrange as rand
 from gui import Gui
 import pygame, sys
 import heuristics
+import population
 
 cell_size =	18
 cols =		10
@@ -200,6 +201,14 @@ class TetrisApp(object):
 			#print(heuristics.AllHeights(self.board))
 			print("\nHole created:") 
 			print(heuristics.HolesCreated(self.board))
+			"""
+			test = population.InitPop(2)
+			for i in test:
+				for num in i:
+					print(bin(num))
+				print("NEXT")
+				"""
+			print(int(-0b1101111))
 			
 	#P to pause
 	def toggle_pause(self):

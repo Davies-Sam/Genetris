@@ -40,8 +40,8 @@ def InitPop(populationSize):
     return population
 
 class Organism(object):
-    def __init__(self, heurisitcs): 
-        self.heuristics = heurisitcs 
+    def __init__(self, heuristics): 
+        self.heuristics = heuristics 
         self.fitness = 0
 
 #population is a list of lists(the organisms) which contain the genes(bitarrays)
@@ -81,8 +81,17 @@ class GA(object):
     #start running the game
     def Run(self):
         a = Organism([9,32,4,222])
-        self.mutate(a,20)
+        """ mutation tests
+        print("before mutation")
         print(a.heuristics)
+        print("\n")
+        self.mutate(a,20)
+        print("after mutation: \n")
+        print(a.heuristics)
+        """
+        b = Organism([21,7,62,100])
+        c = self.Crossover(a,b)
+        print(c.heuristics)
         self.app.run()
 
     #This def 
@@ -168,7 +177,13 @@ class GA(object):
     #takes two parents and does uniform crossover
     #returns an Organism
     def Crossover(self, parent1, parent2):
-        return
+        weights = []
+        for i in range(0, len(parent1.heuristics)):
+            if random.uniform(0,1) > .5:
+                weights.append(parent1.heuristics[i])
+            else:
+                weights.append(parent2.heuristics[i])
+        return Organism(weights)
 
 
     #We need a mutation function - will convert the numbers to binary then operate and convert back. "int(0b010101)" will go from binary to to decimal

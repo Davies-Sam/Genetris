@@ -53,8 +53,8 @@ class Organism(object):
 ###################################################################################
 class GA(object):
     def __init__(self):
-        self.num_of_organisms = 2
-        self.survivors = 98
+        self.num_of_organisms = 10
+        self.survivors = 8
         self.new_organisms = self.num_of_organisms - self.survivors
         self.mutation_rate = .2
         self.convergence_threshold = 85
@@ -80,18 +80,25 @@ class GA(object):
 
     #start running the game
     def Run(self):
+        
+        """ mutation & crossover tests
         a = Organism([9,32,4,222])
-        """ mutation tests
         print("before mutation")
         print(a.heuristics)
         print("\n")
         self.mutate(a,20)
         print("after mutation: \n")
         print(a.heuristics)
-        """
+        
         b = Organism([21,7,62,100])
         c = self.Crossover(a,b)
         print(c.heuristics)
+        """
+        
+        self.SelectSurvivors()
+        for i in self.population:
+            print(i.heuristics)
+        
         self.app.run()
 
     #This def 
@@ -140,35 +147,34 @@ class GA(object):
         #increment the generation
         self.current_generation += 1
         #create the new population with only the survivors
-        new_pop = self.SelectSurvivors(self.survivors, self.selection)
+        self.SelectSurvivors()
         """
         #rethink this approach - we should create 2 new, evaluate them, and then check against the worst 2 organisms
         if they are better than the bottom 2, replace the bottom 2 with them """     
         
         #create the new organisms to add to the new_pop
-        for a in range(self.new_organisms):
+        for a in range(0, self.new_organisms):
             #select two parents
-            parents = self.selection(2, self.selection)
+            parents = random.sample(self.population)
             #create the new organisms and add them to the new_pop
-            new_pop.append(self.crossover(parents[0], parents[1], self.crossover))
+            self.population.append(self.crossover(parents[0], parents[1], self.crossover))
         #go through the new organism's bits and apply the chance to mutate
-        #right now we do this once
-        for organism in new_pop:
-            self.mutation(organism, self.mutation_rate)
+      
+        for a in range(0, self.new_organisms):
+            self.mutation(self.population[a], self.mutation_rate)
         #check to make sure we have the correct number of organisms in the new
         #population
-        assert len(new_pop) == len(self.population), "ERROR: new population doesnt have enough organisms"
-        self.population = new_pop
+        assert 100 == len(self.population), "ERROR: new population doesnt have enough organisms"
 
 
     #Will return the survivors of a population, will return self.survivors number of organisms 
     def SelectSurvivors(self):
         #sort the population by Organism.fitness
-        #chop off the bottom 2
-        #sort(self.population, lambda x: x.fitness)
-        return
+        #make this more modular later by changing the 'magic number' 2 to a variable
+        self.population.sort(key=lambda x: x.fitness)
+        #remove the last 2 (least fit)
+        self.population = self.population[:len(self.population)-2]
        
-    
     #We need a crossover fucntion - given 2 parents produce a new orangism
     #make sure the binary representations are all the same length, pad with 0 at front
     #account for - in position [0]
@@ -188,7 +194,7 @@ class GA(object):
 
     #We need a mutation function - will convert the numbers to binary then operate and convert back. "int(0b010101)" will go from binary to to decimal
 
-        #after an organism is created, apply the mutation chance
+    #after an organism is created, apply the mutation chance
     #chromosome is an array of 4 ints
     #returns the weights as a list of four ints
     def mutate(self, organism, mutation_chance):

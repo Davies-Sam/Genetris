@@ -18,7 +18,7 @@ import heuristics
 import population
 
 #import functions and the number of columns
-from tetris import check_collision, cols, rotate_clockwise
+from tetris import check_collision, cols, rotate_clockwise, join_matrixes
 
 #pass an organism
 
@@ -26,10 +26,10 @@ class Agent(object):
     #################################################################################
         #################################################################################
     #initialize the AI agent with the current organism's heuristics
-    def __init__(self, tetris, heuristics):
+    def __init__(self, tetris):
         self.tetris = tetris
         self.best_move = None
-
+        #self.organism = organism
         self.instant_play = True
 
         #this var will contain the heuristics of a single organism, will be updated
@@ -53,7 +53,7 @@ class Agent(object):
                 #get a new board config after adding the current piece's rotation
                 #to the current board. join the current board and place where the
                 #piece would be placed
-                new_board = join_matrices(self.tetris.board, piece, (x, y))
+                new_board = join_matrixes(self.tetris.board, piece, (x, y))
                 all_moves.append(tuple(x, rotation, new_board))
             #checked every config with current configuration,
             #rotate and do it again

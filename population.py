@@ -44,7 +44,7 @@ class Organism(object):
     def __init__(self, heurisitcs):
         
         self.heuristics = heurisitcs 
-        self.totalFitness = 0
+        self.fitness = 0
 
 #population is a list of lists(the organisms) which contain the genes(bitarrays)
 #
@@ -59,23 +59,26 @@ class GA(object):
         self._survivors = 98
         self._new_organisms = self._num_of_organisms - self._survivors
         self._mutation_rate = 20
-        self._num_times_to_mutate = 3
         self._convergence_threshold = 85
 
         #initialize the population
         self.population = InitPop(self._num_of_organisms)
-        #GA gets the application
-        self.app = TetrisApp(self)
-        #GA gets our agent
-        self.ai = Agent(self.app)
-        self.app.ai = self.ai
-
+      
         #keep track of which organism in the population we are working on
         self.current_organism = 0
         #keeps track of what generation we are on
         self.current_generation = 0
-        #set the ai heuristics to the first organism's heuristics
-        self.ai.heuristics = self.population[self.current_organism].heuristics
+
+        #get the current organism
+        self.currentOrganism = self.population[self.current_organism]
+        
+        #GA gets the application
+        self.app = TetrisApp(self, True)
+
+        #GA gets our agent, which needs the organism 
+        #so it can access weights of the organism
+        self.ai = Agent(self.app)
+        self.app.ai = self.ai
 
     #start running the game
     def Run(self):
@@ -96,8 +99,8 @@ class GA(object):
     #handles when a game we are testing the current organism on ends
     def GameOver(self, current_score):
         organism = self.population[self.current_organism]
-        organism.total_fitness += current_score
-        
+        organism.fitness += current_score
+
         #load the next organism into the algo
         self.NextAI()
 
@@ -128,19 +131,20 @@ class GA(object):
         self.current_generation += 1
         #create the new population with only the survivors
         new_pop = self.SelectSurvivors(self._survivors, self._selection)
+        """
+        #rethink this approach - we should create 2 new, evaluate them, and then check against the worst 2 organisms
+        if they are better than the bottom 2, replace the bottom 2 with them """     
+        
         #create the new organisms to add to the new_pop
         for a in range(self._new_organisms):
             #select two parents
             parents = self._selection(2, self._selection)
             #create the new organisms and add them to the new_pop
             new_pop.append(self._crossover(parents[0], parents[1], self._crossover))
-
         #go through the new organism's bits and apply the chance to mutate
-        #right now we do this three times per new organism
-        for a  in range(self._num_times_to_mutate):
-            for organism in new_pop:
-                self.mutation(organism, self._mutation_rate / self._num_times_to_mutate)
-
+        #right now we do this once
+        for organism in new_pop:
+            self.mutation(organism, self._mutation_rate)
         #check to make sure we have the correct number of organisms in the new
         #population
         assert len(new_pop) == len(self._population), "ERROR: new population doesnt have enough organisms"
@@ -149,17 +153,18 @@ class GA(object):
 
     #Will return the survivors of a population, will return self.survivors number of organisms 
     def SelectSurvivors(self):
+        #sort the population by Organism.fitness
+        #chop off the bottom 2
         return
        
     
     #We need a crossover fucntion - given 2 parents produce a new orangism
 
+
     #We need a mutation function - will convert the numbers to binary then operate and convert back. "int(0b010101)" will go from binary to to decimal
 
 
   
-
-
 if __name__ == "__main__":
     GA().Run()
                 

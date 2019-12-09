@@ -8,6 +8,7 @@ cell_size =	18
 cols =		10
 rows =		22
 maxfps = 	30
+PIECELIMIT = 300
 
 tetris_shapes = [
 	[[1, 1, 1],
@@ -68,9 +69,10 @@ def new_board():
 	return board
 
 class TetrisApp(object):
-	def __init__(self,visuals):
+	def __init__(self, Genetics, visuals):
 		pygame.init()
 		pygame.key.set_repeat(250,25)
+		self.genetics = Genetics
 		#cell_size is the height and the width of our squares.
 		#set width of our window, with 6 extra columns for the HUD info
 		self.width = cell_size*(cols+6)
@@ -82,6 +84,7 @@ class TetrisApp(object):
 		self.bground_grid = [[ 8 if x%2==y%2 else 0 for x in xrange(cols)] for y in xrange(rows)]
 		#sets font for the HUD
 		self.default_font =  pygame.font.Font(pygame.font.get_default_font(), 12)
+		self.piecesPlaced = 0
 		#next line not needed, gui will create the window for us
 		#self.screen = pygame.display.set_mode((self.width, self.height))
 		pygame.event.set_blocked(pygame.MOUSEMOTION) # We do not need
@@ -112,6 +115,9 @@ class TetrisApp(object):
 		#if a new piece can't fit on the board - game over
 		if check_collision(self.board,self.stone,(self.stone_x, self.stone_y)):
 			self.gameover = True
+			#need to return the score of an organism 
+			# can be handled in the game loop
+		self.piecesPlaced += 1
 	
 	#initialize the game values
 	def init_game(self):
@@ -208,7 +214,7 @@ class TetrisApp(object):
 					print(bin(num))
 				print("NEXT")
 				"""
-			print(int(-0b1101111))
+			#print(int(-0b1101111))
 			
 	#P to pause
 	def toggle_pause(self):
@@ -238,6 +244,20 @@ class TetrisApp(object):
 		
 		dont_burn_my_cpu = pygame.time.Clock()
 		while 1:
+
+			if self.piecesPlaced >= PIECELIMIT:
+				self.gameover = True
+			if self.gameover:
+				#needs to be tested
+				#unsure how to access the current genetics that the tetris app is imbued with
+				# this needs to be finished tomorrow.
+				self.genetics.currentOrganism.fitness = self.score
+				#or
+				population.GA.currentOrganism.fitness = self.score
+				self.genetics.GameOver()
+				#or
+				population.GA.GameOver() 
+				return
 			if self.visuals:
 				self.gui.nextFrame(self)
 			#print(self.stone_x, self.stone_y) 
@@ -252,8 +272,7 @@ class TetrisApp(object):
 				self.printed = True
 			else:
 				self.printed = False
-			if self.gameover:
-				return
+			
 			## pass the ai class our board, stone, next stone, stone location, weights, and self #
 			for event in pygame.event.get():
 				if event.type == pygame.USEREVENT+1:
@@ -270,4 +289,5 @@ class TetrisApp(object):
 if __name__ == '__main__':
 	#give tetrisapp true for visuals, false for none
 	App = TetrisApp(True)
-	App.run()
+	#the game now prints your score. 
+	print(App.run())

@@ -1,8 +1,8 @@
 from random import randrange as rand
 from gui import Gui
 import pygame, sys
-import heuristics
-import population
+#import heuristics
+#import population
 
 cell_size =	18
 cols =		10
@@ -251,6 +251,7 @@ class TetrisApp(object):
 				#unsure how to access the current genetics that the tetris app is imbued with
 				# this needs to be finished tomorrow.
 			 	#don't return. the GA will start a new game upon gameover.
+				print("you died")
 			if self.visuals:
 				self.gui.nextFrame(self)
 			#print(self.stone_x, self.stone_y) 

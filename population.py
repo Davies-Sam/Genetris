@@ -53,7 +53,7 @@ class Organism(object):
 ###################################################################################
 class GA(object):
     def __init__(self):
-        self._num_of_organisms = 100
+        self._num_of_organisms = 2
         self._survivors = 98
         self._new_organisms = self._num_of_organisms - self._survivors
         self._mutation_rate = 20
@@ -87,7 +87,7 @@ class GA(object):
         self.current_organism += 1
         #if we have worked on every organism in the current population, get the next
         #generation
-        if self.current_organism >= self.population._num_of_organisms:
+        if self.current_organism >= self._num_of_organisms:
             self.current_organism = 0
             self.NextGeneration()
 
@@ -157,6 +157,9 @@ class GA(object):
        
     
     #We need a crossover fucntion - given 2 parents produce a new orangism
+    #make sure the binary representations are all the same length, pad with 0 at front
+    #account for - in position [0]
+    #account for "b" in the array aswell.
 
 
     #We need a mutation function - will convert the numbers to binary then operate and convert back. "int(0b010101)" will go from binary to to decimal

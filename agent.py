@@ -15,8 +15,8 @@ the higheest score using the weightings. We wil rotate and sweep over the column
 import heuristics
 
 #file that holds and initializes our population
-import population
-
+#import population
+import heuristics
 #import functions and the number of columns
 from tetris import check_collision, cols, rotate_clockwise, join_matrixes
 
@@ -73,7 +73,7 @@ class Agent(object):
         for a_move in all_moves:
             #passing the new_board var into the util function
             #NEEDS TO BE UPDATED!!!! WILL WORK ON LATER.
-            temp = Utility_Function(a_move[2])
+            temp = heuristics.Utility_Function(a_move[2], self.tetris.genetics.currentOrganism.heuristics)
             if temp > max_util:
                 max_util = temp
                 best_board_state = a_move

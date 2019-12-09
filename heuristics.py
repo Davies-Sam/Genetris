@@ -52,7 +52,7 @@ def Bumpiness(board):
     """
     width-1 because we check adjacent columns and the next would be out of bounds
     i.e, for every column except the last, get the absolute value of the 
-    differeces between the rows
+    differeces between the columns
     this implementation of bumpiness also considers single column towers or wells to be very bumpy
     Interestingly this implementation also discourages the AI to strategies going for multiple line clears in 1 piece placement
     """

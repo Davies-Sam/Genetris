@@ -7,7 +7,7 @@
 import random
 from tetris import TetrisApp
 from agent import Agent
-from bitstring import BitArray
+#from bitstring import BitArray
 from enum import Enum
 import heuristics
 
@@ -164,6 +164,40 @@ class GA(object):
 
     #We need a mutation function - will convert the numbers to binary then operate and convert back. "int(0b010101)" will go from binary to to decimal
 
+        #after an organism is created, apply the mutation chance
+    #chromosome is an array of 4 ints
+    #returns the weights as a list of four ints
+    def mutate(self, chromosome, mutation_chance):
+        weights = []
+        genes = 0
+        #convert all 4 weights into bit strings that are stored in one list
+        while genes < 4:
+            weights.append((chromosome[genes] >> bit) & 1 for bit in range(8 -1, -1, -1))
+
+        #for each weight/bit list, iterate through it and apply mutation chance
+        #weights = [weight, weight, weight, weight]
+        for weight in weights:
+            #ex. weight = ['0', '1', '0', .. , '0']
+            for bit in weight:
+                if randint(0, int(mutation_chance)) == 0:
+                    if weight[bit] == '0':
+                        weight[bit] = '1'
+                    else:
+                        weight[bit] = '0'
+
+        #convert back to int and return it
+        new_weights = []
+        genes = 0
+        while genes < 4:
+            #converting the list of bit chars into one char string of bits
+            temp = ''.join(weights[genes])
+            #convert binary string to int
+            temp = int(temp, 2)
+            
+            new_weights.append(temp)
+
+        #return the same type as chromosome
+        return weights
 
   
 if __name__ == "__main__":

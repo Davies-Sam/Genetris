@@ -161,6 +161,14 @@ class GA(object):
     #account for - in position [0]
     #account for "b" in the array aswell.
 
+    #takes two parents and does uniform crossover
+    #returns an Organism
+    def crossover_fcn(self, parent1, parent2):
+        the_heuristic = {}
+        for fcn, a in parent1.heursistics.items():
+            the_heuristic[fun] = random.choice((c1, c2)).heuristics[fun]
+        return Organism[the_heuristic]
+
 
     #We need a mutation function - will convert the numbers to binary then operate and convert back. "int(0b010101)" will go from binary to to decimal
 
@@ -172,7 +180,9 @@ class GA(object):
         genes = 0
         #convert all 4 weights into bit strings that are stored in one list
         while genes < 4:
+
             weights.append((chromosome[genes] >> bit) & 1 for bit in range(8 -1, -1, -1))
+            genes += 1
 
         #for each weight/bit list, iterate through it and apply mutation chance
         #weights = [weight, weight, weight, weight]
@@ -193,11 +203,11 @@ class GA(object):
             temp = ''.join(weights[genes])
             #convert binary string to int
             temp = int(temp, 2)
-            
             new_weights.append(temp)
+            genes += 1
 
         #return the same type as chromosome
-        return weights
+        return new_weights
 
   
 if __name__ == "__main__":

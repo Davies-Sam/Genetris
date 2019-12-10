@@ -133,7 +133,7 @@ class GA(object):
     def NextGeneration(self):
         averageScore = 0 
         for a in self.population:
-            averageScore += a.heuristics
+            averageScore += a.fitness
         averageScore = averageScore/len(self.population)
         with open('out.txt', 'a') as f:
             f.write("Generation: %s , Average Score: %s\n" % (self.current_generation,averageScore))

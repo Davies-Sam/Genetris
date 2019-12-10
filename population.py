@@ -53,8 +53,8 @@ class Organism(object):
 ###################################################################################
 class GA(object):
     def __init__(self):
-        self.num_of_organisms = 100
-        self.survivors = 98
+        self.num_of_organisms = 35
+        self.survivors = 33
         self.new_organisms = self.num_of_organisms - self.survivors
         self.mutation_rate = .2
         self.convergence_threshold = 85
@@ -135,6 +135,7 @@ class GA(object):
         for a in self.population:
             averageScore += a.fitness
         averageScore = averageScore/len(self.population)
+        self.population.sort(key=lambda x: x.fitness, reverse=True)
         with open('out.txt', 'a') as f:
             f.write("Generation: %s , Average Score: %s\n" % (self.current_generation,averageScore))
             for a in self.population:

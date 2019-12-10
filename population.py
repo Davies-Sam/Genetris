@@ -58,7 +58,7 @@ class GA(object):
         self.num_of_organisms = 50
         self.survivors = 40
         self.new_organisms = self.num_of_organisms - self.survivors
-        self.mutation_rate = .2
+        self.mutation_rate = .5
         self.convergence_threshold = 85
         #initialize the population
         self.population = InitPop(self.num_of_organisms)   
@@ -120,7 +120,7 @@ class GA(object):
         self.NextAI()
 
         #restart the game
-        self.app.start_game()
+        self.app.start_game(self.current_generation)
 
     #check if the population has converged
     """
@@ -139,7 +139,7 @@ class GA(object):
         averageScore = averageScore/len(self.population)
         self.population.sort(key=lambda x: x.fitness, reverse=True)
         #print the last generation out
-        with open('out.txt', 'a') as f:
+        with open('results.txt', 'a') as f:
             f.write("\nGeneration: %s , Average Score: %s\n" % (self.current_generation, averageScore))
             for a in self.population:
                 f.write("%s : %s - score:%s\n" % (a.name, a.heuristics, a.fitness))
@@ -161,11 +161,10 @@ class GA(object):
             #print("SELECTED PARENTS %s %s" % (parents[0].name, parents[1].name))
             #create the new organism
             a = self.Crossover(parents[0],parents[1])
+            #mutate the child
+            self.mutate(a,self.mutation_rate)
             #add to population  
             self.population.append(a)
-        #mutate the entire population
-        for organism in self.population:
-            self.mutate(organism, self.mutation_rate)
         
         #check to make sure we have the correct number of organisms in the new
         #population
@@ -180,7 +179,7 @@ class GA(object):
         self.population.sort(key=lambda x: x.fitness, reverse=True)
         #temp for logging
         kill = self.population[-self.new_organisms:] 
-        with open('out.txt', 'a') as f:
+        with open('results.txt', 'a') as f:
             for organism in kill:
                 f.write("%s DIED\n" % organism.name)
         #kill off amount needed to introduce specified amount of new organisms
@@ -200,13 +199,17 @@ class GA(object):
 
     #mutates the weights of a chromosome
     def mutate(self, organism, mutation_chance):
-        randomNew = RandomOrganism()
+        #randomNew = RandomOrganism()
         for num, weight in enumerate(organism.heuristics):
-            temp = list(numpy.binary_repr(weight, width=8))
-            temp2 = list(numpy.binary_repr(randomNew.heuristics[num], width=8))
+            binWeight = numpy.binary_repr(weight, width=8)
+            temp = list(binWeight)
+            #temp2 = list(numpy.binary_repr(randomNew.heuristics[num], width=8))
             for i in range(0,len(temp)):
-                if random.uniform(0,1) > (1 - self.mutation_rate):
-                    temp[i] = temp2[i]
+                if random.uniform(0,1) >= (1 - self.mutation_rate):
+                    if temp[i] == '0':
+                        temp[i] = '1'
+                    else:
+                        temp[i] = '0'
             organism.heuristics[num] = int(''.join(str(i) for i in temp), 2)
                     
   

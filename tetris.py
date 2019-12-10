@@ -99,7 +99,7 @@ class TetrisApp(object):
 		self.ai = None
 		self.lock = Lock()
 		
-		self.init_game()
+		self.init_game(0)
 	
 	def new_stone(self):
 		self.stone = self.next_stone
@@ -114,8 +114,8 @@ class TetrisApp(object):
 			if self.genetics:
 				self.genetics.GameOver(self.score)
 
-	def init_game(self):
-		random.seed(3)	
+	def init_game(self,seed):
+		random.seed(seed)	
 		self.board = new_board()
 		self.score = 0	
 		#start ever game with a flat piece
@@ -210,9 +210,9 @@ class TetrisApp(object):
 			if not check_collision(self.board, new_stone, (self.stone_x, self.stone_y)):
 				self.stone = new_stone
 
-	def start_game(self):
+	def start_game(self,seed):
 		if self.gameover:
-			self.init_game()
+			self.init_game(seed)
 			self.gameover = False
 
 	def quit(self):

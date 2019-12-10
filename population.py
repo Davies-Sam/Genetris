@@ -136,7 +136,7 @@ class GA(object):
             averageScore += a.heuristics
         averageScore = averageScore/len(self.population)
         with open('out.txt', 'a') as f:
-            f.write("Generation: %s , Average Score: \n" % (self.current_generation,averageScore))
+            f.write("Generation: %s , Average Score: %s\n" % (self.current_generation,averageScore))
             for a in self.population:
                 f.write("a: %s - score:%s\n" % (a.heuristics, a.fitness))
                 

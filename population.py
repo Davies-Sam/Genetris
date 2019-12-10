@@ -140,7 +140,7 @@ class GA(object):
         self.population.sort(key=lambda x: x.fitness, reverse=True)
         #print the last generation out
         with open('out.txt', 'a') as f:
-            f.write("\nGeneration: %s , Average Score: %s\n" % (self.current_generation,averageScore))
+            f.write("\nGeneration: %s , Average Score: %s\n" % (self.current_generation, averageScore))
             for a in self.population:
                 f.write("%s : %s - score:%s\n" % (a.name, a.heuristics, a.fitness))
                 
@@ -161,10 +161,11 @@ class GA(object):
             #print("SELECTED PARENTS %s %s" % (parents[0].name, parents[1].name))
             #create the new organism
             a = self.Crossover(parents[0],parents[1])
-            #mutate the child
-            self.mutate(a, self.mutation_rate)  
             #add to population  
             self.population.append(a)
+        #mutate the entire population
+        for organism in self.population:
+            self.mutate(organism, self.mutation_rate)
         
         #check to make sure we have the correct number of organisms in the new
         #population

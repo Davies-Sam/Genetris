@@ -131,11 +131,12 @@ class GA(object):
     #this def takes the current population, removes the worst two organisms and 
     #re-produces two new ones to add to the population
     def NextGeneration(self):
-        """
-        with open('out.txt', 'w') as f:
+    
+        with open('out.txt', 'a') as f:
+            f.write("Generation: %s\n" % self.current_generation)
             for a in self.population:
-                f.write(a.heuristics) 
-        """
+                f.write("a: %s - score:%s\n" % (a.heuristics, a.fitness))
+                
         #if the population has converged, dont need another generation, print out
         #the genes and weights for each organism in the converged population
         #if self.PopConvergenced():

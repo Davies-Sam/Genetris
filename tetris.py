@@ -229,10 +229,12 @@ class TetrisApp(object):
 			print(self.board[i])
 			print('\n')
 			i+=1
+		"""
 		a = self.genetics.RandomOrganism()
 		b = self.genetics.RandomOrganism()
 		print(a.heuristics)
 		print(b.heuristics)
+		"""
 
 	def run(self):
 		key_actions = {

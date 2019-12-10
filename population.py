@@ -53,8 +53,8 @@ class Organism(object):
 ###################################################################################
 class GA(object):
     def __init__(self):
-        self.num_of_organisms = 100
-        self.survivors = 98
+        self.num_of_organisms = 10
+        self.survivors = 8
         self.new_organisms = self.num_of_organisms - self.survivors
         self.mutation_rate = .2
         self.convergence_threshold = 85
@@ -131,6 +131,11 @@ class GA(object):
     #this def takes the current population, removes the worst two organisms and 
     #re-produces two new ones to add to the population
     def NextGeneration(self):
+        """
+        with open('out.txt', 'w') as f:
+            for a in self.population:
+                f.write(a.heuristics) 
+        """
         #if the population has converged, dont need another generation, print out
         #the genes and weights for each organism in the converged population
         #if self.PopConvergenced():

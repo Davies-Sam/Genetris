@@ -146,11 +146,6 @@ class GA(object):
         #if self.PopConvergenced():
         #    print("The Population has converged on generation %s\n", self.current_generation)
         #else the population has not converged, remove two worst organisms
-        #create two new children to add to the next generation
-        print("CURRENT GENERATION: %s" % self.current_generation)
-        #to get average fitness, sum up the total_fitness for each organism/chromosome
-        #then divide by _num_of_organisms
-        print("AVERAGE FITNESS: %s", (sum([]) / self.num_of_organisms))
         #increment the generation
         self.current_generation += 1
         #create the new population with only the survivors
@@ -158,22 +153,23 @@ class GA(object):
         """
         #rethink this approach - we should create 2 new, evaluate them, and then check against the worst 2 organisms
         if they are better than the bottom 2, replace the bottom 2 with them """     
-        print("after pruning:")
-        print(len(self.population))
+        #print("after pruning:")
+        #print(len(self.population))
         #create the new organisms to add to the new_pop
         
         #select two parents
         parents = random.sample(self.population, 2)
-        #create the new organisms and add them to the new_pop
+        #create the new organisms and add them to the population
         a = self.Crossover(parents[0],parents[1])
         b = self.Crossover(parents[0],parents[1])
+        #mutate the children
         self.mutate(a, self.mutation_rate)
         self.mutate(b, self.mutation_rate)
         self.population.append(a)
         self.population.append(b)
         #go through the new organism's bits and apply the chance to mutate
-        print("after reproduction:")
-        print(len(self.population))
+        #print("after reproduction:")
+        #print(len(self.population))
       
 
         #check to make sure we have the correct number of organisms in the new

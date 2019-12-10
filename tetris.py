@@ -1,5 +1,4 @@
 from random import randrange
-from gui import Gui
 import pygame, sys
 from copy import deepcopy
 from threading import Lock

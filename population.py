@@ -11,6 +11,7 @@ from agent import Agent
 from enum import Enum
 import heuristics
 import numpy
+import names
 
 ################################################################################
   #bitarray is annoying! we will represent the weights in decimal
@@ -43,6 +44,7 @@ class Organism(object):
     def __init__(self, heuristics): 
         self.heuristics = heuristics 
         self.fitness = 0
+        self.name = names.get_full_name()
 
 #population is a list of lists(the organisms) which contain the genes(bitarrays)
 #
@@ -136,10 +138,11 @@ class GA(object):
             averageScore += a.fitness
         averageScore = averageScore/len(self.population)
         self.population.sort(key=lambda x: x.fitness, reverse=True)
+        #print the last generation out
         with open('out.txt', 'a') as f:
-            f.write("Generation: %s , Average Score: %s\n" % (self.current_generation,averageScore))
+            f.write("\nGeneration: %s , Average Score: %s\n" % (self.current_generation,averageScore))
             for a in self.population:
-                f.write("a: %s - score:%s\n" % (a.heuristics, a.fitness))
+                f.write("%s : %s - score:%s\n" % (a.name, a.heuristics, a.fitness))
                 
         #if the population has converged, dont need another generation, print out
         #the genes and weights for each organism in the converged population
@@ -184,6 +187,11 @@ class GA(object):
         #make this more modular later by changing the 'magic number' 2 to a variable
         self.population.sort(key=lambda x: x.fitness, reverse=True)
         #remove the last 2 (least fit)
+        kill = self.population[-2:]
+        a = kill[0]
+        b = kill[1]
+        with open('out.txt', 'a') as f:
+            f.write("%s AND %s DIED" % (a.name, b.name))
         self.population = self.population[:len(self.population)-2]
        
     #We need a crossover fucntion - given 2 parents produce a new orangism

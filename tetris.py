@@ -1,4 +1,4 @@
-from random import randrange
+import random
 import pygame, sys
 from copy import deepcopy
 from threading import Lock
@@ -84,7 +84,6 @@ def new_board():
 class TetrisApp(object):
 	def __init__(self, genetics):
 		self.DROPEVENT = pygame.USEREVENT + 1
-
 		pygame.init()
 		pygame.display.set_caption("Tetris AI")
 		pygame.key.set_repeat(250,25)
@@ -94,16 +93,18 @@ class TetrisApp(object):
 		self.bground_grid = [[ 8 if x%2==y%2 else 0 for x in range(COLS)] for y in range(ROWS)]
 		self.default_font = pygame.font.Font(pygame.font.get_default_font(), 11)
 		self.screen = pygame.display.set_mode((self.width, self.height))
-		self.next_stone = tetris_shapes[randrange(len(tetris_shapes))]
+		self.next_stone = tetris_shapes[5]
 		self.gameover = False
 		self.genetics = genetics
 		self.ai = None
 		self.lock = Lock()
+		
 		self.init_game()
 	
 	def new_stone(self):
 		self.stone = self.next_stone
-		self.next_stone = tetris_shapes[randrange(len(tetris_shapes))]
+		nextStone = random.randint(0, len(tetris_shapes)-1)
+		self.next_stone = tetris_shapes[nextStone]
 		self.stone_x = COLS//2 - len(self.stone[0])//2
 		self.stone_y = 0
 		self.score += 1
@@ -114,9 +115,15 @@ class TetrisApp(object):
 				self.genetics.GameOver(self.score)
 
 	def init_game(self):
+		random.seed(3)	
 		self.board = new_board()
-		self.score = 0
+		self.score = 0	
+		#start ever game with a flat piece
+		self.next_stone = tetris_shapes[5]
+		#print("NEW GAME!")
+		#print(self.next_stone)
 		self.new_stone()
+	
 		pygame.time.set_timer(self.DROPEVENT, DROP_TIME)
 	
 	def disp_msg(self, msg, topleft):

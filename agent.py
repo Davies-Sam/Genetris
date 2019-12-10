@@ -18,8 +18,9 @@ import heuristics
 #import population
 import heuristics
 #import functions and the number of columns
-from tetris import check_collision, cols, rotate_clockwise, join_matrixes
-
+from tetris import check_collision, COLS, rotate_clockwise, join_matrixes
+from collections import namedtuple
+Move = namedtuple('Move', ['x_pos', 'rotation', 'result'])
 #pass an organism
 
 class Agent(object):
@@ -30,7 +31,7 @@ class Agent(object):
         self.tetris = tetris
         self.best_move = None
         #self.organism = organism
-        self.instant_play = True
+        self.instantPlay = True
 
         #this var will contain the heuristics of a single organism, will be updated
         #when we work on a different organism
@@ -38,7 +39,7 @@ class Agent(object):
         
     #################################################################################
     #finds the best move from all possible moves. calls rotations_per_piece()
-    @staticmethod
+    
     def find_best_move(self):
         all_moves = []
         piece = self.tetris.stone
@@ -48,13 +49,13 @@ class Agent(object):
         for rotation in range(self.rotations_per_piece(piece)):
             #now that we have a config of a piece/tetromino/stone,
             #check each column with it
-            for x in range((cols - len(piece[0]))+1):
+            for x in range((COLS - len(piece[0]))+1):
                 y = self.top_of_column(x, piece)
                 #get a new board config after adding the current piece's rotation
                 #to the current board. join the current board and place where the
                 #piece would be placed
                 new_board = join_matrixes(self.tetris.board, piece, (x, y))
-                all_moves.append(tuple(x, rotation, new_board))
+                all_moves.append(Move(x, rotation, new_board))
             #checked every config with current configuration,
             #rotate and do it again
             piece = rotate_clockwise(piece)
@@ -73,7 +74,10 @@ class Agent(object):
         for a_move in all_moves:
             #passing the new_board var into the util function
             #NEEDS TO BE UPDATED!!!! WILL WORK ON LATER.
-            temp = heuristics.Utility_Function(a_move[2], self.tetris.genetics.currentOrganism.heuristics)
+            pop = self.tetris.genetics.population
+            curOrgIndex = self.tetris.genetics.current_organism
+            workingOrganism = pop[curOrgIndex]
+            temp = heuristics.Utility_Function(a_move[2], workingOrganism.heuristics)
             if temp > max_util:
                 max_util = temp
                 best_board_state = a_move
@@ -88,7 +92,7 @@ class Agent(object):
     #################################################################################
     #This def is called by the GA which, in turn, calls the rest of the Agent
     #sub-fcns.
-    @staticmethod
+    
     def update_board(self):
         tetris = self.tetris
         
@@ -106,7 +110,7 @@ class Agent(object):
         #move the piece over to the correct column
         tetris.move_to(move[0])
         #if we are still playing, not paused
-        if self.instant_play:
+        if self.instantPlay:
             tetris.stone_y = self.top_of_column(move[0], tetris.stone)
         #free the board
         tetris.lock.release()
@@ -126,7 +130,7 @@ class Agent(object):
     #################################################################################
     #This definition calculates the number of times we can rotate a piece without
     #getting a duplicate configuration, depends on which piece we are looking at
-    @staticmethod
+    
     def rotations_per_piece(self, piece):
         #pieces contains a list of each configuration
         pieces = [piece]

@@ -131,9 +131,12 @@ class GA(object):
     #this def takes the current population, removes the worst two organisms and 
     #re-produces two new ones to add to the population
     def NextGeneration(self):
-    
+        averageScore = 0 
+        for a in self.population:
+            averageScore += a.heuristics
+        averageScore = averageScore/len(self.population)
         with open('out.txt', 'a') as f:
-            f.write("Generation: %s\n" % self.current_generation)
+            f.write("Generation: %s , Average Score: \n" % (self.current_generation,averageScore))
             for a in self.population:
                 f.write("a: %s - score:%s\n" % (a.heuristics, a.fitness))
                 

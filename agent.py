@@ -35,7 +35,7 @@ class Agent(object):
 
         #this var will contain the heuristics of a single organism, will be updated
         #when we work on a different organism
-        self.heuristics = heuristics
+        
         
     #################################################################################
     #finds the best move from all possible moves. calls rotations_per_piece()
@@ -49,7 +49,7 @@ class Agent(object):
         for rotation in range(self.rotations_per_piece(piece)):
             #now that we have a config of a piece/tetromino/stone,
             #check each column with it
-            for x in range((COLS - len(piece[0]))+1):
+            for x in range( ( COLS - len(piece[0]) ) + 1 ):
                 y = self.top_of_column(x, piece)
                 #get a new board config after adding the current piece's rotation
                 #to the current board. join the current board and place where the
@@ -71,6 +71,7 @@ class Agent(object):
         best_board_state = None
 
         #check how good each placement is for each placement
+        
         for a_move in all_moves:
             #passing the new_board var into the util function
             #NEEDS TO BE UPDATED!!!! WILL WORK ON LATER.
@@ -81,7 +82,13 @@ class Agent(object):
             if temp > max_util:
                 max_util = temp
                 best_board_state = a_move
+        """
+        pop = self.tetris.genetics.population
+        curOrgIndex = self.tetris.genetics.current_organism
+        workingOrganism = pop[curOrgIndex]
 
+        return max(all_moves, key=lambda m: heuristics.Utility_Function(m.result,workingOrganism.heuristics))
+        """
 
         #max_util has the utility of the best board state
         #best_board_state contains x_coord, rotation of the piece, and how the board
@@ -118,6 +125,7 @@ class Agent(object):
     #################################################################################
     #this function finds how far down the piece needs to go before a collision
     #uses the def from tetris.py check_collision()
+  
     def top_of_column(self, x_coord, piece):
         y_coord = 0
 
@@ -130,6 +138,7 @@ class Agent(object):
     #################################################################################
     #This definition calculates the number of times we can rotate a piece without
     #getting a duplicate configuration, depends on which piece we are looking at
+    #good.
     
     def rotations_per_piece(self, piece):
         #pieces contains a list of each configuration

@@ -225,11 +225,14 @@ class TetrisApp(object):
 	
 	def print_board(self):
 		i=0
-		if not self.printed:
-			for row in self.board:	
-				print(self.board[i])
-				print('\n')
-				i+=1
+		for row in self.board:	
+			print(self.board[i])
+			print('\n')
+			i+=1
+		a = self.genetics.RandomOrganism()
+		b = self.genetics.RandomOrganism()
+		print(a.heuristics)
+		print(b.heuristics)
 
 	def run(self):
 		key_actions = {
@@ -241,6 +244,7 @@ class TetrisApp(object):
 			'SPACE': self.start_game,
 			'RETURN': self.insta_drop,
 			'p': self.ai_toggle_instantPlay,
+			't' : self.print_board
 		}
 		
 		#clock = pygame.time.Clock()

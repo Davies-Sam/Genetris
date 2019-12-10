@@ -20,7 +20,7 @@ import numpy
 def RandomOrganism():
     nums = []
     for j in range(0, 4):
-        a = random.randint(0, 255)
+        a = random.randint(-128, 127)
         nums.append(a)
     organism = Organism(nums)
     return organism

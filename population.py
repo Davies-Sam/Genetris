@@ -53,8 +53,8 @@ class Organism(object):
 ###################################################################################
 class GA(object):
     def __init__(self):
-        self.num_of_organisms = 10
-        self.survivors = 8
+        self.num_of_organisms = 100
+        self.survivors = 98
         self.new_organisms = self.num_of_organisms - self.survivors
         self.mutation_rate = .2
         self.convergence_threshold = 85
@@ -182,7 +182,7 @@ class GA(object):
     def SelectSurvivors(self):
         #sort the population by Organism.fitness
         #make this more modular later by changing the 'magic number' 2 to a variable
-        self.population.sort(key=lambda x: x.fitness)
+        self.population.sort(key=lambda x: x.fitness, reverse=True)
         #remove the last 2 (least fit)
         self.population = self.population[:len(self.population)-2]
        

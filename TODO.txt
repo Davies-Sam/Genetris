@@ -7,6 +7,6 @@
 7) Connect the Agent to the game Created: 12/8 Completed: 12/8
 8) Complete the genetics - population creation, crossover & mutation Created: 12/8 Completed: 12/9
 9) Connect the organisms to the AI agent Created: 12/8 Completed: 12/9
-10) Allow for negative weights Created: 12/9 Completed:
-11) Write each generation to a file for loggin purposes Created: 12/9 Completed:
+10) Allow for negative weights Created: 12/9 Completed: 12/9
+11) Write each generation to a file for loggin purposes Created: 12/9 Completed: 12/9
 12) Let the Algorithm run for a day at least: Created: 12/9 Completed:

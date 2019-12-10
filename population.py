@@ -55,8 +55,8 @@ class Organism(object):
 ###################################################################################
 class GA(object):
     def __init__(self):
-        self.num_of_organisms = 35
-        self.survivors = 33
+        self.num_of_organisms = 50
+        self.survivors = 40
         self.new_organisms = self.num_of_organisms - self.survivors
         self.mutation_rate = .2
         self.convergence_threshold = 85
@@ -159,40 +159,36 @@ class GA(object):
         #print("after pruning:")
         #print(len(self.population))
         #create the new organisms to add to the new_pop
+        for x in range (0, self.new_organisms):
+            #select two parents
+            parents = random.sample(self.population, 2)
+            #create the new organism
+            a = self.Crossover(parents[0],parents[1])
+            #mutate the child
+            self.mutate(a, self.mutation_rate)  
+            #add to population  
+            self.population.append(a)
         
-        #select two parents
-        parents = random.sample(self.population, 2)
-        #create the new organisms and add them to the population
-        a = self.Crossover(parents[0],parents[1])
-        b = self.Crossover(parents[0],parents[1])
-        #mutate the children
-        self.mutate(a, self.mutation_rate)
-        self.mutate(b, self.mutation_rate)
-        self.population.append(a)
-        self.population.append(b)
-        #go through the new organism's bits and apply the chance to mutate
-        #print("after reproduction:")
-        #print(len(self.population))
       
 
         #check to make sure we have the correct number of organisms in the new
         #population
        
-        #assert 2 == len(self.population), "ERROR: new population doesnt have enough organisms"
+        assert 50 == len(self.population), "ERROR: new population doesnt have enough organisms"
 
 
     #Will return the survivors of a population, will return self.survivors number of organisms 
     def SelectSurvivors(self):
         #sort the population by Organism.fitness
-        #make this more modular later by changing the 'magic number' 2 to a variable
+     
         self.population.sort(key=lambda x: x.fitness, reverse=True)
-        #remove the last 2 (least fit)
-        kill = self.population[-2:]
-        a = kill[0]
-        b = kill[1]
+        #temp for logging
+        kill = self.population[-self.new_organisms:] 
         with open('out.txt', 'a') as f:
-            f.write("%s AND %s DIED" % (a.name, b.name))
-        self.population = self.population[:len(self.population)-2]
+            for organism in kill:
+                f.write("%s DIED\n" % organism.name)
+        #kill off amount needed to introduce specified amount of new organisms
+        self.population = self.population[:len(self.population)-(self.new_organisms)]
        
     #We need a crossover fucntion - given 2 parents produce a new orangism
     #make sure the binary representations are all the same length, pad with 0 at front

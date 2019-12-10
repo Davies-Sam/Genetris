@@ -190,7 +190,7 @@ class GA(object):
     def Crossover(self, parent1, parent2):
         weights = []
         for i in range(0, len(parent1.heuristics)):
-            if random.uniform(0,1) > .5:
+            if random.random() < .5:
                 weights.append(parent1.heuristics[i])
             else:
                 weights.append(parent2.heuristics[i])

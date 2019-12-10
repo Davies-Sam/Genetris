@@ -138,7 +138,9 @@ class TetrisApp(object):
 			self.screen.blit(msg_image, (
 			  self.width // 2-msgim_center_x,
 			  self.height // 2-msgim_center_y+i*22))
-	
+		
+	#Adopted this function from Jgardner to fix corrupt boards
+	#https://github.com/jgardner8/genetic-tetris-ai/blob/8853f0ef3af83e90d5ddd386627c0e437cfaf573/tetris.py#L181
 	def draw_matrix(self, matrix, offset):
 		off_x, off_y  = offset
 		for y, row in enumerate(matrix):
@@ -149,7 +151,8 @@ class TetrisApp(object):
 							pygame.Rect((off_x+x)*CELL_SIZE, (off_y+y)*CELL_SIZE, CELL_SIZE, CELL_SIZE), 0)
 					except IndexError:
 						print("Corrupted board") 
-						print(self.board)
+						self.print_board()
+						
 	
 	def add_cl_lines(self, n):
 		linescores = [0, 40, 100, 300, 1200]
@@ -205,21 +208,39 @@ class TetrisApp(object):
 		if self.gameover:
 			self.init_game()
 			self.gameover = False
-	
-	def ai_toggle_instant_play(self):
+
+	def quit(self):
+		self.center_msg("exiting...")
+		pygame.display.update()
+		""" make sure fitnesses are recorded
+		for a in self.genetics.population:
+			print(a.fitness)
+			print("\n")
+		"""
+		sys.exit()
+
+	def ai_toggle_instantPlay(self):
 		if self.ai:
-			self.ai.instant_play = not self.ai.instant_play
+			self.ai.instantPlay = not self.ai.instantPlay
+	
+	def print_board(self):
+		i=0
+		if not self.printed:
+			for row in self.board:	
+				print(self.board[i])
+				print('\n')
+				i+=1
 
 	def run(self):
 		key_actions = {
-			'ESCAPE':	sys.exit,
+			'ESCAPE':	self.quit,
 			'LEFT': lambda: self.move(-1),
 			'RIGHT': lambda: self.move(+1),
 			'DOWN': self.drop,
 			'UP': self.rotate_stone,
 			'SPACE': self.start_game,
 			'RETURN': self.insta_drop,
-			'p': self.ai_toggle_instant_play,
+			'p': self.ai_toggle_instantPlay,
 		}
 		
 		#clock = pygame.time.Clock()
@@ -264,7 +285,7 @@ if __name__ == "__main__":
 	from agent import Agent
 	app = TetrisApp()
 	app.ai = Agent(app)
-	app.ai.instant_play = False
+	app.ai.instantPlay = False
 	app.run()
 
 	

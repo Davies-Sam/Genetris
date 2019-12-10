@@ -31,7 +31,7 @@ class Agent(object):
         self.tetris = tetris
         self.best_move = None
         #self.organism = organism
-        self.instantPlay = True
+        self.instantPlay = False
 
         #this var will contain the heuristics of a single organism, will be updated
         #when we work on a different organism
@@ -67,7 +67,7 @@ class Agent(object):
 
         #now we calculate the utility of each board state and find the max
         #heuristics takes only a board... keep this in mind when calling util_fcn
-        max_util = -float("inf")
+        max_util = float("-inf")
         best_board_state = None
 
         #check how good each placement is for each placement

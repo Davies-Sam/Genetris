@@ -205,7 +205,7 @@ class GA(object):
             temp = list(binWeight)
             #temp2 = list(numpy.binary_repr(randomNew.heuristics[num], width=8))
             for i in range(0,len(temp)):
-                if random.uniform(0,1) >= (1 - self.mutation_rate):
+                if random.random() < (1 - self.mutation_rate):
                     if temp[i] == '0':
                         temp[i] = '1'
                     else:

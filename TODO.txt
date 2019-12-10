@@ -10,5 +10,5 @@
 10) Allow for negative weights Created: 12/9 Completed: 12/9
 11) Write each generation to a file for loggin purposes Created: 12/9 Completed: 12/9
 12) Let the Algorithm run for a day at least: Created: 12/9 Completed: 12/10
-13) Name the organisms so we can track them more easily in the logs  Created: 12/9 Completed:
+13) Name the organisms so we can track them more easily in the logs  Created: 12/9 Completed: 12/10
 14) Consider fixing the piece sequence Created: 12/10 Completed: 12/10

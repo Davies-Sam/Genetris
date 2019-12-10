@@ -153,15 +153,12 @@ class GA(object):
         self.current_generation += 1
         #create the new population with only the survivors
         self.SelectSurvivors()
-        """
-        #rethink this approach - we should create 2 new, evaluate them, and then check against the worst 2 organisms
-        if they are better than the bottom 2, replace the bottom 2 with them """     
-        #print("after pruning:")
-        #print(len(self.population))
+  
         #create the new organisms to add to the new_pop
         for x in range (0, self.new_organisms):
             #select two parents
             parents = random.sample(self.population, 2)
+            #print("SELECTED PARENTS %s %s" % (parents[0].name, parents[1].name))
             #create the new organism
             a = self.Crossover(parents[0],parents[1])
             #mutate the child
@@ -169,8 +166,6 @@ class GA(object):
             #add to population  
             self.population.append(a)
         
-      
-
         #check to make sure we have the correct number of organisms in the new
         #population
        
@@ -189,11 +184,6 @@ class GA(object):
                 f.write("%s DIED\n" % organism.name)
         #kill off amount needed to introduce specified amount of new organisms
         self.population = self.population[:len(self.population)-(self.new_organisms)]
-       
-    #We need a crossover fucntion - given 2 parents produce a new orangism
-    #make sure the binary representations are all the same length, pad with 0 at front
-    #account for - in position [0]
-    #account for "b" in the array aswell.
 
     #takes two parents and does uniform crossover
     #returns an Organism
@@ -206,11 +196,8 @@ class GA(object):
                 weights.append(parent2.heuristics[i])
         return Organism(weights)
 
-    #We need a mutation function - will convert the numbers to binary then operate and convert back. "int(0b010101)" will go from binary to to decimal
 
-    #after an organism is created, apply the mutation chance
-    #chromosome is an array of 4 ints
-    #returns the weights as a list of four ints
+    #mutates the weights of a chromosome
     def mutate(self, organism, mutation_chance):
         randomNew = RandomOrganism()
         for num, weight in enumerate(organism.heuristics):

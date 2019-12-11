@@ -45,6 +45,7 @@ class Organism(object):
         self.heuristics = heuristics 
         self.fitness = 0
         self.name = names.get_full_name()
+        self.age = 0
 
 #population is a list of lists(the organisms) which contain the genes(bitarrays)
 #
@@ -112,13 +113,12 @@ class GA(object):
         self.ai.heuristics = self.population[self.current_organism].heuristics
 
     #handles when a game we are testing the current organism on ends
-    def GameOver(self, current_score):
-        organism = self.population[self.current_organism]
-        organism.fitness = current_score
-
+    def GameOver(self, lines_cleared):
+        organism = self.population[self.current_organism]     
+        organism.fitness = lines_cleared
+       
         #load the next organism into the algo
         self.NextAI()
-
         #restart the game
         self.app.start_game(self.current_generation)
 
@@ -140,9 +140,9 @@ class GA(object):
         self.population.sort(key=lambda x: x.fitness, reverse=True)
         #print the last generation out
         with open('results.txt', 'a') as f:
-            f.write("\nGeneration: %s , Average Score: %s\n" % (self.current_generation, averageScore))
+            f.write("\nGeneration: %s , Average Lines Cleared: %s\n" % (self.current_generation, averageScore))
             for a in self.population:
-                f.write("%s : %s - score:%s\n" % (a.name, a.heuristics, a.fitness))
+                f.write("%s, Age: %s Weights: %s - Lines Cleared:%s\n" % (a.name, a.age, a.heuristics, a.fitness))
                 
         #if the population has converged, dont need another generation, print out
         #the genes and weights for each organism in the converged population
@@ -177,6 +177,8 @@ class GA(object):
         #sort the population by Organism.fitness
      
         self.population.sort(key=lambda x: x.fitness, reverse=True)
+        for organism in self.population:
+            organism.age += 1
         #temp for logging
         kill = self.population[-self.new_organisms:] 
         with open('results.txt', 'a') as f:

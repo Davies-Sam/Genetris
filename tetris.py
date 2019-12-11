@@ -94,6 +94,7 @@ class TetrisApp(object):
 		self.default_font = pygame.font.Font(pygame.font.get_default_font(), 11)
 		self.screen = pygame.display.set_mode((self.width, self.height))
 		self.next_stone = tetris_shapes[5]
+		self.linesCleared = 0
 		self.gameover = False
 		self.genetics = genetics
 		self.ai = None
@@ -112,12 +113,13 @@ class TetrisApp(object):
 		if check_collision(self.board, self.stone, (self.stone_x, self.stone_y)):
 			self.gameover = True
 			if self.genetics:
-				self.genetics.GameOver(self.score)
+				self.genetics.GameOver(self.linesCleared)
 
 	def init_game(self,seed):
 		random.seed(seed)	
 		self.board = new_board()
 		self.score = 0	
+		self.linesCleared = 0
 		#start ever game with a flat piece
 		self.next_stone = tetris_shapes[5]
 		#print("NEW GAME!")
@@ -163,6 +165,7 @@ class TetrisApp(object):
 	def add_cl_lines(self, n):
 		linescores = [0, 40, 100, 300, 1200]
 		self.score += linescores[n]
+		self.linesCleared += n
 	
 	def move_to(self, x):
 		self.move(x - self.stone_x)
@@ -269,11 +272,14 @@ class TetrisApp(object):
 					if self.ai and self.genetics:
 						chromosome = self.genetics.population[self.genetics.current_organism]
 						self.disp_msg("Generation: %s" % self.genetics.current_generation, (self.rlim+CELL_SIZE, CELL_SIZE*11))
-						self.disp_msg("\n  %s: %s\n  %s: %s\n  %s: %s\n  %s: %s\n" % (
+						self.disp_msg("\n  %s: %s\n  %s: %s\n  %s: %s\n  %s: %s\n %s: %s\n %s: %s\n %s: %s\n" % (
+							"Name", chromosome.name,
+							"Age", chromosome.age,
 							"Height_weight", chromosome.heuristics[0],
 							"Bumpiness_weight", chromosome.heuristics[1],
 							"Holes_weight", chromosome.heuristics[2],
 							"Lines_weight", chromosome.heuristics[3],
+							"Lines Cleared", self.linesCleared
 						), (self.rlim+CELL_SIZE, CELL_SIZE*12.1))
 					self.draw_matrix(self.bground_grid, (0,0))
 					self.draw_matrix(self.board, (0,0))

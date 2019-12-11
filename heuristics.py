@@ -86,22 +86,9 @@ def LinesCleared(board):
     return cleared
 
 
-
 #Vertically connected holes
-def ConnectedHoles(board):
-    height = len(board) - 1 
-    width = len(board[1])
-    holes = 0
-    holeInColumn = {0: 0, 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0}
-    for row, rowElements in enumerate(board):
-        x=0
-        for cell in rowElements:
-            #if the height of the column is > height of 0 cell, we know we have a hole
-            if cell == 0 and ColumnHeight(board, x) > (height - row):
-                holeInColumn[x] += 1
-                holes += 1
-            x += 1
-    return holes
+
+#Blockades (number of pieces placed above a hole)
 
 #Altitude difference
 
@@ -114,10 +101,39 @@ def ConnectedHoles(board):
 #Weighted Blocks (sum of occupied blocks, n-th row counts n times)
 
 #Horizontal Transitions (adjacent blocks arent either both empty or both occupied)
+def HorizontalRoughness(board):
+    height = len(board) - 1 
+    width = len(board[1])
+    gaps = 0
+    for row, rowElements in enumerate(board):
+        for x in range(0, len(rowElements)):
+            if (x>0 and x<9) and rowElements[x] == 0 and rowElements[x-1] != 0 and rowElements[x+1] != 0:
+                gaps +=1
+            elif x == 0 and rowElements[x] == 0 and rowElements[x+1] != 0 :
+                gaps +=1
+            elif x == 9 and rowElements[x] == 0 and rowElements[x-1] != 0:
+                gaps +=1
+
+    return gaps
 
 #Vertical Transitions (adjacent blocks aren't either both empty or both occupied)
+def VerticalRoughness(board):
+    height = len(board) - 1 
+    width = len(board[1])
+    coords = {}
+    vGaps = 0
+    for row, rowElements in enumerate(board):
+        for x in range(0, len(rowElements)):
+            coords[(x,row)] = rowElements[x]
+
+    for y in range (0, 23):
+        for x in range(0,10):
+            if y > 1 and y < 22:
+                if coords[(x,y)] == 0 and coords[(x,y+1)]!= 0 and coords[(x,y-1)]!= 0:
+                    vGaps += 1
 
 
+    return vGaps
 
 #This is the 'main' function of the file, the only one to be called externally.
 #It will return the score of a placement by checking the weighted heuristics

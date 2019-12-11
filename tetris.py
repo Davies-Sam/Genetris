@@ -2,14 +2,15 @@ import random
 import pygame, sys
 from copy import deepcopy
 from threading import Lock
+import heuristics
 
 CELL_SIZE =	20
 COLS =		10
 ROWS =		22
 MAXFPS = 	30
 PIECELIMIT = 300
-DROP_TIME = 20
-DRAW = False
+DROP_TIME = 5005
+DRAW = True
 
 tetris_shapes = [
 	[[1, 1, 1],
@@ -245,6 +246,7 @@ class TetrisApp(object):
 		print(a.heuristics)
 		print(b.heuristics)
 		"""
+		print(heuristics.VerticalRoughness(self.board))
 
 	def run(self):
 		key_actions = {
@@ -262,6 +264,7 @@ class TetrisApp(object):
 		#clock = pygame.time.Clock()
 		while True:
 			if DRAW:
+				
 				self.screen.fill((0,0,0))
 				if self.gameover:
 					self.center_msg("Game Over!\nYour score: %d\nPress space to continue" % self.score)
@@ -302,9 +305,9 @@ class TetrisApp(object):
 
 if __name__ == "__main__":
 	from agent import Agent
-	app = TetrisApp()
-	app.ai = Agent(app)
-	app.ai.instantPlay = False
+	app = TetrisApp(None)
+	#app.ai = Agent(app)
+	#app.ai.instantPlay = False
 	app.run()
 
 	

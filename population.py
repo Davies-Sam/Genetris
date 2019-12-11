@@ -181,11 +181,13 @@ class GA(object):
         self.population.sort(key=lambda x: x.fitness, reverse=True)
         for organism in self.population:
             organism.age += 1
+            """
         #temp for logging
         kill = self.population[-self.new_organisms:] 
         with open('results.txt', 'a') as f:
             for organism in kill:
                 f.write("%s DIED\n" % organism.name)
+        """
         #kill off amount needed to introduce specified amount of new organisms
         self.population = self.population[:len(self.population)-(self.new_organisms)]
 

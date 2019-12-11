@@ -2,14 +2,14 @@ import random
 import pygame, sys
 from copy import deepcopy
 from threading import Lock
-import heuristics
+
 
 CELL_SIZE =	20
 COLS =		10
 ROWS =		22
 MAXFPS = 	30
 PIECELIMIT = 300
-DROP_TIME = 5005
+DROP_TIME = 20
 DRAW = True
 
 tetris_shapes = [
@@ -246,7 +246,7 @@ class TetrisApp(object):
 		print(a.heuristics)
 		print(b.heuristics)
 		"""
-		print(heuristics.Blockades(self.board))
+		#print(heuristics.WeightedBlocks(self.board))
 
 	def run(self):
 		key_actions = {
@@ -276,13 +276,19 @@ class TetrisApp(object):
 					if self.ai and self.genetics:
 						chromosome = self.genetics.population[self.genetics.current_organism]
 						self.disp_msg("Generation: %s" % self.genetics.current_generation, (self.rlim+CELL_SIZE, CELL_SIZE*11))
-						self.disp_msg("\n  %s: %s\n  %s: %s\n  %s: %s\n  %s: %s\n %s: %s\n %s: %s\n %s: %s\n" % (
+						self.disp_msg("\n  %s: %s\n  %s: %s\n  %s: %s\n  %s: %s\n %s: %s\n %s: %s\n %s: %s\n %s: %s\n %s: %s\n %s: %s\n %s: %s\n %s: %s\n %s: %s\n" % (
 							"Name", chromosome.name,
 							"Age", chromosome.age,
-							"Height_weight", chromosome.heuristics[0],
-							"Bumpiness_weight", chromosome.heuristics[1],
-							"Holes_weight", chromosome.heuristics[2],
-							"Lines_weight", chromosome.heuristics[3],
+							"Height", chromosome.heuristics[0],
+							"Bumpiness", chromosome.heuristics[1],
+							"Holes", chromosome.heuristics[2],
+							"Lines", chromosome.heuristics[3],
+							"Connected Holes", chromosome.heuristics[4],
+							"Blockades", chromosome.heuristics[5],
+							"Altitude Delta", chromosome.heuristics[6],
+							"Weighted Blocks", chromosome.heuristics[7],
+							"Horizonal Roughness", chromosome.heuristics[8],
+							"Vertical Roughness", chromosome.heuristics[9],
 							"Lines Cleared", self.linesCleared
 						), (self.rlim+CELL_SIZE, CELL_SIZE*12.1))
 					self.draw_matrix(self.bground_grid, (0,0))
@@ -305,9 +311,9 @@ class TetrisApp(object):
 
 if __name__ == "__main__":
 	from agent import Agent
-	app = TetrisApp(None)
-	#app.ai = Agent(app)
-	#app.ai.instantPlay = False
+	app = TetrisApp()
+	app.ai = Agent(app)
+	app.ai.instantPlay = True
 	app.run()
 
 	

@@ -20,7 +20,7 @@ import names
 
 def RandomOrganism():
     nums = []
-    for j in range(0, 4):
+    for j in range(0, 10):
         a = random.randint(-128, 127)
         nums.append(a)
     organism = Organism(nums)
@@ -57,10 +57,9 @@ class Organism(object):
 class GA(object):
     def __init__(self):
         self.num_of_organisms = 100
-        self.survivors = 70
+        self.survivors = 90
         self.new_organisms = self.num_of_organisms - self.survivors
-        self.mutation_rate = .2
-        self.convergence_threshold = 85
+        self.mutation_rate = .1
         #initialize the population
         self.population = InitPop(self.num_of_organisms)   
         #keep track of which organism in the population we are working on
@@ -77,7 +76,9 @@ class GA(object):
         self.app.ai = self.ai
 
     #start running the game
-    def Run(self):   
+    def Run(self):
+        with open('results.txt', 'w') as f:
+            f.write("Weights: TotalHeight, Bumpiness, Holes, LinesCleared, Connected Holes, Blockades, Altitude Delta, Weighted Blocks, H-Roughness, V-Roughness.\n Mutation Rate: %s , Replacement Per Cycle: %s\n" % (self.mutation_rate, self.new_organisms))
         self.app.run()
 
     #This def 

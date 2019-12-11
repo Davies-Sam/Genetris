@@ -87,6 +87,32 @@ def LinesCleared(board):
 
 
 #Vertically connected holes
+def ConnectedHoles(board):
+    height = len(board) - 1 
+    width = len(board[1])
+    coords = {}
+    connected = 0
+
+    for row, rowElements in enumerate(board):
+        for x in range(0, len(rowElements)):
+            coords[(x,row)] = rowElements[x]
+
+    holes = []
+    for row, rowElements in enumerate(board):    
+        for x in range(0,len(rowElements)):
+            #if the height of the column is > height of 0 cell, we know we have a hole
+            if rowElements[x] == 0 and ColumnHeight(board, x) > (height - row):   
+                holes.append((x,row))
+
+    for entry in holes:
+        x, y = entry
+        if coords[(x,y+1)]== 0:
+            connected += 1
+
+    return connected
+
+
+    
 
 #Blockades (number of pieces placed above a hole)
 def Blockades(board):
@@ -113,17 +139,31 @@ def Blockades(board):
     return blockades
     
 
-
-
 #Altitude difference
+def AltitudeDelta(board):
+    tallest = max(AllHeights(board))
+    shortest = min(AllHeights(board))
+    return tallest - shortest
 
+##################
+#not implemented
 #Maximum well depth
-
+#
 #Number of wells
+##################
 
-#Height of placed piece
 
 #Weighted Blocks (sum of occupied blocks, n-th row counts n times)
+def WeightedBlocks(board):
+    height = len(board) - 1 
+    width = len(board[1])
+    blockScore = 0
+    for row, rowElements in enumerate(board):
+        for cell in rowElements:
+            if cell != 0:
+                blockScore += 1*(height-row)
+    return blockScore
+    
 
 #Horizontal Transitions (adjacent blocks arent either both empty or both occupied)
 def HorizontalRoughness(board):
@@ -163,17 +203,34 @@ def VerticalRoughness(board):
 #This is the 'main' function of the file, the only one to be called externally.
 #It will return the score of a placement by checking the weighted heuristics
 #On the board and weights that is passed to this utility function.
+#WE HAVE NOT MADE THE ORGANISM HOLD LABELED WEIGHTS
+#THIS FUNCTION HOLDS THE CORRECT ORDER OF THE WEIGHTS
+#FOR LEGIBILITY WE WILL ATTACH NAMES TO THE WEIGHTS LATER
 def Utility_Function(board, weights):
     #get the heurstics
     height = TotalHeight(board)
     bump = Bumpiness(board)
     holes = HolesCreated(board)
     cleared = LinesCleared(board)
+    connectedHoles = ConnectedHoles(board)
+    blockades = Blockades(board)
+    altituteDelta = AltitudeDelta(board)
+    weightedBlocks = WeightedBlocks(board)
+    hRoughness = HorizontalRoughness(board)
+    vRoughness = VerticalRoughness(board)
+
     #now we weight the heuristics
     wHeight = height * weights[0]
     wBump = bump * weights[1]
     wHoles = holes * weights[2]
     wCleared = cleared * weights[3]
+    wConnectedHoles = connectedHoles * weights[4]
+    wBlockades = blockades * weights[5]
+    wAltitudeDelta = altituteDelta * weights[6]
+    wWeightedBlocks = weightedBlocks * weights[7]
+    wHroughness = hRoughness * weights[8]
+    wVroughness = vRoughness * weights[9]
+
     #sum the weighted heurstics to get the score of a piece placement
-    score = wHeight + wBump + wHoles + wCleared
+    score = wHeight + wBump + wHoles + wCleared + wConnectedHoles + wBlockades + wAltitudeDelta + wWeightedBlocks + wHroughness + wVroughness
     return score

@@ -246,7 +246,7 @@ class TetrisApp(object):
 		print(a.heuristics)
 		print(b.heuristics)
 		"""
-		print(heuristics.VerticalRoughness(self.board))
+		print(heuristics.Blockades(self.board))
 
 	def run(self):
 		key_actions = {

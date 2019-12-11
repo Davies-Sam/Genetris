@@ -89,6 +89,31 @@ def LinesCleared(board):
 #Vertically connected holes
 
 #Blockades (number of pieces placed above a hole)
+def Blockades(board):
+    height = len(board) - 1 
+    width = len(board[1])
+    coords = {}
+    blockades = 0
+    for row, rowElements in enumerate(board):
+        for x in range(0, len(rowElements)):
+            coords[(x,row)] = rowElements[x]
+
+    holes = []
+    for row, rowElements in enumerate(board):    
+        for x in range(0,len(rowElements)):
+            #if the height of the column is > height of 0 cell, we know we have a hole
+            if rowElements[x] == 0 and ColumnHeight(board, x) > (height - row):   
+                holes.append((x,row))
+
+    for entry in holes:
+        x, y = entry
+        for z in range(0,y):
+            if coords[(x,z)]!= 0:
+                blockades += 1
+    return blockades
+    
+
+
 
 #Altitude difference
 

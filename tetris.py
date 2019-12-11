@@ -92,7 +92,8 @@ class TetrisApp(object):
 		self.rlim = CELL_SIZE * COLS
 		self.bground_grid = [[ 8 if x%2==y%2 else 0 for x in range(COLS)] for y in range(ROWS)]
 		self.default_font = pygame.font.Font(pygame.font.get_default_font(), 11)
-		self.screen = pygame.display.set_mode((self.width, self.height))
+		if DRAW:
+			self.screen = pygame.display.set_mode((self.width, self.height))
 		self.next_stone = tetris_shapes[5]
 		self.linesCleared = 0
 		self.gameover = False

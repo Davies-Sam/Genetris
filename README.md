@@ -7,7 +7,7 @@ Training an AI to play Tetris using a Genetic Algorithm
 http://www.cs.uml.edu/ecg/uploads/AIfall10/eshahar_rwest_GATetris.pdf
 
 https://ieeexplore.ieee.org/document/8247067
-^ also available at: https://www.researchgate.net/publication/322321608_Playing_the_Original_Game_Boy_Tetris_Using_a_Real_Coded_Genetic_Algorithm
+ , also available at: https://www.researchgate.net/publication/322321608_Playing_the_Original_Game_Boy_Tetris_Using_a_Real_Coded_Genetic_Algorithm
 
 https://codemyroad.wordpress.com/2013/04/14/tetris-ai-the-near-perfect-player/
 

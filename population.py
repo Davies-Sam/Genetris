@@ -56,8 +56,8 @@ class Organism(object):
 ###################################################################################
 class GA(object):
     def __init__(self):
-        self.num_of_organisms = 50
-        self.survivors = 40
+        self.num_of_organisms = 100
+        self.survivors = 70
         self.new_organisms = self.num_of_organisms - self.survivors
         self.mutation_rate = .5
         self.convergence_threshold = 85
@@ -162,14 +162,16 @@ class GA(object):
             #create the new organism
             a = self.Crossover(parents[0],parents[1])
             #mutate the child
+            #print("child: %s\n" % a.heuristics)
             self.mutate(a,self.mutation_rate)
+            #print("mutated: %s\n" % a.heuristics)
             #add to population  
             self.population.append(a)
         
         #check to make sure we have the correct number of organisms in the new
         #population
        
-        assert 50 == len(self.population), "ERROR: new population doesnt have enough organisms"
+        assert self.num_of_organisms == len(self.population), "ERROR: new population doesnt have enough organisms"
 
 
     #Will return the survivors of a population, will return self.survivors number of organisms 
@@ -206,13 +208,20 @@ class GA(object):
             binWeight = numpy.binary_repr(weight, width=8)
             temp = list(binWeight)
             #temp2 = list(numpy.binary_repr(randomNew.heuristics[num], width=8))
+            #print(temp)
             for i in range(0,len(temp)):
                 if random.random() < (1 - self.mutation_rate):
                     if temp[i] == '0':
                         temp[i] = '1'
                     else:
                         temp[i] = '0'
-            organism.heuristics[num] = int(''.join(str(i) for i in temp), 2)
+            x = int(''.join(str(i) for i in temp[1:]), 2)
+            if temp[0] == '1':
+                organism.heuristics[num] = -x
+            else:
+                organism.heuristics[num] = x
+            
+            #print(organism.heuristics[num])
                     
   
 if __name__ == "__main__":

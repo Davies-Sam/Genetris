@@ -1,0 +1,1400 @@
+
+Generation: 0 , Average Lines Cleared: 3
+Darren Duncan, Age: 0 Weights: [-64, -51, -93, -94] - Lines Cleared:28
+Michelle Sanders, Age: 0 Weights: [-93, -9, -21, 99] - Lines Cleared:9
+Anthony Kelly, Age: 0 Weights: [9, -9, -11, -117] - Lines Cleared:1
+Charles Thomas, Age: 0 Weights: [7, 13, 71, -57] - Lines Cleared:0
+Rhonda Hargrove, Age: 0 Weights: [84, -58, 109, -58] - Lines Cleared:0
+Maureen Leach, Age: 0 Weights: [-102, 121, -78, -63] - Lines Cleared:0
+Lisa Beaulieu, Age: 0 Weights: [127, 6, -106, 30] - Lines Cleared:0
+Jerry Sykes, Age: 0 Weights: [76, -57, 31, -68] - Lines Cleared:0
+Tammy Chapman, Age: 0 Weights: [-94, 40, 9, 1] - Lines Cleared:0
+Kent Ramos, Age: 0 Weights: [9, 52, -79, 59] - Lines Cleared:0
+
+Generation: 1 , Average Lines Cleared: 4
+Darren Duncan, Age: 1 Weights: [-64, -51, -93, -94] - Lines Cleared:28
+Michelle Sanders, Age: 1 Weights: [-93, -9, -21, 99] - Lines Cleared:11
+Anthony Kelly, Age: 1 Weights: [9, -9, -11, -117] - Lines Cleared:1
+Jerry Sykes, Age: 1 Weights: [76, -57, 31, -68] - Lines Cleared:1
+Charles Thomas, Age: 1 Weights: [7, 13, 71, -57] - Lines Cleared:0
+Rhonda Hargrove, Age: 1 Weights: [84, -58, 109, -58] - Lines Cleared:0
+Maureen Leach, Age: 1 Weights: [-102, 121, -78, -63] - Lines Cleared:0
+Lisa Beaulieu, Age: 1 Weights: [127, 6, -106, 30] - Lines Cleared:0
+Frank Newsom, Age: 0 Weights: [103, 46, 27, 135] - Lines Cleared:0
+Mary Parkhurst, Age: 0 Weights: [226, 31, 220, 123] - Lines Cleared:0
+
+Generation: 2 , Average Lines Cleared: 5
+Michelle Sanders, Age: 2 Weights: [-93, -9, -21, 99] - Lines Cleared:33
+Darren Duncan, Age: 2 Weights: [-64, -51, -93, -94] - Lines Cleared:19
+Anthony Kelly, Age: 2 Weights: [9, -9, -11, -117] - Lines Cleared:0
+Jerry Sykes, Age: 2 Weights: [76, -57, 31, -68] - Lines Cleared:0
+Charles Thomas, Age: 2 Weights: [7, 13, 71, -57] - Lines Cleared:0
+Rhonda Hargrove, Age: 2 Weights: [84, -58, 109, -58] - Lines Cleared:0
+Maureen Leach, Age: 2 Weights: [-102, 121, -78, -63] - Lines Cleared:0
+Lisa Beaulieu, Age: 2 Weights: [127, 6, -106, 30] - Lines Cleared:0
+Judith West, Age: 0 Weights: [68, 149, 208, 33] - Lines Cleared:0
+Charles Mayo, Age: 0 Weights: [134, 138, 172, 146] - Lines Cleared:0
+
+Generation: 3 , Average Lines Cleared: 5
+Michelle Sanders, Age: 3 Weights: [-93, -9, -21, 99] - Lines Cleared:31
+Darren Duncan, Age: 3 Weights: [-64, -51, -93, -94] - Lines Cleared:20
+Anthony Kelly, Age: 3 Weights: [9, -9, -11, -117] - Lines Cleared:1
+Jerry Sykes, Age: 3 Weights: [76, -57, 31, -68] - Lines Cleared:0
+Charles Thomas, Age: 3 Weights: [7, 13, 71, -57] - Lines Cleared:0
+Rhonda Hargrove, Age: 3 Weights: [84, -58, 109, -58] - Lines Cleared:0
+Maureen Leach, Age: 3 Weights: [-102, 121, -78, -63] - Lines Cleared:0
+Lisa Beaulieu, Age: 3 Weights: [127, 6, -106, 30] - Lines Cleared:0
+Gregory Horton, Age: 0 Weights: [231, 47, 33, 197] - Lines Cleared:0
+Michael Beltran, Age: 0 Weights: [91, 46, 235, 112] - Lines Cleared:0
+
+Generation: 4 , Average Lines Cleared: 2
+Darren Duncan, Age: 4 Weights: [-64, -51, -93, -94] - Lines Cleared:23
+Michelle Sanders, Age: 4 Weights: [-93, -9, -21, 99] - Lines Cleared:6
+Anthony Kelly, Age: 4 Weights: [9, -9, -11, -117] - Lines Cleared:0
+Jerry Sykes, Age: 4 Weights: [76, -57, 31, -68] - Lines Cleared:0
+Charles Thomas, Age: 4 Weights: [7, 13, 71, -57] - Lines Cleared:0
+Rhonda Hargrove, Age: 4 Weights: [84, -58, 109, -58] - Lines Cleared:0
+Maureen Leach, Age: 4 Weights: [-102, 121, -78, -63] - Lines Cleared:0
+Lisa Beaulieu, Age: 4 Weights: [127, 6, -106, 30] - Lines Cleared:0
+Melinda Anderson, Age: 0 Weights: [62, 72, 77, 9] - Lines Cleared:0
+Catalina Boutwell, Age: 0 Weights: [86, 216, 241, 162] - Lines Cleared:0
+
+Generation: 5 , Average Lines Cleared: 2
+Michelle Sanders, Age: 5 Weights: [-93, -9, -21, 99] - Lines Cleared:18
+Darren Duncan, Age: 5 Weights: [-64, -51, -93, -94] - Lines Cleared:9
+Anthony Kelly, Age: 5 Weights: [9, -9, -11, -117] - Lines Cleared:1
+Jerry Sykes, Age: 5 Weights: [76, -57, 31, -68] - Lines Cleared:0
+Charles Thomas, Age: 5 Weights: [7, 13, 71, -57] - Lines Cleared:0
+Rhonda Hargrove, Age: 5 Weights: [84, -58, 109, -58] - Lines Cleared:0
+Maureen Leach, Age: 5 Weights: [-102, 121, -78, -63] - Lines Cleared:0
+Lisa Beaulieu, Age: 5 Weights: [127, 6, -106, 30] - Lines Cleared:0
+Donald Bagwell, Age: 0 Weights: [120, 165, 236, 98] - Lines Cleared:0
+Ruth Irwin, Age: 0 Weights: [137, 184, 46, 206] - Lines Cleared:0
+
+Generation: 6 , Average Lines Cleared: 3
+Darren Duncan, Age: 6 Weights: [-64, -51, -93, -94] - Lines Cleared:20
+Michelle Sanders, Age: 6 Weights: [-93, -9, -21, 99] - Lines Cleared:14
+Anthony Kelly, Age: 6 Weights: [9, -9, -11, -117] - Lines Cleared:0
+Jerry Sykes, Age: 6 Weights: [76, -57, 31, -68] - Lines Cleared:0
+Charles Thomas, Age: 6 Weights: [7, 13, 71, -57] - Lines Cleared:0
+Rhonda Hargrove, Age: 6 Weights: [84, -58, 109, -58] - Lines Cleared:0
+Maureen Leach, Age: 6 Weights: [-102, 121, -78, -63] - Lines Cleared:0
+Lisa Beaulieu, Age: 6 Weights: [127, 6, -106, 30] - Lines Cleared:0
+Daniel Rudge, Age: 0 Weights: [5, 25, 181, 169] - Lines Cleared:0
+Terrance Myers, Age: 0 Weights: [116, 8, 5, 125] - Lines Cleared:0
+
+Generation: 7 , Average Lines Cleared: 3
+Darren Duncan, Age: 7 Weights: [-64, -51, -93, -94] - Lines Cleared:23
+Michelle Sanders, Age: 7 Weights: [-93, -9, -21, 99] - Lines Cleared:10
+Anthony Kelly, Age: 7 Weights: [9, -9, -11, -117] - Lines Cleared:0
+Jerry Sykes, Age: 7 Weights: [76, -57, 31, -68] - Lines Cleared:0
+Charles Thomas, Age: 7 Weights: [7, 13, 71, -57] - Lines Cleared:0
+Rhonda Hargrove, Age: 7 Weights: [84, -58, 109, -58] - Lines Cleared:0
+Maureen Leach, Age: 7 Weights: [-102, 121, -78, -63] - Lines Cleared:0
+Lisa Beaulieu, Age: 7 Weights: [127, 6, -106, 30] - Lines Cleared:0
+Michelle Masters, Age: 0 Weights: [216, 5, 27, 36] - Lines Cleared:0
+Brent Nault, Age: 0 Weights: [204, 140, 54, 214] - Lines Cleared:0
+
+Generation: 8 , Average Lines Cleared: 2
+Michelle Sanders, Age: 8 Weights: [-93, -9, -21, 99] - Lines Cleared:17
+Darren Duncan, Age: 8 Weights: [-64, -51, -93, -94] - Lines Cleared:12
+Anthony Kelly, Age: 8 Weights: [9, -9, -11, -117] - Lines Cleared:0
+Jerry Sykes, Age: 8 Weights: [76, -57, 31, -68] - Lines Cleared:0
+Charles Thomas, Age: 8 Weights: [7, 13, 71, -57] - Lines Cleared:0
+Rhonda Hargrove, Age: 8 Weights: [84, -58, 109, -58] - Lines Cleared:0
+Maureen Leach, Age: 8 Weights: [-102, 121, -78, -63] - Lines Cleared:0
+Lisa Beaulieu, Age: 8 Weights: [127, 6, -106, 30] - Lines Cleared:0
+Megan Wolf, Age: 0 Weights: [129, 175, 250, 204] - Lines Cleared:0
+Ben Brooks, Age: 0 Weights: [160, 224, 58, 32] - Lines Cleared:0
+
+Generation: 9 , Average Lines Cleared: 3
+Darren Duncan, Age: 9 Weights: [-64, -51, -93, -94] - Lines Cleared:19
+Michelle Sanders, Age: 9 Weights: [-93, -9, -21, 99] - Lines Cleared:16
+Anthony Kelly, Age: 9 Weights: [9, -9, -11, -117] - Lines Cleared:0
+Jerry Sykes, Age: 9 Weights: [76, -57, 31, -68] - Lines Cleared:0
+Charles Thomas, Age: 9 Weights: [7, 13, 71, -57] - Lines Cleared:0
+Rhonda Hargrove, Age: 9 Weights: [84, -58, 109, -58] - Lines Cleared:0
+Maureen Leach, Age: 9 Weights: [-102, 121, -78, -63] - Lines Cleared:0
+Lisa Beaulieu, Age: 9 Weights: [127, 6, -106, 30] - Lines Cleared:0
+Pete Bass, Age: 0 Weights: [5, 226, 55, 139] - Lines Cleared:0
+Julie Schreiner, Age: 0 Weights: [163, 83, 182, 150] - Lines Cleared:0
+
+Generation: 10 , Average Lines Cleared: 3
+Michelle Sanders, Age: 10 Weights: [-93, -9, -21, 99] - Lines Cleared:18
+Darren Duncan, Age: 10 Weights: [-64, -51, -93, -94] - Lines Cleared:13
+Anthony Kelly, Age: 10 Weights: [9, -9, -11, -117] - Lines Cleared:1
+Jerry Sykes, Age: 10 Weights: [76, -57, 31, -68] - Lines Cleared:0
+Charles Thomas, Age: 10 Weights: [7, 13, 71, -57] - Lines Cleared:0
+Rhonda Hargrove, Age: 10 Weights: [84, -58, 109, -58] - Lines Cleared:0
+Maureen Leach, Age: 10 Weights: [-102, 121, -78, -63] - Lines Cleared:0
+Lisa Beaulieu, Age: 10 Weights: [127, 6, -106, 30] - Lines Cleared:0
+Rose Andresen, Age: 0 Weights: [91, 159, 249, 174] - Lines Cleared:0
+Charles Ryan, Age: 0 Weights: [150, 55, 181, 103] - Lines Cleared:0
+
+Generation: 11 , Average Lines Cleared: 3
+Michelle Sanders, Age: 11 Weights: [-93, -9, -21, 99] - Lines Cleared:26
+Darren Duncan, Age: 11 Weights: [-64, -51, -93, -94] - Lines Cleared:11
+Anthony Kelly, Age: 11 Weights: [9, -9, -11, -117] - Lines Cleared:1
+Jerry Sykes, Age: 11 Weights: [76, -57, 31, -68] - Lines Cleared:0
+Charles Thomas, Age: 11 Weights: [7, 13, 71, -57] - Lines Cleared:0
+Rhonda Hargrove, Age: 11 Weights: [84, -58, 109, -58] - Lines Cleared:0
+Maureen Leach, Age: 11 Weights: [-102, 121, -78, -63] - Lines Cleared:0
+Lisa Beaulieu, Age: 11 Weights: [127, 6, -106, 30] - Lines Cleared:0
+Darrell Saeler, Age: 0 Weights: [138, 75, 157, 120] - Lines Cleared:0
+Anthony Plourd, Age: 0 Weights: [93, 222, 133, 248] - Lines Cleared:0
+
+Generation: 12 , Average Lines Cleared: 4
+Michelle Sanders, Age: 12 Weights: [-93, -9, -21, 99] - Lines Cleared:20
+Darren Duncan, Age: 12 Weights: [-64, -51, -93, -94] - Lines Cleared:19
+Anthony Kelly, Age: 12 Weights: [9, -9, -11, -117] - Lines Cleared:1
+Jerry Sykes, Age: 12 Weights: [76, -57, 31, -68] - Lines Cleared:0
+Charles Thomas, Age: 12 Weights: [7, 13, 71, -57] - Lines Cleared:0
+Rhonda Hargrove, Age: 12 Weights: [84, -58, 109, -58] - Lines Cleared:0
+Maureen Leach, Age: 12 Weights: [-102, 121, -78, -63] - Lines Cleared:0
+Lisa Beaulieu, Age: 12 Weights: [127, 6, -106, 30] - Lines Cleared:0
+Sandra Johnson, Age: 0 Weights: [33, 55, 230, 216] - Lines Cleared:0
+Cody Tomlinson, Age: 0 Weights: [130, 122, 112, 71] - Lines Cleared:0
+
+Generation: 13 , Average Lines Cleared: 2
+Darren Duncan, Age: 13 Weights: [-64, -51, -93, -94] - Lines Cleared:15
+Michelle Sanders, Age: 13 Weights: [-93, -9, -21, 99] - Lines Cleared:12
+Anthony Kelly, Age: 13 Weights: [9, -9, -11, -117] - Lines Cleared:1
+Jerry Sykes, Age: 13 Weights: [76, -57, 31, -68] - Lines Cleared:0
+Charles Thomas, Age: 13 Weights: [7, 13, 71, -57] - Lines Cleared:0
+Rhonda Hargrove, Age: 13 Weights: [84, -58, 109, -58] - Lines Cleared:0
+Maureen Leach, Age: 13 Weights: [-102, 121, -78, -63] - Lines Cleared:0
+Lisa Beaulieu, Age: 13 Weights: [127, 6, -106, 30] - Lines Cleared:0
+Norman Leonard, Age: 0 Weights: [35, 250, 118, 215] - Lines Cleared:0
+Marcelo Rauser, Age: 0 Weights: [164, 196, 123, 173] - Lines Cleared:0
+
+Generation: 0 , Average Lines Cleared: 2
+Gertrude Mclendon, Age: 0 Weights: [20, -99, -93, 61] - Lines Cleared:13
+Chad Stubbs, Age: 0 Weights: [-19, -40, -6, 118] - Lines Cleared:4
+Daniel Cameron, Age: 0 Weights: [56, -82, -121, -33] - Lines Cleared:4
+Samuel Brown, Age: 0 Weights: [73, -92, -78, 58] - Lines Cleared:1
+Morgan Eads, Age: 0 Weights: [-93, 124, -5, 28] - Lines Cleared:0
+Myrl Spragg, Age: 0 Weights: [53, 50, -38, -119] - Lines Cleared:0
+Ruby Lund, Age: 0 Weights: [-117, 122, 44, 124] - Lines Cleared:0
+Debra Trawick, Age: 0 Weights: [97, -9, 42, 110] - Lines Cleared:0
+Ryan Gonzalez, Age: 0 Weights: [-85, 25, -108, 74] - Lines Cleared:0
+Ellen Jensen, Age: 0 Weights: [-85, 99, 74, -70] - Lines Cleared:0
+
+Generation: 1 , Average Lines Cleared: 1
+Chad Stubbs, Age: 1 Weights: [-19, -40, -6, 118] - Lines Cleared:6
+Gertrude Mclendon, Age: 1 Weights: [20, -99, -93, 61] - Lines Cleared:3
+Daniel Cameron, Age: 1 Weights: [56, -82, -121, -33] - Lines Cleared:2
+Samuel Brown, Age: 1 Weights: [73, -92, -78, 58] - Lines Cleared:2
+Morgan Eads, Age: 1 Weights: [-93, 124, -5, 28] - Lines Cleared:0
+Myrl Spragg, Age: 1 Weights: [53, 50, -38, -119] - Lines Cleared:0
+Ruby Lund, Age: 1 Weights: [-117, 122, 44, 124] - Lines Cleared:0
+Debra Trawick, Age: 1 Weights: [97, -9, 42, 110] - Lines Cleared:0
+Jackie Delaney, Age: 0 Weights: [170, 31, 79, 191] - Lines Cleared:0
+Rebecca Lamarre, Age: 0 Weights: [173, 217, 135, 134] - Lines Cleared:0
+
+Generation: 2 , Average Lines Cleared: 1
+Gertrude Mclendon, Age: 2 Weights: [20, -99, -93, 61] - Lines Cleared:7
+Chad Stubbs, Age: 2 Weights: [-19, -40, -6, 118] - Lines Cleared:5
+Samuel Brown, Age: 2 Weights: [73, -92, -78, 58] - Lines Cleared:5
+Daniel Cameron, Age: 2 Weights: [56, -82, -121, -33] - Lines Cleared:0
+Morgan Eads, Age: 2 Weights: [-93, 124, -5, 28] - Lines Cleared:0
+Myrl Spragg, Age: 2 Weights: [53, 50, -38, -119] - Lines Cleared:0
+Ruby Lund, Age: 2 Weights: [-117, 122, 44, 124] - Lines Cleared:0
+Debra Trawick, Age: 2 Weights: [97, -9, 42, 110] - Lines Cleared:0
+Tamra Jones, Age: 0 Weights: [8, 198, 202, 249] - Lines Cleared:0
+Charles Branch, Age: 0 Weights: [162, 180, 113, 5] - Lines Cleared:0
+
+Generation: 0 , Average Lines Cleared: 1
+Ricky Kats, Age: 0 Weights: [-88, -80, -44, -121] - Lines Cleared:5
+Karl Gregory, Age: 0 Weights: [8, -121, 36, -112] - Lines Cleared:3
+Stella Cooley, Age: 0 Weights: [98, -113, -33, -75] - Lines Cleared:3
+James Damon, Age: 0 Weights: [-107, 10, 5, 22] - Lines Cleared:1
+Lynda Choate, Age: 0 Weights: [-62, 21, 56, -117] - Lines Cleared:0
+Nelson Hill, Age: 0 Weights: [-125, 112, -26, 48] - Lines Cleared:0
+Carolyn Notter, Age: 0 Weights: [3, 9, -104, -98] - Lines Cleared:0
+Maxine Green, Age: 0 Weights: [9, 7, 118, -12] - Lines Cleared:0
+Daryl Wong, Age: 0 Weights: [-29, 51, -124, 29] - Lines Cleared:0
+Paul Faulk, Age: 0 Weights: [19, -46, 72, -123] - Lines Cleared:0
+
+Generation: 1 , Average Lines Cleared: 1
+Ricky Kats, Age: 1 Weights: [-88, -80, -44, -121] - Lines Cleared:6
+James Damon, Age: 1 Weights: [-107, 10, 5, 22] - Lines Cleared:3
+Karl Gregory, Age: 1 Weights: [8, -121, 36, -112] - Lines Cleared:1
+Stella Cooley, Age: 1 Weights: [98, -113, -33, -75] - Lines Cleared:0
+Lynda Choate, Age: 1 Weights: [-62, 21, 56, -117] - Lines Cleared:0
+Nelson Hill, Age: 1 Weights: [-125, 112, -26, 48] - Lines Cleared:0
+Carolyn Notter, Age: 1 Weights: [3, 9, -104, -98] - Lines Cleared:0
+Maxine Green, Age: 1 Weights: [9, 7, 118, -12] - Lines Cleared:0
+Howard Hulslander, Age: 0 Weights: [209, 235, 140, 37] - Lines Cleared:0
+Benjamin Howell, Age: 0 Weights: [197, 2, 58, 224] - Lines Cleared:0
+
+Generation: 0 , Average Lines Cleared: 0
+Hollie Hurt, Age: 0 Weights: [-53, -40, 16, 86] - Lines Cleared:6
+Lois Bates, Age: 0 Weights: [48, -108, -33, 50] - Lines Cleared:3
+Micheal Monahan, Age: 0 Weights: [31, -118, 114, -124] - Lines Cleared:0
+Gilbert Gleason, Age: 0 Weights: [0, 16, 27, 13] - Lines Cleared:0
+Tamara Blumenthal, Age: 0 Weights: [102, 55, -97, 17] - Lines Cleared:0
+Rose Wince, Age: 0 Weights: [32, 100, -34, 10] - Lines Cleared:0
+Constance Kamal, Age: 0 Weights: [-2, -50, 106, -103] - Lines Cleared:0
+Maria Whitaker, Age: 0 Weights: [-94, 85, -79, -49] - Lines Cleared:0
+Patricia Henson, Age: 0 Weights: [106, -33, -46, -75] - Lines Cleared:0
+Robert Hanson, Age: 0 Weights: [60, -2, -40, -84] - Lines Cleared:0
+
+Generation: 1 , Average Lines Cleared: 0
+Hollie Hurt, Age: 1 Weights: [-53, -40, 16, 86] - Lines Cleared:5
+Lois Bates, Age: 1 Weights: [48, -108, -33, 50] - Lines Cleared:3
+Micheal Monahan, Age: 1 Weights: [31, -118, 114, -124] - Lines Cleared:1
+Gilbert Gleason, Age: 1 Weights: [0, 16, 27, 13] - Lines Cleared:0
+Tamara Blumenthal, Age: 1 Weights: [102, 55, -97, 17] - Lines Cleared:0
+Rose Wince, Age: 1 Weights: [32, 100, -34, 10] - Lines Cleared:0
+Constance Kamal, Age: 1 Weights: [-2, -50, 106, -103] - Lines Cleared:0
+Maria Whitaker, Age: 1 Weights: [-94, 85, -79, -49] - Lines Cleared:0
+Mary Parkhurst, Age: 0 Weights: [54, 162, 39, 187] - Lines Cleared:0
+Kenneth Mischke, Age: 0 Weights: [190, 197, 172, 31] - Lines Cleared:0
+
+Generation: 2 , Average Lines Cleared: 0
+Hollie Hurt, Age: 2 Weights: [-53, -40, 16, 86] - Lines Cleared:4
+Lois Bates, Age: 2 Weights: [48, -108, -33, 50] - Lines Cleared:2
+Micheal Monahan, Age: 2 Weights: [31, -118, 114, -124] - Lines Cleared:1
+Gilbert Gleason, Age: 2 Weights: [0, 16, 27, 13] - Lines Cleared:0
+Tamara Blumenthal, Age: 2 Weights: [102, 55, -97, 17] - Lines Cleared:0
+Rose Wince, Age: 2 Weights: [32, 100, -34, 10] - Lines Cleared:0
+Constance Kamal, Age: 2 Weights: [-2, -50, 106, -103] - Lines Cleared:0
+Maria Whitaker, Age: 2 Weights: [-94, 85, -79, -49] - Lines Cleared:0
+Tamra Jones, Age: 0 Weights: [100, 158, 206, 174] - Lines Cleared:0
+Charles Branch, Age: 0 Weights: [111, 129, 23, 27] - Lines Cleared:0
+
+Generation: 3 , Average Lines Cleared: 0
+Lois Bates, Age: 3 Weights: [48, -108, -33, 50] - Lines Cleared:1
+Hollie Hurt, Age: 3 Weights: [-53, -40, 16, 86] - Lines Cleared:0
+Micheal Monahan, Age: 3 Weights: [31, -118, 114, -124] - Lines Cleared:0
+Gilbert Gleason, Age: 3 Weights: [0, 16, 27, 13] - Lines Cleared:0
+Tamara Blumenthal, Age: 3 Weights: [102, 55, -97, 17] - Lines Cleared:0
+Rose Wince, Age: 3 Weights: [32, 100, -34, 10] - Lines Cleared:0
+Constance Kamal, Age: 3 Weights: [-2, -50, 106, -103] - Lines Cleared:0
+Maria Whitaker, Age: 3 Weights: [-94, 85, -79, -49] - Lines Cleared:0
+Jacqueline Bradley, Age: 0 Weights: [131, 187, 253, 132] - Lines Cleared:0
+Debbie Henry, Age: 0 Weights: [209, 118, 137, 244] - Lines Cleared:0
+
+Generation: 0 , Average Lines Cleared: 2
+Michael Duncan, Age: 0 Weights: [-55, -14, -31, 76] - Lines Cleared:21
+Theodore Mabery, Age: 0 Weights: [-72, -105, -42, 55] - Lines Cleared:4
+Juanita Blakes, Age: 0 Weights: [-45, 79, -87, 87] - Lines Cleared:0
+Douglas Burdette, Age: 0 Weights: [-39, 64, 47, 89] - Lines Cleared:0
+William Barta, Age: 0 Weights: [-42, 9, -12, -108] - Lines Cleared:0
+Cindy Loy, Age: 0 Weights: [95, 74, 104, 9] - Lines Cleared:0
+Jason Vigil, Age: 0 Weights: [66, -119, 106, 38] - Lines Cleared:0
+Hosea Schmidt, Age: 0 Weights: [34, 29, -53, -37] - Lines Cleared:0
+Elizabeth Ralston, Age: 0 Weights: [28, -17, 15, -32] - Lines Cleared:0
+Lillian Stansell, Age: 0 Weights: [101, -38, -33, 121] - Lines Cleared:0
+
+Generation: 1 , Average Lines Cleared: 2
+Michael Duncan, Age: 1 Weights: [-55, -14, -31, 76] - Lines Cleared:18
+Theodore Mabery, Age: 1 Weights: [-72, -105, -42, 55] - Lines Cleared:4
+Jason Vigil, Age: 1 Weights: [66, -119, 106, 38] - Lines Cleared:1
+Juanita Blakes, Age: 1 Weights: [-45, 79, -87, 87] - Lines Cleared:0
+Douglas Burdette, Age: 1 Weights: [-39, 64, 47, 89] - Lines Cleared:0
+William Barta, Age: 1 Weights: [-42, 9, -12, -108] - Lines Cleared:0
+Cindy Loy, Age: 1 Weights: [95, 74, 104, 9] - Lines Cleared:0
+Hosea Schmidt, Age: 1 Weights: [34, 29, -53, -37] - Lines Cleared:0
+Mary Parkhurst, Age: 0 Weights: [41, 213, 144, 119] - Lines Cleared:0
+Kenneth Mischke, Age: 0 Weights: [87, 17, 124, 126] - Lines Cleared:0
+
+Generation: 2 , Average Lines Cleared: 4
+Michael Duncan, Age: 2 Weights: [-55, -14, -31, 76] - Lines Cleared:35
+Theodore Mabery, Age: 2 Weights: [-72, -105, -42, 55] - Lines Cleared:9
+Jason Vigil, Age: 2 Weights: [66, -119, 106, 38] - Lines Cleared:0
+Juanita Blakes, Age: 2 Weights: [-45, 79, -87, 87] - Lines Cleared:0
+Douglas Burdette, Age: 2 Weights: [-39, 64, 47, 89] - Lines Cleared:0
+William Barta, Age: 2 Weights: [-42, 9, -12, -108] - Lines Cleared:0
+Cindy Loy, Age: 2 Weights: [95, 74, 104, 9] - Lines Cleared:0
+Hosea Schmidt, Age: 2 Weights: [34, 29, -53, -37] - Lines Cleared:0
+Larry Jones, Age: 0 Weights: [104, 150, 250, 151] - Lines Cleared:0
+Paul Williams, Age: 0 Weights: [237, 157, 242, 66] - Lines Cleared:0
+
+Generation: 3 , Average Lines Cleared: 2
+Michael Duncan, Age: 3 Weights: [-55, -14, -31, 76] - Lines Cleared:15
+Theodore Mabery, Age: 3 Weights: [-72, -105, -42, 55] - Lines Cleared:9
+Jason Vigil, Age: 3 Weights: [66, -119, 106, 38] - Lines Cleared:0
+Juanita Blakes, Age: 3 Weights: [-45, 79, -87, 87] - Lines Cleared:0
+Douglas Burdette, Age: 3 Weights: [-39, 64, 47, 89] - Lines Cleared:0
+William Barta, Age: 3 Weights: [-42, 9, -12, -108] - Lines Cleared:0
+Cindy Loy, Age: 3 Weights: [95, 74, 104, 9] - Lines Cleared:0
+Hosea Schmidt, Age: 3 Weights: [34, 29, -53, -37] - Lines Cleared:0
+George Jefferson, Age: 0 Weights: [51, 81, 142, 144] - Lines Cleared:0
+Carl Kuman, Age: 0 Weights: [156, 95, 165, 241] - Lines Cleared:0
+
+Generation: 4 , Average Lines Cleared: 2
+Michael Duncan, Age: 4 Weights: [-55, -14, -31, 76] - Lines Cleared:22
+Theodore Mabery, Age: 4 Weights: [-72, -105, -42, 55] - Lines Cleared:3
+Jason Vigil, Age: 4 Weights: [66, -119, 106, 38] - Lines Cleared:0
+Juanita Blakes, Age: 4 Weights: [-45, 79, -87, 87] - Lines Cleared:0
+Douglas Burdette, Age: 4 Weights: [-39, 64, 47, 89] - Lines Cleared:0
+William Barta, Age: 4 Weights: [-42, 9, -12, -108] - Lines Cleared:0
+Cindy Loy, Age: 4 Weights: [95, 74, 104, 9] - Lines Cleared:0
+Hosea Schmidt, Age: 4 Weights: [34, 29, -53, -37] - Lines Cleared:0
+Margarita Blackwood, Age: 0 Weights: [163, 5, 133, 14] - Lines Cleared:0
+Herbert Briski, Age: 0 Weights: [16, 181, 162, 83] - Lines Cleared:0
+
+Generation: 0 , Average Lines Cleared: 2
+Dale Brock, Age: 0 Weights: [-56, -50, -68, -128] - Lines Cleared:15
+Jennifer Thuringer, Age: 0 Weights: [-32, -5, 2, 105] - Lines Cleared:6
+Mario Davis, Age: 0 Weights: [44, -77, 40, -128] - Lines Cleared:2
+Keith Wammack, Age: 0 Weights: [-92, -97, 65, 1] - Lines Cleared:2
+Monica Occhuizzo, Age: 0 Weights: [36, 67, 15, -2] - Lines Cleared:0
+Geraldine Padgett, Age: 0 Weights: [-111, 124, 77, -17] - Lines Cleared:0
+Lindsay Carranza, Age: 0 Weights: [-117, 38, 83, -2] - Lines Cleared:0
+Maria Massengill, Age: 0 Weights: [15, -17, 84, 97] - Lines Cleared:0
+Emma Sellers, Age: 0 Weights: [89, -28, 63, 112] - Lines Cleared:0
+Sydney Garrison, Age: 0 Weights: [12, 99, -18, -38] - Lines Cleared:0
+
+Generation: 1 , Average Lines Cleared: 1
+Dale Brock, Age: 1 Weights: [-56, -50, -68, -128] - Lines Cleared:9
+Keith Wammack, Age: 1 Weights: [-92, -97, 65, 1] - Lines Cleared:2
+Jennifer Thuringer, Age: 1 Weights: [-32, -5, 2, 105] - Lines Cleared:1
+Mario Davis, Age: 1 Weights: [44, -77, 40, -128] - Lines Cleared:0
+Monica Occhuizzo, Age: 1 Weights: [36, 67, 15, -2] - Lines Cleared:0
+Geraldine Padgett, Age: 1 Weights: [-111, 124, 77, -17] - Lines Cleared:0
+Lindsay Carranza, Age: 1 Weights: [-117, 38, 83, -2] - Lines Cleared:0
+Maria Massengill, Age: 1 Weights: [15, -17, 84, 97] - Lines Cleared:0
+Bonnie Martin, Age: 0 Weights: [53, 6, 104, 246] - Lines Cleared:0
+Mitzi Zimmer, Age: 0 Weights: [49, 72, 73, 238] - Lines Cleared:0
+
+Generation: 2 , Average Lines Cleared: 1
+Dale Brock, Age: 2 Weights: [-56, -50, -68, -128] - Lines Cleared:14
+Jennifer Thuringer, Age: 2 Weights: [-32, -5, 2, 105] - Lines Cleared:4
+Mario Davis, Age: 2 Weights: [44, -77, 40, -128] - Lines Cleared:1
+Keith Wammack, Age: 2 Weights: [-92, -97, 65, 1] - Lines Cleared:0
+Monica Occhuizzo, Age: 2 Weights: [36, 67, 15, -2] - Lines Cleared:0
+Geraldine Padgett, Age: 2 Weights: [-111, 124, 77, -17] - Lines Cleared:0
+Lindsay Carranza, Age: 2 Weights: [-117, 38, 83, -2] - Lines Cleared:0
+Maria Massengill, Age: 2 Weights: [15, -17, 84, 97] - Lines Cleared:0
+James Butcher, Age: 0 Weights: [60, 174, 32, 235] - Lines Cleared:0
+Thomas Divine, Age: 0 Weights: [96, 71, 23, 254] - Lines Cleared:0
+
+Generation: 3 , Average Lines Cleared: 2
+Dale Brock, Age: 3 Weights: [-56, -50, -68, -128] - Lines Cleared:24
+Jennifer Thuringer, Age: 3 Weights: [-32, -5, 2, 105] - Lines Cleared:1
+Mario Davis, Age: 3 Weights: [44, -77, 40, -128] - Lines Cleared:0
+Keith Wammack, Age: 3 Weights: [-92, -97, 65, 1] - Lines Cleared:0
+Monica Occhuizzo, Age: 3 Weights: [36, 67, 15, -2] - Lines Cleared:0
+Geraldine Padgett, Age: 3 Weights: [-111, 124, 77, -17] - Lines Cleared:0
+Lindsay Carranza, Age: 3 Weights: [-117, 38, 83, -2] - Lines Cleared:0
+Maria Massengill, Age: 3 Weights: [15, -17, 84, 97] - Lines Cleared:0
+James Daugherty, Age: 0 Weights: [201, 38, 77, 255] - Lines Cleared:0
+Lawrence Abild, Age: 0 Weights: [57, 32, 15, 248] - Lines Cleared:0
+
+Generation: 4 , Average Lines Cleared: 1
+Jennifer Thuringer, Age: 4 Weights: [-32, -5, 2, 105] - Lines Cleared:6
+Dale Brock, Age: 4 Weights: [-56, -50, -68, -128] - Lines Cleared:3
+Keith Wammack, Age: 4 Weights: [-92, -97, 65, 1] - Lines Cleared:2
+Mario Davis, Age: 4 Weights: [44, -77, 40, -128] - Lines Cleared:0
+Monica Occhuizzo, Age: 4 Weights: [36, 67, 15, -2] - Lines Cleared:0
+Geraldine Padgett, Age: 4 Weights: [-111, 124, 77, -17] - Lines Cleared:0
+Lindsay Carranza, Age: 4 Weights: [-117, 38, 83, -2] - Lines Cleared:0
+Maria Massengill, Age: 4 Weights: [15, -17, 84, 97] - Lines Cleared:0
+Josephine Schick, Age: 0 Weights: [172, 56, 96, 193] - Lines Cleared:0
+Sandra Bonnet, Age: 0 Weights: [118, 153, 68, 105] - Lines Cleared:0
+
+Generation: 5 , Average Lines Cleared: 1
+Dale Brock, Age: 5 Weights: [-56, -50, -68, -128] - Lines Cleared:9
+Jennifer Thuringer, Age: 5 Weights: [-32, -5, 2, 105] - Lines Cleared:4
+Keith Wammack, Age: 5 Weights: [-92, -97, 65, 1] - Lines Cleared:2
+Mario Davis, Age: 5 Weights: [44, -77, 40, -128] - Lines Cleared:0
+Monica Occhuizzo, Age: 5 Weights: [36, 67, 15, -2] - Lines Cleared:0
+Geraldine Padgett, Age: 5 Weights: [-111, 124, 77, -17] - Lines Cleared:0
+Lindsay Carranza, Age: 5 Weights: [-117, 38, 83, -2] - Lines Cleared:0
+Maria Massengill, Age: 5 Weights: [15, -17, 84, 97] - Lines Cleared:0
+Doreen Powell, Age: 0 Weights: [167, 135, 168, 129] - Lines Cleared:0
+Laura Wiley, Age: 0 Weights: [227, 121, 1, 105] - Lines Cleared:0
+
+Generation: 6 , Average Lines Cleared: 1
+Dale Brock, Age: 6 Weights: [-56, -50, -68, -128] - Lines Cleared:12
+Jennifer Thuringer, Age: 6 Weights: [-32, -5, 2, 105] - Lines Cleared:5
+Keith Wammack, Age: 6 Weights: [-92, -97, 65, 1] - Lines Cleared:1
+Mario Davis, Age: 6 Weights: [44, -77, 40, -128] - Lines Cleared:0
+Monica Occhuizzo, Age: 6 Weights: [36, 67, 15, -2] - Lines Cleared:0
+Geraldine Padgett, Age: 6 Weights: [-111, 124, 77, -17] - Lines Cleared:0
+Lindsay Carranza, Age: 6 Weights: [-117, 38, 83, -2] - Lines Cleared:0
+Maria Massengill, Age: 6 Weights: [15, -17, 84, 97] - Lines Cleared:0
+Lisa Smith, Age: 0 Weights: [207, 157, 106, 5] - Lines Cleared:0
+Mary Ludlow, Age: 0 Weights: [21, 109, 77, 247] - Lines Cleared:0
+
+Generation: 7 , Average Lines Cleared: 1
+Dale Brock, Age: 7 Weights: [-56, -50, -68, -128] - Lines Cleared:10
+Jennifer Thuringer, Age: 7 Weights: [-32, -5, 2, 105] - Lines Cleared:1
+Keith Wammack, Age: 7 Weights: [-92, -97, 65, 1] - Lines Cleared:1
+Mario Davis, Age: 7 Weights: [44, -77, 40, -128] - Lines Cleared:0
+Monica Occhuizzo, Age: 7 Weights: [36, 67, 15, -2] - Lines Cleared:0
+Geraldine Padgett, Age: 7 Weights: [-111, 124, 77, -17] - Lines Cleared:0
+Lindsay Carranza, Age: 7 Weights: [-117, 38, 83, -2] - Lines Cleared:0
+Maria Massengill, Age: 7 Weights: [15, -17, 84, 97] - Lines Cleared:0
+Tanya Kells, Age: 0 Weights: [101, 207, 23, 206] - Lines Cleared:0
+Charles Fimbres, Age: 0 Weights: [192, 99, 75, 222] - Lines Cleared:0
+
+Generation: 0 , Average Lines Cleared: 4
+Ruby Wilson, Age: 0 Weights: [-92, -13, -27, 90] - Lines Cleared:30
+Breanna Tillery, Age: 0 Weights: [-52, -27, -120, -90] - Lines Cleared:15
+Peter Shelly, Age: 0 Weights: [-35, -106, 19, 4] - Lines Cleared:2
+Harry Beattie, Age: 0 Weights: [114, -114, -22, 92] - Lines Cleared:1
+Neda Schmidt, Age: 0 Weights: [22, -103, 26, -22] - Lines Cleared:1
+Mark Jennison, Age: 0 Weights: [15, 54, -100, -40] - Lines Cleared:0
+Betty Mckenney, Age: 0 Weights: [32, 34, -117, -54] - Lines Cleared:0
+Susan Shanks, Age: 0 Weights: [4, -120, 127, -81] - Lines Cleared:0
+Roland Arrey, Age: 0 Weights: [21, 100, -32, -15] - Lines Cleared:0
+Susana Giles, Age: 0 Weights: [30, 73, -121, 126] - Lines Cleared:0
+
+Generation: 1 , Average Lines Cleared: 4
+Breanna Tillery, Age: 1 Weights: [-52, -27, -120, -90] - Lines Cleared:34
+Ruby Wilson, Age: 1 Weights: [-92, -13, -27, 90] - Lines Cleared:11
+Peter Shelly, Age: 1 Weights: [-35, -106, 19, 4] - Lines Cleared:1
+Neda Schmidt, Age: 1 Weights: [22, -103, 26, -22] - Lines Cleared:1
+Susan Shanks, Age: 1 Weights: [4, -120, 127, -81] - Lines Cleared:1
+Harry Beattie, Age: 1 Weights: [114, -114, -22, 92] - Lines Cleared:0
+Mark Jennison, Age: 1 Weights: [15, 54, -100, -40] - Lines Cleared:0
+Betty Mckenney, Age: 1 Weights: [32, 34, -117, -54] - Lines Cleared:0
+Michael Ford, Age: 0 Weights: [77, 157, 106, 68] - Lines Cleared:0
+Ronald Jared, Age: 0 Weights: [210, 20, 202, 230] - Lines Cleared:0
+
+Generation: 2 , Average Lines Cleared: 6
+Ruby Wilson, Age: 2 Weights: [-92, -13, -27, 90] - Lines Cleared:33
+Breanna Tillery, Age: 2 Weights: [-52, -27, -120, -90] - Lines Cleared:27
+Peter Shelly, Age: 2 Weights: [-35, -106, 19, 4] - Lines Cleared:3
+Neda Schmidt, Age: 2 Weights: [22, -103, 26, -22] - Lines Cleared:3
+Susan Shanks, Age: 2 Weights: [4, -120, 127, -81] - Lines Cleared:1
+Harry Beattie, Age: 2 Weights: [114, -114, -22, 92] - Lines Cleared:0
+Mark Jennison, Age: 2 Weights: [15, 54, -100, -40] - Lines Cleared:0
+Betty Mckenney, Age: 2 Weights: [32, 34, -117, -54] - Lines Cleared:0
+Judith West, Age: 0 Weights: [205, 241, 125, 152] - Lines Cleared:0
+David Nadeau, Age: 0 Weights: [5, 109, 131, 171] - Lines Cleared:0
+
+Generation: 3 , Average Lines Cleared: 4
+Ruby Wilson, Age: 3 Weights: [-92, -13, -27, 90] - Lines Cleared:31
+Breanna Tillery, Age: 3 Weights: [-52, -27, -120, -90] - Lines Cleared:8
+Peter Shelly, Age: 3 Weights: [-35, -106, 19, 4] - Lines Cleared:7
+Neda Schmidt, Age: 3 Weights: [22, -103, 26, -22] - Lines Cleared:1
+Susan Shanks, Age: 3 Weights: [4, -120, 127, -81] - Lines Cleared:0
+Harry Beattie, Age: 3 Weights: [114, -114, -22, 92] - Lines Cleared:0
+Mark Jennison, Age: 3 Weights: [15, 54, -100, -40] - Lines Cleared:0
+Betty Mckenney, Age: 3 Weights: [32, 34, -117, -54] - Lines Cleared:0
+Christopher Brown, Age: 0 Weights: [151, 150, 67, 172] - Lines Cleared:0
+Young Vaughan, Age: 0 Weights: [21, 184, 46, 23] - Lines Cleared:0
+
+Generation: 0 , Average Lines Cleared: 2
+Gerald Markham, Age: 0 Weights: [-86, -8, -113, 22] - Lines Cleared:33
+Cynthia Wagner, Age: 0 Weights: [-110, -19, -107, -35] - Lines Cleared:27
+Julia Holmes, Age: 0 Weights: [-119, -71, 7, 93] - Lines Cleared:11
+Perry Trahan, Age: 0 Weights: [-70, -87, -60, -46] - Lines Cleared:11
+William Swartz, Age: 0 Weights: [5, -43, -78, -56] - Lines Cleared:11
+Allison Pena, Age: 0 Weights: [-20, -10, -124, 117] - Lines Cleared:10
+Rosa Guy, Age: 0 Weights: [-128, -29, -53, -31] - Lines Cleared:7
+David White, Age: 0 Weights: [30, -100, -22, 68] - Lines Cleared:5
+Jennie Willett, Age: 0 Weights: [-111, -11, 37, -120] - Lines Cleared:3
+Carrie Powell, Age: 0 Weights: [-117, -108, 41, -5] - Lines Cleared:2
+James Ramos, Age: 0 Weights: [-29, -85, 3, 53] - Lines Cleared:2
+Viola Cotton, Age: 0 Weights: [52, -52, -12, 45] - Lines Cleared:1
+Raymond Reyes, Age: 0 Weights: [-88, 8, 24, 96] - Lines Cleared:1
+Claudia Sizemore, Age: 0 Weights: [-93, -127, 11, -64] - Lines Cleared:1
+Emma Gaston, Age: 0 Weights: [-48, 4, -42, -23] - Lines Cleared:1
+William Gray, Age: 0 Weights: [-92, 113, -92, -63] - Lines Cleared:0
+Cesar Salmeron, Age: 0 Weights: [50, 51, -87, -119] - Lines Cleared:0
+Cynthia Wahlen, Age: 0 Weights: [72, 10, 64, -41] - Lines Cleared:0
+Loris Allen, Age: 0 Weights: [78, 10, -121, 17] - Lines Cleared:0
+Crystal Mccallum, Age: 0 Weights: [38, 93, -2, 93] - Lines Cleared:0
+Clark Donald, Age: 0 Weights: [-28, 98, 6, -128] - Lines Cleared:0
+Russell Alaimo, Age: 0 Weights: [100, 71, -82, -74] - Lines Cleared:0
+Shauna Jensen, Age: 0 Weights: [50, 33, 8, 8] - Lines Cleared:0
+James Samuel, Age: 0 Weights: [-119, 113, -94, 116] - Lines Cleared:0
+Lillian Bush, Age: 0 Weights: [5, -67, 115, 66] - Lines Cleared:0
+Janet Edmondson, Age: 0 Weights: [91, 2, -20, 107] - Lines Cleared:0
+Mary Page, Age: 0 Weights: [-28, 65, -91, 106] - Lines Cleared:0
+Theresa Caspari, Age: 0 Weights: [81, 60, -90, 69] - Lines Cleared:0
+Maria Dicaprio, Age: 0 Weights: [-25, -20, 108, 23] - Lines Cleared:0
+Eric Stockwell, Age: 0 Weights: [120, 71, 76, 122] - Lines Cleared:0
+Carla Henry, Age: 0 Weights: [-2, 60, 34, 85] - Lines Cleared:0
+Herbert Skinner, Age: 0 Weights: [-116, 127, -96, -7] - Lines Cleared:0
+Billy Doe, Age: 0 Weights: [59, 23, 80, 108] - Lines Cleared:0
+Ella Lynn, Age: 0 Weights: [-127, 96, -26, 114] - Lines Cleared:0
+Kendal Abrams, Age: 0 Weights: [49, 6, -124, 104] - Lines Cleared:0
+German Roddick, Age: 0 Weights: [58, 13, 2, -2] - Lines Cleared:0
+Shannon Battle, Age: 0 Weights: [89, 118, 64, -82] - Lines Cleared:0
+Mathew Toomey, Age: 0 Weights: [-110, -29, 127, 65] - Lines Cleared:0
+Raymond Hankins, Age: 0 Weights: [-72, 35, -124, 122] - Lines Cleared:0
+Luz Vesey, Age: 0 Weights: [-8, 40, -55, 42] - Lines Cleared:0
+Chris Miller, Age: 0 Weights: [74, -10, -47, 29] - Lines Cleared:0
+Jeff Avery, Age: 0 Weights: [84, -19, 122, -19] - Lines Cleared:0
+Stephanie Williams, Age: 0 Weights: [92, -30, 0, -1] - Lines Cleared:0
+Jerry Baxter, Age: 0 Weights: [-9, 84, 5, 88] - Lines Cleared:0
+Jerome Torres, Age: 0 Weights: [40, -97, 63, 55] - Lines Cleared:0
+Sarah Waiters, Age: 0 Weights: [-40, 87, 85, 52] - Lines Cleared:0
+Craig Woodward, Age: 0 Weights: [-32, 116, 79, 36] - Lines Cleared:0
+Linda Williams, Age: 0 Weights: [-69, 62, 20, -24] - Lines Cleared:0
+Christopher Toledo, Age: 0 Weights: [-6, -58, 109, -105] - Lines Cleared:0
+Kevin Franklin, Age: 0 Weights: [-90, 113, -81, -9] - Lines Cleared:0
+Chris Miller DIED
+Jeff Avery DIED
+Stephanie Williams DIED
+Jerry Baxter DIED
+Jerome Torres DIED
+Sarah Waiters DIED
+Craig Woodward DIED
+Linda Williams DIED
+Christopher Toledo DIED
+Kevin Franklin DIED
+
+Generation: 1 , Average Lines Cleared: 2
+Cynthia Wagner, Age: 1 Weights: [-110, -19, -107, -35] - Lines Cleared:43
+William Swartz, Age: 1 Weights: [5, -43, -78, -56] - Lines Cleared:16
+Allison Pena, Age: 1 Weights: [-20, -10, -124, 117] - Lines Cleared:16
+Gerald Markham, Age: 1 Weights: [-86, -8, -113, 22] - Lines Cleared:13
+Perry Trahan, Age: 1 Weights: [-70, -87, -60, -46] - Lines Cleared:7
+Rosa Guy, Age: 1 Weights: [-128, -29, -53, -31] - Lines Cleared:5
+Carrie Powell, Age: 1 Weights: [-117, -108, 41, -5] - Lines Cleared:4
+Jennie Willett, Age: 1 Weights: [-111, -11, 37, -120] - Lines Cleared:3
+James Ramos, Age: 1 Weights: [-29, -85, 3, 53] - Lines Cleared:3
+Claudia Sizemore, Age: 1 Weights: [-93, -127, 11, -64] - Lines Cleared:3
+Julia Holmes, Age: 1 Weights: [-119, -71, 7, 93] - Lines Cleared:2
+Lillian Bush, Age: 1 Weights: [5, -67, 115, 66] - Lines Cleared:1
+David White, Age: 1 Weights: [30, -100, -22, 68] - Lines Cleared:0
+Viola Cotton, Age: 1 Weights: [52, -52, -12, 45] - Lines Cleared:0
+Raymond Reyes, Age: 1 Weights: [-88, 8, 24, 96] - Lines Cleared:0
+Emma Gaston, Age: 1 Weights: [-48, 4, -42, -23] - Lines Cleared:0
+William Gray, Age: 1 Weights: [-92, 113, -92, -63] - Lines Cleared:0
+Cesar Salmeron, Age: 1 Weights: [50, 51, -87, -119] - Lines Cleared:0
+Cynthia Wahlen, Age: 1 Weights: [72, 10, 64, -41] - Lines Cleared:0
+Loris Allen, Age: 1 Weights: [78, 10, -121, 17] - Lines Cleared:0
+Crystal Mccallum, Age: 1 Weights: [38, 93, -2, 93] - Lines Cleared:0
+Clark Donald, Age: 1 Weights: [-28, 98, 6, -128] - Lines Cleared:0
+Russell Alaimo, Age: 1 Weights: [100, 71, -82, -74] - Lines Cleared:0
+Shauna Jensen, Age: 1 Weights: [50, 33, 8, 8] - Lines Cleared:0
+James Samuel, Age: 1 Weights: [-119, 113, -94, 116] - Lines Cleared:0
+Janet Edmondson, Age: 1 Weights: [91, 2, -20, 107] - Lines Cleared:0
+Mary Page, Age: 1 Weights: [-28, 65, -91, 106] - Lines Cleared:0
+Theresa Caspari, Age: 1 Weights: [81, 60, -90, 69] - Lines Cleared:0
+Maria Dicaprio, Age: 1 Weights: [-25, -20, 108, 23] - Lines Cleared:0
+Eric Stockwell, Age: 1 Weights: [120, 71, 76, 122] - Lines Cleared:0
+Carla Henry, Age: 1 Weights: [-2, 60, 34, 85] - Lines Cleared:0
+Herbert Skinner, Age: 1 Weights: [-116, 127, -96, -7] - Lines Cleared:0
+Billy Doe, Age: 1 Weights: [59, 23, 80, 108] - Lines Cleared:0
+Ella Lynn, Age: 1 Weights: [-127, 96, -26, 114] - Lines Cleared:0
+Kendal Abrams, Age: 1 Weights: [49, 6, -124, 104] - Lines Cleared:0
+German Roddick, Age: 1 Weights: [58, 13, 2, -2] - Lines Cleared:0
+Shannon Battle, Age: 1 Weights: [89, 118, 64, -82] - Lines Cleared:0
+Mathew Toomey, Age: 1 Weights: [-110, -29, 127, 65] - Lines Cleared:0
+Raymond Hankins, Age: 1 Weights: [-72, 35, -124, 122] - Lines Cleared:0
+Luz Vesey, Age: 1 Weights: [-8, 40, -55, 42] - Lines Cleared:0
+Chaya Burt, Age: 0 Weights: [112, 96, 76, 5] - Lines Cleared:0
+David Selby, Age: 0 Weights: [46, 149, 151, 231] - Lines Cleared:0
+Linda Carrier, Age: 0 Weights: [154, 215, 23, 32] - Lines Cleared:0
+Nathan Vosburg, Age: 0 Weights: [135, 21, 183, 163] - Lines Cleared:0
+Tammy Gallagher, Age: 0 Weights: [207, 138, 1, 93] - Lines Cleared:0
+Ian Wolf, Age: 0 Weights: [8, 78, 146, 34] - Lines Cleared:0
+Amanda Vazquez, Age: 0 Weights: [36, 148, 152, 227] - Lines Cleared:0
+Lori Doyle, Age: 0 Weights: [18, 166, 123, 218] - Lines Cleared:0
+Juliette Shear, Age: 0 Weights: [105, 201, 66, 117] - Lines Cleared:0
+Helena Stice, Age: 0 Weights: [20, 151, 189, 53] - Lines Cleared:0
+Chaya Burt DIED
+David Selby DIED
+Linda Carrier DIED
+Nathan Vosburg DIED
+Tammy Gallagher DIED
+Ian Wolf DIED
+Amanda Vazquez DIED
+Lori Doyle DIED
+Juliette Shear DIED
+Helena Stice DIED
+
+Generation: 2 , Average Lines Cleared: 2
+Cynthia Wagner, Age: 2 Weights: [-110, -19, -107, -35] - Lines Cleared:46
+Rosa Guy, Age: 2 Weights: [-128, -29, -53, -31] - Lines Cleared:19
+Gerald Markham, Age: 2 Weights: [-86, -8, -113, 22] - Lines Cleared:13
+Allison Pena, Age: 2 Weights: [-20, -10, -124, 117] - Lines Cleared:12
+Perry Trahan, Age: 2 Weights: [-70, -87, -60, -46] - Lines Cleared:8
+William Swartz, Age: 2 Weights: [5, -43, -78, -56] - Lines Cleared:5
+Carrie Powell, Age: 2 Weights: [-117, -108, 41, -5] - Lines Cleared:4
+Julia Holmes, Age: 2 Weights: [-119, -71, 7, 93] - Lines Cleared:4
+James Ramos, Age: 2 Weights: [-29, -85, 3, 53] - Lines Cleared:3
+Claudia Sizemore, Age: 2 Weights: [-93, -127, 11, -64] - Lines Cleared:3
+David White, Age: 2 Weights: [30, -100, -22, 68] - Lines Cleared:3
+Raymond Reyes, Age: 2 Weights: [-88, 8, 24, 96] - Lines Cleared:2
+Jennie Willett, Age: 2 Weights: [-111, -11, 37, -120] - Lines Cleared:0
+Lillian Bush, Age: 2 Weights: [5, -67, 115, 66] - Lines Cleared:0
+Viola Cotton, Age: 2 Weights: [52, -52, -12, 45] - Lines Cleared:0
+Emma Gaston, Age: 2 Weights: [-48, 4, -42, -23] - Lines Cleared:0
+William Gray, Age: 2 Weights: [-92, 113, -92, -63] - Lines Cleared:0
+Cesar Salmeron, Age: 2 Weights: [50, 51, -87, -119] - Lines Cleared:0
+Cynthia Wahlen, Age: 2 Weights: [72, 10, 64, -41] - Lines Cleared:0
+Loris Allen, Age: 2 Weights: [78, 10, -121, 17] - Lines Cleared:0
+Crystal Mccallum, Age: 2 Weights: [38, 93, -2, 93] - Lines Cleared:0
+Clark Donald, Age: 2 Weights: [-28, 98, 6, -128] - Lines Cleared:0
+Russell Alaimo, Age: 2 Weights: [100, 71, -82, -74] - Lines Cleared:0
+Shauna Jensen, Age: 2 Weights: [50, 33, 8, 8] - Lines Cleared:0
+James Samuel, Age: 2 Weights: [-119, 113, -94, 116] - Lines Cleared:0
+Janet Edmondson, Age: 2 Weights: [91, 2, -20, 107] - Lines Cleared:0
+Mary Page, Age: 2 Weights: [-28, 65, -91, 106] - Lines Cleared:0
+Theresa Caspari, Age: 2 Weights: [81, 60, -90, 69] - Lines Cleared:0
+Maria Dicaprio, Age: 2 Weights: [-25, -20, 108, 23] - Lines Cleared:0
+Eric Stockwell, Age: 2 Weights: [120, 71, 76, 122] - Lines Cleared:0
+Carla Henry, Age: 2 Weights: [-2, 60, 34, 85] - Lines Cleared:0
+Herbert Skinner, Age: 2 Weights: [-116, 127, -96, -7] - Lines Cleared:0
+Billy Doe, Age: 2 Weights: [59, 23, 80, 108] - Lines Cleared:0
+Ella Lynn, Age: 2 Weights: [-127, 96, -26, 114] - Lines Cleared:0
+Kendal Abrams, Age: 2 Weights: [49, 6, -124, 104] - Lines Cleared:0
+German Roddick, Age: 2 Weights: [58, 13, 2, -2] - Lines Cleared:0
+Shannon Battle, Age: 2 Weights: [89, 118, 64, -82] - Lines Cleared:0
+Mathew Toomey, Age: 2 Weights: [-110, -29, 127, 65] - Lines Cleared:0
+Raymond Hankins, Age: 2 Weights: [-72, 35, -124, 122] - Lines Cleared:0
+Luz Vesey, Age: 2 Weights: [-8, 40, -55, 42] - Lines Cleared:0
+James Butcher, Age: 0 Weights: [77, 17, 229, 193] - Lines Cleared:0
+Gerald Tarr, Age: 0 Weights: [69, 155, 170, 149] - Lines Cleared:0
+Joanne Butler, Age: 0 Weights: [240, 128, 61, 66] - Lines Cleared:0
+David Allen, Age: 0 Weights: [217, 120, 119, 193] - Lines Cleared:0
+Joanne Howard, Age: 0 Weights: [70, 83, 51, 80] - Lines Cleared:0
+Lynn Soltys, Age: 0 Weights: [104, 200, 126, 111] - Lines Cleared:0
+Michael Cooper, Age: 0 Weights: [41, 68, 181, 99] - Lines Cleared:0
+Elsie Mesich, Age: 0 Weights: [91, 22, 166, 72] - Lines Cleared:0
+Salvatore Jones, Age: 0 Weights: [1, 47, 201, 190] - Lines Cleared:0
+Tiffany Council, Age: 0 Weights: [210, 28, 172, 192] - Lines Cleared:0
+James Butcher DIED
+Gerald Tarr DIED
+Joanne Butler DIED
+David Allen DIED
+Joanne Howard DIED
+Lynn Soltys DIED
+Michael Cooper DIED
+Elsie Mesich DIED
+Salvatore Jones DIED
+Tiffany Council DIED
+
+Generation: 3 , Average Lines Cleared: 2
+Cynthia Wagner, Age: 3 Weights: [-110, -19, -107, -35] - Lines Cleared:45
+Gerald Markham, Age: 3 Weights: [-86, -8, -113, 22] - Lines Cleared:27
+William Swartz, Age: 3 Weights: [5, -43, -78, -56] - Lines Cleared:11
+Perry Trahan, Age: 3 Weights: [-70, -87, -60, -46] - Lines Cleared:10
+Allison Pena, Age: 3 Weights: [-20, -10, -124, 117] - Lines Cleared:9
+Rosa Guy, Age: 3 Weights: [-128, -29, -53, -31] - Lines Cleared:8
+James Ramos, Age: 3 Weights: [-29, -85, 3, 53] - Lines Cleared:6
+David White, Age: 3 Weights: [30, -100, -22, 68] - Lines Cleared:4
+Jennie Willett, Age: 3 Weights: [-111, -11, 37, -120] - Lines Cleared:4
+Raymond Reyes, Age: 3 Weights: [-88, 8, 24, 96] - Lines Cleared:1
+Carrie Powell, Age: 3 Weights: [-117, -108, 41, -5] - Lines Cleared:0
+Julia Holmes, Age: 3 Weights: [-119, -71, 7, 93] - Lines Cleared:0
+Claudia Sizemore, Age: 3 Weights: [-93, -127, 11, -64] - Lines Cleared:0
+Lillian Bush, Age: 3 Weights: [5, -67, 115, 66] - Lines Cleared:0
+Viola Cotton, Age: 3 Weights: [52, -52, -12, 45] - Lines Cleared:0
+Emma Gaston, Age: 3 Weights: [-48, 4, -42, -23] - Lines Cleared:0
+William Gray, Age: 3 Weights: [-92, 113, -92, -63] - Lines Cleared:0
+Cesar Salmeron, Age: 3 Weights: [50, 51, -87, -119] - Lines Cleared:0
+Cynthia Wahlen, Age: 3 Weights: [72, 10, 64, -41] - Lines Cleared:0
+Loris Allen, Age: 3 Weights: [78, 10, -121, 17] - Lines Cleared:0
+Crystal Mccallum, Age: 3 Weights: [38, 93, -2, 93] - Lines Cleared:0
+Clark Donald, Age: 3 Weights: [-28, 98, 6, -128] - Lines Cleared:0
+Russell Alaimo, Age: 3 Weights: [100, 71, -82, -74] - Lines Cleared:0
+Shauna Jensen, Age: 3 Weights: [50, 33, 8, 8] - Lines Cleared:0
+James Samuel, Age: 3 Weights: [-119, 113, -94, 116] - Lines Cleared:0
+Janet Edmondson, Age: 3 Weights: [91, 2, -20, 107] - Lines Cleared:0
+Mary Page, Age: 3 Weights: [-28, 65, -91, 106] - Lines Cleared:0
+Theresa Caspari, Age: 3 Weights: [81, 60, -90, 69] - Lines Cleared:0
+Maria Dicaprio, Age: 3 Weights: [-25, -20, 108, 23] - Lines Cleared:0
+Eric Stockwell, Age: 3 Weights: [120, 71, 76, 122] - Lines Cleared:0
+Carla Henry, Age: 3 Weights: [-2, 60, 34, 85] - Lines Cleared:0
+Herbert Skinner, Age: 3 Weights: [-116, 127, -96, -7] - Lines Cleared:0
+Billy Doe, Age: 3 Weights: [59, 23, 80, 108] - Lines Cleared:0
+Ella Lynn, Age: 3 Weights: [-127, 96, -26, 114] - Lines Cleared:0
+Kendal Abrams, Age: 3 Weights: [49, 6, -124, 104] - Lines Cleared:0
+German Roddick, Age: 3 Weights: [58, 13, 2, -2] - Lines Cleared:0
+Shannon Battle, Age: 3 Weights: [89, 118, 64, -82] - Lines Cleared:0
+Mathew Toomey, Age: 3 Weights: [-110, -29, 127, 65] - Lines Cleared:0
+Raymond Hankins, Age: 3 Weights: [-72, 35, -124, 122] - Lines Cleared:0
+Luz Vesey, Age: 3 Weights: [-8, 40, -55, 42] - Lines Cleared:0
+George Jefferson, Age: 0 Weights: [140, 195, 54, 5] - Lines Cleared:0
+Jeff Rivera, Age: 0 Weights: [98, 16, 85, 113] - Lines Cleared:0
+Scotty Williams, Age: 0 Weights: [95, 138, 73, 59] - Lines Cleared:0
+Aaron Guerra, Age: 0 Weights: [187, 12, 169, 180] - Lines Cleared:0
+Bobbie Landry, Age: 0 Weights: [82, 214, 201, 128] - Lines Cleared:0
+Michael Hill, Age: 0 Weights: [103, 21, 233, 179] - Lines Cleared:0
+Nancy Jacobs, Age: 0 Weights: [31, 222, 9, 73] - Lines Cleared:0
+Shirley Buford, Age: 0 Weights: [232, 53, 123, 5] - Lines Cleared:0
+Leonard Munoz, Age: 0 Weights: [88, 98, 94, 143] - Lines Cleared:0
+Todd Pitts, Age: 0 Weights: [131, 208, 6, 130] - Lines Cleared:0
+George Jefferson DIED
+Jeff Rivera DIED
+Scotty Williams DIED
+Aaron Guerra DIED
+Bobbie Landry DIED
+Michael Hill DIED
+Nancy Jacobs DIED
+Shirley Buford DIED
+Leonard Munoz DIED
+Todd Pitts DIED
+
+Generation: 0 , Average Lines Cleared: 1
+John Hamrick, Age: 0 Weights: [-115, -58, -22, 115] - Lines Cleared:7
+Cindi Gwin, Age: 0 Weights: [-97, -34, 41, 22] - Lines Cleared:4
+Gail Holton, Age: 0 Weights: [11, -24, -13, -102] - Lines Cleared:3
+Jackie Venice, Age: 0 Weights: [27, 94, -76, -85] - Lines Cleared:0
+Barry Willet, Age: 0 Weights: [-54, 50, -46, -126] - Lines Cleared:0
+Matt Kyung, Age: 0 Weights: [-85, 20, -81, -46] - Lines Cleared:0
+Timothy Thomas, Age: 0 Weights: [98, 118, -24, -19] - Lines Cleared:0
+Joan Gonzales, Age: 0 Weights: [48, 44, 88, -64] - Lines Cleared:0
+Robert Allen, Age: 0 Weights: [-123, -13, 119, 25] - Lines Cleared:0
+Kathleen Stilson, Age: 0 Weights: [75, 73, -103, -78] - Lines Cleared:0
+Robert Allen DIED
+Kathleen Stilson DIED
+
+Generation: 1 , Average Lines Cleared: 1
+John Hamrick, Age: 1 Weights: [-115, -58, -22, 115] - Lines Cleared:6
+Cindi Gwin, Age: 1 Weights: [-97, -34, 41, 22] - Lines Cleared:3
+Gail Holton, Age: 1 Weights: [11, -24, -13, -102] - Lines Cleared:1
+Jackie Venice, Age: 1 Weights: [27, 94, -76, -85] - Lines Cleared:0
+Barry Willet, Age: 1 Weights: [-54, 50, -46, -126] - Lines Cleared:0
+Matt Kyung, Age: 1 Weights: [-85, 20, -81, -46] - Lines Cleared:0
+Timothy Thomas, Age: 1 Weights: [98, 118, -24, -19] - Lines Cleared:0
+Joan Gonzales, Age: 1 Weights: [48, 44, 88, -64] - Lines Cleared:0
+Robert Barr, Age: 0 Weights: [118, 138, 140, 36] - Lines Cleared:0
+Billy Harrington, Age: 0 Weights: [17, 119, 168, 104] - Lines Cleared:0
+Robert Barr DIED
+Billy Harrington DIED
+
+Generation: 2 , Average Lines Cleared: 2
+John Hamrick, Age: 2 Weights: [-115, -58, -22, 115] - Lines Cleared:8
+Gail Holton, Age: 2 Weights: [11, -24, -13, -102] - Lines Cleared:8
+Cindi Gwin, Age: 2 Weights: [-97, -34, 41, 22] - Lines Cleared:4
+Jackie Venice, Age: 2 Weights: [27, 94, -76, -85] - Lines Cleared:0
+Barry Willet, Age: 2 Weights: [-54, 50, -46, -126] - Lines Cleared:0
+Matt Kyung, Age: 2 Weights: [-85, 20, -81, -46] - Lines Cleared:0
+Timothy Thomas, Age: 2 Weights: [98, 118, -24, -19] - Lines Cleared:0
+Joan Gonzales, Age: 2 Weights: [48, 44, 88, -64] - Lines Cleared:0
+Judith West, Age: 0 Weights: [157, 60, 75, 172] - Lines Cleared:0
+Joan Harding, Age: 0 Weights: [21, 216, 174, 173] - Lines Cleared:0
+Judith West DIED
+Joan Harding DIED
+
+Generation: 0 , Average Lines Cleared: 3
+Clara Fleming, Age: 0 Weights: [-19, -126, -103, -107] - Lines Cleared:10
+Wilbur Ahrens, Age: 0 Weights: [25, -5, -32, 117] - Lines Cleared:7
+Kathleen Redway, Age: 0 Weights: [36, -60, -78, 30] - Lines Cleared:7
+Jessica Felder, Age: 0 Weights: [60, -117, -125, -41] - Lines Cleared:5
+Kathleen Merrill, Age: 0 Weights: [-124, -116, 105, -103] - Lines Cleared:2
+Jane Hutchinson, Age: 0 Weights: [125, -101, -58, -24] - Lines Cleared:0
+Harry Janda, Age: 0 Weights: [32, 16, 40, 97] - Lines Cleared:0
+Ida Jessup, Age: 0 Weights: [84, -58, 5, -93] - Lines Cleared:0
+Karl Bell, Age: 0 Weights: [-87, 90, -112, 65] - Lines Cleared:0
+Robert Price, Age: 0 Weights: [37, 50, 17, 124] - Lines Cleared:0
+Karl Bell DIED
+Robert Price DIED
+
+Generation: 1 , Average Lines Cleared: 2
+Clara Fleming, Age: 1 Weights: [-19, -126, -103, -107] - Lines Cleared:9
+Jessica Felder, Age: 1 Weights: [60, -117, -125, -41] - Lines Cleared:6
+Wilbur Ahrens, Age: 1 Weights: [25, -5, -32, 117] - Lines Cleared:4
+Kathleen Redway, Age: 1 Weights: [36, -60, -78, 30] - Lines Cleared:2
+Kathleen Merrill, Age: 1 Weights: [-124, -116, 105, -103] - Lines Cleared:2
+Jane Hutchinson, Age: 1 Weights: [125, -101, -58, -24] - Lines Cleared:0
+Harry Janda, Age: 1 Weights: [32, 16, 40, 97] - Lines Cleared:0
+Ida Jessup, Age: 1 Weights: [84, -58, 5, -93] - Lines Cleared:0
+Alyssa Rump, Age: 0 Weights: [151, 210, 36, 220] - Lines Cleared:0
+Emma Sease, Age: 0 Weights: [46, 34, 155, 159] - Lines Cleared:0
+Alyssa Rump DIED
+Emma Sease DIED
+
+Generation: 2 , Average Lines Cleared: 2
+Clara Fleming, Age: 2 Weights: [-19, -126, -103, -107] - Lines Cleared:13
+Jessica Felder, Age: 2 Weights: [60, -117, -125, -41] - Lines Cleared:5
+Kathleen Redway, Age: 2 Weights: [36, -60, -78, 30] - Lines Cleared:5
+Kathleen Merrill, Age: 2 Weights: [-124, -116, 105, -103] - Lines Cleared:4
+Wilbur Ahrens, Age: 2 Weights: [25, -5, -32, 117] - Lines Cleared:0
+Jane Hutchinson, Age: 2 Weights: [125, -101, -58, -24] - Lines Cleared:0
+Harry Janda, Age: 2 Weights: [32, 16, 40, 97] - Lines Cleared:0
+Ida Jessup, Age: 2 Weights: [84, -58, 5, -93] - Lines Cleared:0
+Larry Jones, Age: 0 Weights: [171, 11, 16, 165] - Lines Cleared:0
+Henry Theodore, Age: 0 Weights: [68, 74, 154, 31] - Lines Cleared:0
+Larry Jones DIED
+Henry Theodore DIED
+
+Generation: 3 , Average Lines Cleared: 1
+Clara Fleming, Age: 3 Weights: [-19, -126, -103, -107] - Lines Cleared:10
+Jessica Felder, Age: 3 Weights: [60, -117, -125, -41] - Lines Cleared:1
+Kathleen Redway, Age: 3 Weights: [36, -60, -78, 30] - Lines Cleared:1
+Kathleen Merrill, Age: 3 Weights: [-124, -116, 105, -103] - Lines Cleared:0
+Wilbur Ahrens, Age: 3 Weights: [25, -5, -32, 117] - Lines Cleared:0
+Jane Hutchinson, Age: 3 Weights: [125, -101, -58, -24] - Lines Cleared:0
+Harry Janda, Age: 3 Weights: [32, 16, 40, 97] - Lines Cleared:0
+Ida Jessup, Age: 3 Weights: [84, -58, 5, -93] - Lines Cleared:0
+James Williams, Age: 0 Weights: [158, 95, 207, 177] - Lines Cleared:0
+Rita Harrison, Age: 0 Weights: [254, 138, 39, 23] - Lines Cleared:0
+James Williams DIED
+Rita Harrison DIED
+
+Generation: 4 , Average Lines Cleared: 1
+Clara Fleming, Age: 4 Weights: [-19, -126, -103, -107] - Lines Cleared:5
+Jessica Felder, Age: 4 Weights: [60, -117, -125, -41] - Lines Cleared:3
+Kathleen Redway, Age: 4 Weights: [36, -60, -78, 30] - Lines Cleared:1
+Kathleen Merrill, Age: 4 Weights: [-124, -116, 105, -103] - Lines Cleared:1
+Ida Jessup, Age: 4 Weights: [84, -58, 5, -93] - Lines Cleared:1
+Wilbur Ahrens, Age: 4 Weights: [25, -5, -32, 117] - Lines Cleared:0
+Jane Hutchinson, Age: 4 Weights: [125, -101, -58, -24] - Lines Cleared:0
+Harry Janda, Age: 4 Weights: [32, 16, 40, 97] - Lines Cleared:0
+Mavis Lund, Age: 0 Weights: [162, 67, 83, 19] - Lines Cleared:0
+Millicent Denny, Age: 0 Weights: [108, 169, 3, 188] - Lines Cleared:0
+Mavis Lund DIED
+Millicent Denny DIED
+
+Generation: 5 , Average Lines Cleared: 2
+Jessica Felder, Age: 5 Weights: [60, -117, -125, -41] - Lines Cleared:11
+Clara Fleming, Age: 5 Weights: [-19, -126, -103, -107] - Lines Cleared:6
+Kathleen Merrill, Age: 5 Weights: [-124, -116, 105, -103] - Lines Cleared:3
+Jane Hutchinson, Age: 5 Weights: [125, -101, -58, -24] - Lines Cleared:1
+Kathleen Redway, Age: 5 Weights: [36, -60, -78, 30] - Lines Cleared:0
+Ida Jessup, Age: 5 Weights: [84, -58, 5, -93] - Lines Cleared:0
+Wilbur Ahrens, Age: 5 Weights: [25, -5, -32, 117] - Lines Cleared:0
+Harry Janda, Age: 5 Weights: [32, 16, 40, 97] - Lines Cleared:0
+Alonzo Lamarr, Age: 0 Weights: [12, 21, 230, 83] - Lines Cleared:0
+Jose Gonzales, Age: 0 Weights: [77, 52, 99, 61] - Lines Cleared:0
+Alonzo Lamarr DIED
+Jose Gonzales DIED
+
+Generation: 6 , Average Lines Cleared: 3
+Jessica Felder, Age: 6 Weights: [60, -117, -125, -41] - Lines Cleared:14
+Clara Fleming, Age: 6 Weights: [-19, -126, -103, -107] - Lines Cleared:10
+Kathleen Redway, Age: 6 Weights: [36, -60, -78, 30] - Lines Cleared:6
+Wilbur Ahrens, Age: 6 Weights: [25, -5, -32, 117] - Lines Cleared:2
+Kathleen Merrill, Age: 6 Weights: [-124, -116, 105, -103] - Lines Cleared:0
+Jane Hutchinson, Age: 6 Weights: [125, -101, -58, -24] - Lines Cleared:0
+Ida Jessup, Age: 6 Weights: [84, -58, 5, -93] - Lines Cleared:0
+Harry Janda, Age: 6 Weights: [32, 16, 40, 97] - Lines Cleared:0
+Karen Power, Age: 0 Weights: [229, 146, 100, 185] - Lines Cleared:0
+Mildred Nunn, Age: 0 Weights: [212, 216, 154, 171] - Lines Cleared:0
+Karen Power DIED
+Mildred Nunn DIED
+
+Generation: 7 , Average Lines Cleared: 2
+Jessica Felder, Age: 7 Weights: [60, -117, -125, -41] - Lines Cleared:10
+Kathleen Redway, Age: 7 Weights: [36, -60, -78, 30] - Lines Cleared:8
+Kathleen Merrill, Age: 7 Weights: [-124, -116, 105, -103] - Lines Cleared:3
+Clara Fleming, Age: 7 Weights: [-19, -126, -103, -107] - Lines Cleared:2
+Wilbur Ahrens, Age: 7 Weights: [25, -5, -32, 117] - Lines Cleared:0
+Jane Hutchinson, Age: 7 Weights: [125, -101, -58, -24] - Lines Cleared:0
+Ida Jessup, Age: 7 Weights: [84, -58, 5, -93] - Lines Cleared:0
+Harry Janda, Age: 7 Weights: [32, 16, 40, 97] - Lines Cleared:0
+Virginia Leitner, Age: 0 Weights: [23, 97, 199, 183] - Lines Cleared:0
+Jo Johnson, Age: 0 Weights: [26, 46, 206, 94] - Lines Cleared:0
+Virginia Leitner DIED
+Jo Johnson DIED
+
+Generation: 8 , Average Lines Cleared: 2
+Jessica Felder, Age: 8 Weights: [60, -117, -125, -41] - Lines Cleared:9
+Clara Fleming, Age: 8 Weights: [-19, -126, -103, -107] - Lines Cleared:7
+Kathleen Redway, Age: 8 Weights: [36, -60, -78, 30] - Lines Cleared:5
+Kathleen Merrill, Age: 8 Weights: [-124, -116, 105, -103] - Lines Cleared:0
+Wilbur Ahrens, Age: 8 Weights: [25, -5, -32, 117] - Lines Cleared:0
+Jane Hutchinson, Age: 8 Weights: [125, -101, -58, -24] - Lines Cleared:0
+Ida Jessup, Age: 8 Weights: [84, -58, 5, -93] - Lines Cleared:0
+Harry Janda, Age: 8 Weights: [32, 16, 40, 97] - Lines Cleared:0
+Amanda Phillips, Age: 0 Weights: [134, 118, 149, 95] - Lines Cleared:0
+Suzanne Melendez, Age: 0 Weights: [174, 25, 190, 81] - Lines Cleared:0
+Amanda Phillips DIED
+Suzanne Melendez DIED
+
+Generation: 9 , Average Lines Cleared: 1
+Clara Fleming, Age: 9 Weights: [-19, -126, -103, -107] - Lines Cleared:8
+Jessica Felder, Age: 9 Weights: [60, -117, -125, -41] - Lines Cleared:3
+Kathleen Redway, Age: 9 Weights: [36, -60, -78, 30] - Lines Cleared:3
+Kathleen Merrill, Age: 9 Weights: [-124, -116, 105, -103] - Lines Cleared:0
+Wilbur Ahrens, Age: 9 Weights: [25, -5, -32, 117] - Lines Cleared:0
+Jane Hutchinson, Age: 9 Weights: [125, -101, -58, -24] - Lines Cleared:0
+Ida Jessup, Age: 9 Weights: [84, -58, 5, -93] - Lines Cleared:0
+Harry Janda, Age: 9 Weights: [32, 16, 40, 97] - Lines Cleared:0
+Christopher Zarella, Age: 0 Weights: [71, 180, 153, 22] - Lines Cleared:0
+Thomas Johnson, Age: 0 Weights: [234, 34, 103, 226] - Lines Cleared:0
+Christopher Zarella DIED
+Thomas Johnson DIED
+
+Generation: 10 , Average Lines Cleared: 3
+Clara Fleming, Age: 10 Weights: [-19, -126, -103, -107] - Lines Cleared:12
+Jessica Felder, Age: 10 Weights: [60, -117, -125, -41] - Lines Cleared:7
+Kathleen Redway, Age: 10 Weights: [36, -60, -78, 30] - Lines Cleared:6
+Kathleen Merrill, Age: 10 Weights: [-124, -116, 105, -103] - Lines Cleared:5
+Wilbur Ahrens, Age: 10 Weights: [25, -5, -32, 117] - Lines Cleared:0
+Jane Hutchinson, Age: 10 Weights: [125, -101, -58, -24] - Lines Cleared:0
+Ida Jessup, Age: 10 Weights: [84, -58, 5, -93] - Lines Cleared:0
+Harry Janda, Age: 10 Weights: [32, 16, 40, 97] - Lines Cleared:0
+Juana Bowers, Age: 0 Weights: [26, 72, 105, 160] - Lines Cleared:0
+Randy Duy, Age: 0 Weights: [131, 160, 15, 198] - Lines Cleared:0
+Juana Bowers DIED
+Randy Duy DIED
+
+Generation: 11 , Average Lines Cleared: 2
+Jessica Felder, Age: 11 Weights: [60, -117, -125, -41] - Lines Cleared:18
+Kathleen Redway, Age: 11 Weights: [36, -60, -78, 30] - Lines Cleared:5
+Clara Fleming, Age: 11 Weights: [-19, -126, -103, -107] - Lines Cleared:3
+Kathleen Merrill, Age: 11 Weights: [-124, -116, 105, -103] - Lines Cleared:3
+Wilbur Ahrens, Age: 11 Weights: [25, -5, -32, 117] - Lines Cleared:0
+Jane Hutchinson, Age: 11 Weights: [125, -101, -58, -24] - Lines Cleared:0
+Ida Jessup, Age: 11 Weights: [84, -58, 5, -93] - Lines Cleared:0
+Harry Janda, Age: 11 Weights: [32, 16, 40, 97] - Lines Cleared:0
+Annette Davis, Age: 0 Weights: [195, 67, 101, 44] - Lines Cleared:0
+David Holloman, Age: 0 Weights: [185, 98, 102, 4] - Lines Cleared:0
+Annette Davis DIED
+David Holloman DIED
+
+Generation: 12 , Average Lines Cleared: 0
+Kathleen Merrill, Age: 12 Weights: [-124, -116, 105, -103] - Lines Cleared:3
+Jessica Felder, Age: 12 Weights: [60, -117, -125, -41] - Lines Cleared:2
+Clara Fleming, Age: 12 Weights: [-19, -126, -103, -107] - Lines Cleared:2
+Jane Hutchinson, Age: 12 Weights: [125, -101, -58, -24] - Lines Cleared:1
+Kathleen Redway, Age: 12 Weights: [36, -60, -78, 30] - Lines Cleared:0
+Wilbur Ahrens, Age: 12 Weights: [25, -5, -32, 117] - Lines Cleared:0
+Ida Jessup, Age: 12 Weights: [84, -58, 5, -93] - Lines Cleared:0
+Harry Janda, Age: 12 Weights: [32, 16, 40, 97] - Lines Cleared:0
+Sandra Johnson, Age: 0 Weights: [42, 215, 221, 56] - Lines Cleared:0
+Steven Meachen, Age: 0 Weights: [80, 91, 255, 99] - Lines Cleared:0
+Sandra Johnson DIED
+Steven Meachen DIED
+
+Generation: 13 , Average Lines Cleared: 3
+Jessica Felder, Age: 13 Weights: [60, -117, -125, -41] - Lines Cleared:19
+Clara Fleming, Age: 13 Weights: [-19, -126, -103, -107] - Lines Cleared:9
+Kathleen Redway, Age: 13 Weights: [36, -60, -78, 30] - Lines Cleared:8
+Kathleen Merrill, Age: 13 Weights: [-124, -116, 105, -103] - Lines Cleared:1
+Jane Hutchinson, Age: 13 Weights: [125, -101, -58, -24] - Lines Cleared:0
+Wilbur Ahrens, Age: 13 Weights: [25, -5, -32, 117] - Lines Cleared:0
+Ida Jessup, Age: 13 Weights: [84, -58, 5, -93] - Lines Cleared:0
+Harry Janda, Age: 13 Weights: [32, 16, 40, 97] - Lines Cleared:0
+Timothy Fett, Age: 0 Weights: [245, 45, 237, 186] - Lines Cleared:0
+Andrea Burrell, Age: 0 Weights: [31, 194, 70, 162] - Lines Cleared:0
+Timothy Fett DIED
+Andrea Burrell DIED
+
+Generation: 14 , Average Lines Cleared: 1
+Clara Fleming, Age: 14 Weights: [-19, -126, -103, -107] - Lines Cleared:8
+Jessica Felder, Age: 14 Weights: [60, -117, -125, -41] - Lines Cleared:2
+Kathleen Redway, Age: 14 Weights: [36, -60, -78, 30] - Lines Cleared:2
+Wilbur Ahrens, Age: 14 Weights: [25, -5, -32, 117] - Lines Cleared:1
+Kathleen Merrill, Age: 14 Weights: [-124, -116, 105, -103] - Lines Cleared:0
+Jane Hutchinson, Age: 14 Weights: [125, -101, -58, -24] - Lines Cleared:0
+Ida Jessup, Age: 14 Weights: [84, -58, 5, -93] - Lines Cleared:0
+Harry Janda, Age: 14 Weights: [32, 16, 40, 97] - Lines Cleared:0
+Kent Malveaux, Age: 0 Weights: [129, 178, 183, 197] - Lines Cleared:0
+Cherrie Bridges, Age: 0 Weights: [76, 17, 78, 83] - Lines Cleared:0
+Kent Malveaux DIED
+Cherrie Bridges DIED
+
+Generation: 15 , Average Lines Cleared: 2
+Kathleen Redway, Age: 15 Weights: [36, -60, -78, 30] - Lines Cleared:10
+Clara Fleming, Age: 15 Weights: [-19, -126, -103, -107] - Lines Cleared:8
+Jessica Felder, Age: 15 Weights: [60, -117, -125, -41] - Lines Cleared:7
+Kathleen Merrill, Age: 15 Weights: [-124, -116, 105, -103] - Lines Cleared:1
+Wilbur Ahrens, Age: 15 Weights: [25, -5, -32, 117] - Lines Cleared:0
+Jane Hutchinson, Age: 15 Weights: [125, -101, -58, -24] - Lines Cleared:0
+Ida Jessup, Age: 15 Weights: [84, -58, 5, -93] - Lines Cleared:0
+Harry Janda, Age: 15 Weights: [32, 16, 40, 97] - Lines Cleared:0
+Helen Eastman, Age: 0 Weights: [98, 32, 254, 249] - Lines Cleared:0
+Walter Bean, Age: 0 Weights: [79, 173, 30, 82] - Lines Cleared:0
+Helen Eastman DIED
+Walter Bean DIED
+
+Generation: 16 , Average Lines Cleared: 0
+Jessica Felder, Age: 16 Weights: [60, -117, -125, -41] - Lines Cleared:3
+Clara Fleming, Age: 16 Weights: [-19, -126, -103, -107] - Lines Cleared:2
+Kathleen Redway, Age: 16 Weights: [36, -60, -78, 30] - Lines Cleared:1
+Kathleen Merrill, Age: 16 Weights: [-124, -116, 105, -103] - Lines Cleared:1
+Wilbur Ahrens, Age: 16 Weights: [25, -5, -32, 117] - Lines Cleared:0
+Jane Hutchinson, Age: 16 Weights: [125, -101, -58, -24] - Lines Cleared:0
+Ida Jessup, Age: 16 Weights: [84, -58, 5, -93] - Lines Cleared:0
+Harry Janda, Age: 16 Weights: [32, 16, 40, 97] - Lines Cleared:0
+Andrew Mcdowell, Age: 0 Weights: [130, 154, 71, 74] - Lines Cleared:0
+Earnest Brashears, Age: 0 Weights: [205, 91, 18, 59] - Lines Cleared:0
+Andrew Mcdowell DIED
+Earnest Brashears DIED
+
+Generation: 17 , Average Lines Cleared: 2
+Clara Fleming, Age: 17 Weights: [-19, -126, -103, -107] - Lines Cleared:10
+Kathleen Redway, Age: 17 Weights: [36, -60, -78, 30] - Lines Cleared:9
+Jessica Felder, Age: 17 Weights: [60, -117, -125, -41] - Lines Cleared:7
+Kathleen Merrill, Age: 17 Weights: [-124, -116, 105, -103] - Lines Cleared:2
+Jane Hutchinson, Age: 17 Weights: [125, -101, -58, -24] - Lines Cleared:1
+Wilbur Ahrens, Age: 17 Weights: [25, -5, -32, 117] - Lines Cleared:0
+Ida Jessup, Age: 17 Weights: [84, -58, 5, -93] - Lines Cleared:0
+Harry Janda, Age: 17 Weights: [32, 16, 40, 97] - Lines Cleared:0
+Anna Szot, Age: 0 Weights: [19, 163, 189, 244] - Lines Cleared:0
+Timothy Wise, Age: 0 Weights: [180, 108, 163, 254] - Lines Cleared:0
+Anna Szot DIED
+Timothy Wise DIED
+
+Generation: 18 , Average Lines Cleared: 2
+Jessica Felder, Age: 18 Weights: [60, -117, -125, -41] - Lines Cleared:11
+Kathleen Redway, Age: 18 Weights: [36, -60, -78, 30] - Lines Cleared:8
+Clara Fleming, Age: 18 Weights: [-19, -126, -103, -107] - Lines Cleared:2
+Kathleen Merrill, Age: 18 Weights: [-124, -116, 105, -103] - Lines Cleared:1
+Jane Hutchinson, Age: 18 Weights: [125, -101, -58, -24] - Lines Cleared:0
+Wilbur Ahrens, Age: 18 Weights: [25, -5, -32, 117] - Lines Cleared:0
+Ida Jessup, Age: 18 Weights: [84, -58, 5, -93] - Lines Cleared:0
+Harry Janda, Age: 18 Weights: [32, 16, 40, 97] - Lines Cleared:0
+Helen Quimby, Age: 0 Weights: [119, 65, 209, 236] - Lines Cleared:0
+Steven Dombkowski, Age: 0 Weights: [19, 159, 73, 41] - Lines Cleared:0
+Helen Quimby DIED
+Steven Dombkowski DIED
+
+Generation: 19 , Average Lines Cleared: 1
+Jessica Felder, Age: 19 Weights: [60, -117, -125, -41] - Lines Cleared:7
+Clara Fleming, Age: 19 Weights: [-19, -126, -103, -107] - Lines Cleared:7
+Kathleen Redway, Age: 19 Weights: [36, -60, -78, 30] - Lines Cleared:3
+Kathleen Merrill, Age: 19 Weights: [-124, -116, 105, -103] - Lines Cleared:2
+Jane Hutchinson, Age: 19 Weights: [125, -101, -58, -24] - Lines Cleared:0
+Wilbur Ahrens, Age: 19 Weights: [25, -5, -32, 117] - Lines Cleared:0
+Ida Jessup, Age: 19 Weights: [84, -58, 5, -93] - Lines Cleared:0
+Harry Janda, Age: 19 Weights: [32, 16, 40, 97] - Lines Cleared:0
+Danielle Foster, Age: 0 Weights: [61, 19, 70, 132] - Lines Cleared:0
+Sean Driscoll, Age: 0 Weights: [212, 135, 158, 56] - Lines Cleared:0
+Danielle Foster DIED
+Sean Driscoll DIED
+
+Generation: 20 , Average Lines Cleared: 2
+Jessica Felder, Age: 20 Weights: [60, -117, -125, -41] - Lines Cleared:9
+Clara Fleming, Age: 20 Weights: [-19, -126, -103, -107] - Lines Cleared:7
+Kathleen Redway, Age: 20 Weights: [36, -60, -78, 30] - Lines Cleared:4
+Jane Hutchinson, Age: 20 Weights: [125, -101, -58, -24] - Lines Cleared:3
+Kathleen Merrill, Age: 20 Weights: [-124, -116, 105, -103] - Lines Cleared:2
+Ida Jessup, Age: 20 Weights: [84, -58, 5, -93] - Lines Cleared:1
+Wilbur Ahrens, Age: 20 Weights: [25, -5, -32, 117] - Lines Cleared:0
+Harry Janda, Age: 20 Weights: [32, 16, 40, 97] - Lines Cleared:0
+Justin Luna, Age: 0 Weights: [14, 64, 232, 63] - Lines Cleared:0
+Paul Mathews, Age: 0 Weights: [72, 11, 114, 46] - Lines Cleared:0
+Justin Luna DIED
+Paul Mathews DIED
+
+Generation: 21 , Average Lines Cleared: 1
+Clara Fleming, Age: 21 Weights: [-19, -126, -103, -107] - Lines Cleared:8
+Jessica Felder, Age: 21 Weights: [60, -117, -125, -41] - Lines Cleared:5
+Kathleen Merrill, Age: 21 Weights: [-124, -116, 105, -103] - Lines Cleared:2
+Kathleen Redway, Age: 21 Weights: [36, -60, -78, 30] - Lines Cleared:1
+Jane Hutchinson, Age: 21 Weights: [125, -101, -58, -24] - Lines Cleared:1
+Wilbur Ahrens, Age: 21 Weights: [25, -5, -32, 117] - Lines Cleared:1
+Ida Jessup, Age: 21 Weights: [84, -58, 5, -93] - Lines Cleared:0
+Harry Janda, Age: 21 Weights: [32, 16, 40, 97] - Lines Cleared:0
+Patricia Clark, Age: 0 Weights: [142, 102, 212, 18] - Lines Cleared:0
+Catherine Rolon, Age: 0 Weights: [55, 32, 241, 23] - Lines Cleared:0
+Patricia Clark DIED
+Catherine Rolon DIED
+
+Generation: 22 , Average Lines Cleared: 1
+Clara Fleming, Age: 22 Weights: [-19, -126, -103, -107] - Lines Cleared:7
+Jessica Felder, Age: 22 Weights: [60, -117, -125, -41] - Lines Cleared:3
+Kathleen Redway, Age: 22 Weights: [36, -60, -78, 30] - Lines Cleared:3
+Kathleen Merrill, Age: 22 Weights: [-124, -116, 105, -103] - Lines Cleared:2
+Jane Hutchinson, Age: 22 Weights: [125, -101, -58, -24] - Lines Cleared:0
+Wilbur Ahrens, Age: 22 Weights: [25, -5, -32, 117] - Lines Cleared:0
+Ida Jessup, Age: 22 Weights: [84, -58, 5, -93] - Lines Cleared:0
+Harry Janda, Age: 22 Weights: [32, 16, 40, 97] - Lines Cleared:0
+Michael Apana, Age: 0 Weights: [204, 17, 46, 255] - Lines Cleared:0
+Gerald Bousquet, Age: 0 Weights: [170, 59, 145, 104] - Lines Cleared:0
+Michael Apana DIED
+Gerald Bousquet DIED
+
+Generation: 23 , Average Lines Cleared: 2
+Kathleen Redway, Age: 23 Weights: [36, -60, -78, 30] - Lines Cleared:11
+Clara Fleming, Age: 23 Weights: [-19, -126, -103, -107] - Lines Cleared:7
+Jessica Felder, Age: 23 Weights: [60, -117, -125, -41] - Lines Cleared:6
+Kathleen Merrill, Age: 23 Weights: [-124, -116, 105, -103] - Lines Cleared:1
+Jane Hutchinson, Age: 23 Weights: [125, -101, -58, -24] - Lines Cleared:0
+Wilbur Ahrens, Age: 23 Weights: [25, -5, -32, 117] - Lines Cleared:0
+Ida Jessup, Age: 23 Weights: [84, -58, 5, -93] - Lines Cleared:0
+Harry Janda, Age: 23 Weights: [32, 16, 40, 97] - Lines Cleared:0
+David Dory, Age: 0 Weights: [85, 191, 212, 151] - Lines Cleared:0
+Timothy Goyne, Age: 0 Weights: [44, 125, 133, 144] - Lines Cleared:0
+David Dory DIED
+Timothy Goyne DIED
+
+Generation: 24 , Average Lines Cleared: 2
+Clara Fleming, Age: 24 Weights: [-19, -126, -103, -107] - Lines Cleared:10
+Jessica Felder, Age: 24 Weights: [60, -117, -125, -41] - Lines Cleared:9
+Kathleen Redway, Age: 24 Weights: [36, -60, -78, 30] - Lines Cleared:3
+Kathleen Merrill, Age: 24 Weights: [-124, -116, 105, -103] - Lines Cleared:2
+Jane Hutchinson, Age: 24 Weights: [125, -101, -58, -24] - Lines Cleared:0
+Wilbur Ahrens, Age: 24 Weights: [25, -5, -32, 117] - Lines Cleared:0
+Ida Jessup, Age: 24 Weights: [84, -58, 5, -93] - Lines Cleared:0
+Harry Janda, Age: 24 Weights: [32, 16, 40, 97] - Lines Cleared:0
+John Kammerer, Age: 0 Weights: [42, 182, 199, 255] - Lines Cleared:0
+Terry Gaffigan, Age: 0 Weights: [83, 138, 255, 4] - Lines Cleared:0
+John Kammerer DIED
+Terry Gaffigan DIED
+
+Generation: 25 , Average Lines Cleared: 1
+Kathleen Redway, Age: 25 Weights: [36, -60, -78, 30] - Lines Cleared:10
+Jessica Felder, Age: 25 Weights: [60, -117, -125, -41] - Lines Cleared:4
+Clara Fleming, Age: 25 Weights: [-19, -126, -103, -107] - Lines Cleared:3
+Kathleen Merrill, Age: 25 Weights: [-124, -116, 105, -103] - Lines Cleared:0
+Jane Hutchinson, Age: 25 Weights: [125, -101, -58, -24] - Lines Cleared:0
+Wilbur Ahrens, Age: 25 Weights: [25, -5, -32, 117] - Lines Cleared:0
+Ida Jessup, Age: 25 Weights: [84, -58, 5, -93] - Lines Cleared:0
+Harry Janda, Age: 25 Weights: [32, 16, 40, 97] - Lines Cleared:0
+Ingrid Rogers, Age: 0 Weights: [242, 209, 222, 35] - Lines Cleared:0
+Erik Nichols, Age: 0 Weights: [182, 20, 158, 44] - Lines Cleared:0
+Ingrid Rogers DIED
+Erik Nichols DIED
+
+Generation: 26 , Average Lines Cleared: 2
+Clara Fleming, Age: 26 Weights: [-19, -126, -103, -107] - Lines Cleared:9
+Wilbur Ahrens, Age: 26 Weights: [25, -5, -32, 117] - Lines Cleared:5
+Jessica Felder, Age: 26 Weights: [60, -117, -125, -41] - Lines Cleared:3
+Kathleen Merrill, Age: 26 Weights: [-124, -116, 105, -103] - Lines Cleared:3
+Kathleen Redway, Age: 26 Weights: [36, -60, -78, 30] - Lines Cleared:2
+Jane Hutchinson, Age: 26 Weights: [125, -101, -58, -24] - Lines Cleared:0
+Ida Jessup, Age: 26 Weights: [84, -58, 5, -93] - Lines Cleared:0
+Harry Janda, Age: 26 Weights: [32, 16, 40, 97] - Lines Cleared:0
+Gregory Walker, Age: 0 Weights: [171, 26, 178, 208] - Lines Cleared:0
+Avis Kiel, Age: 0 Weights: [228, 125, 34, 101] - Lines Cleared:0
+Gregory Walker DIED
+Avis Kiel DIED
+
+Generation: 27 , Average Lines Cleared: 1
+Clara Fleming, Age: 27 Weights: [-19, -126, -103, -107] - Lines Cleared:7
+Kathleen Merrill, Age: 27 Weights: [-124, -116, 105, -103] - Lines Cleared:3
+Jessica Felder, Age: 27 Weights: [60, -117, -125, -41] - Lines Cleared:2
+Wilbur Ahrens, Age: 27 Weights: [25, -5, -32, 117] - Lines Cleared:1
+Kathleen Redway, Age: 27 Weights: [36, -60, -78, 30] - Lines Cleared:0
+Jane Hutchinson, Age: 27 Weights: [125, -101, -58, -24] - Lines Cleared:0
+Ida Jessup, Age: 27 Weights: [84, -58, 5, -93] - Lines Cleared:0
+Harry Janda, Age: 27 Weights: [32, 16, 40, 97] - Lines Cleared:0
+Emanuel Harrison, Age: 0 Weights: [170, 126, 80, 16] - Lines Cleared:0
+Elenor Mullens, Age: 0 Weights: [41, 139, 196, 166] - Lines Cleared:0
+Emanuel Harrison DIED
+Elenor Mullens DIED
+
+Generation: 28 , Average Lines Cleared: 1
+Clara Fleming, Age: 28 Weights: [-19, -126, -103, -107] - Lines Cleared:8
+Kathleen Merrill, Age: 28 Weights: [-124, -116, 105, -103] - Lines Cleared:4
+Jessica Felder, Age: 28 Weights: [60, -117, -125, -41] - Lines Cleared:4
+Kathleen Redway, Age: 28 Weights: [36, -60, -78, 30] - Lines Cleared:2
+Wilbur Ahrens, Age: 28 Weights: [25, -5, -32, 117] - Lines Cleared:0
+Jane Hutchinson, Age: 28 Weights: [125, -101, -58, -24] - Lines Cleared:0
+Ida Jessup, Age: 28 Weights: [84, -58, 5, -93] - Lines Cleared:0
+Harry Janda, Age: 28 Weights: [32, 16, 40, 97] - Lines Cleared:0
+Ella Turrie, Age: 0 Weights: [192, 242, 175, 24] - Lines Cleared:0
+Dawn Robinson, Age: 0 Weights: [217, 4, 3, 128] - Lines Cleared:0
+Ella Turrie DIED
+Dawn Robinson DIED
+
+Generation: 29 , Average Lines Cleared: 1
+Clara Fleming, Age: 29 Weights: [-19, -126, -103, -107] - Lines Cleared:7
+Jessica Felder, Age: 29 Weights: [60, -117, -125, -41] - Lines Cleared:3
+Kathleen Redway, Age: 29 Weights: [36, -60, -78, 30] - Lines Cleared:2
+Ida Jessup, Age: 29 Weights: [84, -58, 5, -93] - Lines Cleared:1
+Kathleen Merrill, Age: 29 Weights: [-124, -116, 105, -103] - Lines Cleared:0
+Wilbur Ahrens, Age: 29 Weights: [25, -5, -32, 117] - Lines Cleared:0
+Jane Hutchinson, Age: 29 Weights: [125, -101, -58, -24] - Lines Cleared:0
+Harry Janda, Age: 29 Weights: [32, 16, 40, 97] - Lines Cleared:0
+Catherine Delperdang, Age: 0 Weights: [210, 15, 252, 101] - Lines Cleared:0
+Leonard Dixson, Age: 0 Weights: [71, 215, 44, 18] - Lines Cleared:0
+Catherine Delperdang DIED
+Leonard Dixson DIED
+
+Generation: 30 , Average Lines Cleared: 2
+Clara Fleming, Age: 30 Weights: [-19, -126, -103, -107] - Lines Cleared:14
+Jessica Felder, Age: 30 Weights: [60, -117, -125, -41] - Lines Cleared:4
+Kathleen Redway, Age: 30 Weights: [36, -60, -78, 30] - Lines Cleared:4
+Kathleen Merrill, Age: 30 Weights: [-124, -116, 105, -103] - Lines Cleared:2
+Ida Jessup, Age: 30 Weights: [84, -58, 5, -93] - Lines Cleared:0
+Wilbur Ahrens, Age: 30 Weights: [25, -5, -32, 117] - Lines Cleared:0
+Jane Hutchinson, Age: 30 Weights: [125, -101, -58, -24] - Lines Cleared:0
+Harry Janda, Age: 30 Weights: [32, 16, 40, 97] - Lines Cleared:0
+Wanda Cox, Age: 0 Weights: [238, 75, 37, 35] - Lines Cleared:0
+Daniel Rances, Age: 0 Weights: [229, 171, 57, 12] - Lines Cleared:0
+Wanda Cox DIED
+Daniel Rances DIED
+
+Generation: 31 , Average Lines Cleared: 1
+Clara Fleming, Age: 31 Weights: [-19, -126, -103, -107] - Lines Cleared:11
+Jessica Felder, Age: 31 Weights: [60, -117, -125, -41] - Lines Cleared:3
+Kathleen Redway, Age: 31 Weights: [36, -60, -78, 30] - Lines Cleared:1
+Kathleen Merrill, Age: 31 Weights: [-124, -116, 105, -103] - Lines Cleared:0
+Ida Jessup, Age: 31 Weights: [84, -58, 5, -93] - Lines Cleared:0
+Wilbur Ahrens, Age: 31 Weights: [25, -5, -32, 117] - Lines Cleared:0
+Jane Hutchinson, Age: 31 Weights: [125, -101, -58, -24] - Lines Cleared:0
+Harry Janda, Age: 31 Weights: [32, 16, 40, 97] - Lines Cleared:0
+Lynn Maiava, Age: 0 Weights: [101, 130, 19, 57] - Lines Cleared:0
+Thomas Chitwood, Age: 0 Weights: [47, 8, 184, 23] - Lines Cleared:0
+Lynn Maiava DIED
+Thomas Chitwood DIED
+
+Generation: 32 , Average Lines Cleared: 1
+Jessica Felder, Age: 32 Weights: [60, -117, -125, -41] - Lines Cleared:5
+Clara Fleming, Age: 32 Weights: [-19, -126, -103, -107] - Lines Cleared:4
+Kathleen Redway, Age: 32 Weights: [36, -60, -78, 30] - Lines Cleared:3
+Kathleen Merrill, Age: 32 Weights: [-124, -116, 105, -103] - Lines Cleared:2
+Ida Jessup, Age: 32 Weights: [84, -58, 5, -93] - Lines Cleared:0
+Wilbur Ahrens, Age: 32 Weights: [25, -5, -32, 117] - Lines Cleared:0
+Jane Hutchinson, Age: 32 Weights: [125, -101, -58, -24] - Lines Cleared:0
+Harry Janda, Age: 32 Weights: [32, 16, 40, 97] - Lines Cleared:0
+Adam Parham, Age: 0 Weights: [182, 169, 115, 168] - Lines Cleared:0
+Tara Zadow, Age: 0 Weights: [243, 99, 228, 222] - Lines Cleared:0
+Adam Parham DIED
+Tara Zadow DIED
+
+Generation: 33 , Average Lines Cleared: 1
+Jessica Felder, Age: 33 Weights: [60, -117, -125, -41] - Lines Cleared:6
+Clara Fleming, Age: 33 Weights: [-19, -126, -103, -107] - Lines Cleared:5
+Kathleen Redway, Age: 33 Weights: [36, -60, -78, 30] - Lines Cleared:4
+Kathleen Merrill, Age: 33 Weights: [-124, -116, 105, -103] - Lines Cleared:2
+Ida Jessup, Age: 33 Weights: [84, -58, 5, -93] - Lines Cleared:0
+Wilbur Ahrens, Age: 33 Weights: [25, -5, -32, 117] - Lines Cleared:0
+Jane Hutchinson, Age: 33 Weights: [125, -101, -58, -24] - Lines Cleared:0
+Harry Janda, Age: 33 Weights: [32, 16, 40, 97] - Lines Cleared:0
+Sarah Martin, Age: 0 Weights: [194, 91, 190, 1] - Lines Cleared:0
+Marlene Balnis, Age: 0 Weights: [191, 202, 98, 232] - Lines Cleared:0
+Sarah Martin DIED
+Marlene Balnis DIED
+
+Generation: 34 , Average Lines Cleared: 2
+Jessica Felder, Age: 34 Weights: [60, -117, -125, -41] - Lines Cleared:9
+Kathleen Redway, Age: 34 Weights: [36, -60, -78, 30] - Lines Cleared:5
+Kathleen Merrill, Age: 34 Weights: [-124, -116, 105, -103] - Lines Cleared:4
+Clara Fleming, Age: 34 Weights: [-19, -126, -103, -107] - Lines Cleared:2
+Ida Jessup, Age: 34 Weights: [84, -58, 5, -93] - Lines Cleared:1
+Wilbur Ahrens, Age: 34 Weights: [25, -5, -32, 117] - Lines Cleared:1
+Jane Hutchinson, Age: 34 Weights: [125, -101, -58, -24] - Lines Cleared:0
+Harry Janda, Age: 34 Weights: [32, 16, 40, 97] - Lines Cleared:0
+Aaron Brumbaugh, Age: 0 Weights: [251, 67, 215, 166] - Lines Cleared:0
+Myra Pearson, Age: 0 Weights: [17, 79, 3, 226] - Lines Cleared:0
+Aaron Brumbaugh DIED
+Myra Pearson DIED
+
+Generation: 35 , Average Lines Cleared: 2
+Kathleen Redway, Age: 35 Weights: [36, -60, -78, 30] - Lines Cleared:9
+Clara Fleming, Age: 35 Weights: [-19, -126, -103, -107] - Lines Cleared:8
+Jessica Felder, Age: 35 Weights: [60, -117, -125, -41] - Lines Cleared:5
+Kathleen Merrill, Age: 35 Weights: [-124, -116, 105, -103] - Lines Cleared:1
+Ida Jessup, Age: 35 Weights: [84, -58, 5, -93] - Lines Cleared:1
+Wilbur Ahrens, Age: 35 Weights: [25, -5, -32, 117] - Lines Cleared:1
+Jane Hutchinson, Age: 35 Weights: [125, -101, -58, -24] - Lines Cleared:0
+Harry Janda, Age: 35 Weights: [32, 16, 40, 97] - Lines Cleared:0
+Joanna Garcia, Age: 0 Weights: [252, 111, 238, 253] - Lines Cleared:0
+John Gilbert, Age: 0 Weights: [72, 100, 215, 157] - Lines Cleared:0
+Joanna Garcia DIED
+John Gilbert DIED
+
+Generation: 36 , Average Lines Cleared: 1
+Kathleen Redway, Age: 36 Weights: [36, -60, -78, 30] - Lines Cleared:7
+Jessica Felder, Age: 36 Weights: [60, -117, -125, -41] - Lines Cleared:6
+Clara Fleming, Age: 36 Weights: [-19, -126, -103, -107] - Lines Cleared:4
+Kathleen Merrill, Age: 36 Weights: [-124, -116, 105, -103] - Lines Cleared:1
+Ida Jessup, Age: 36 Weights: [84, -58, 5, -93] - Lines Cleared:0
+Wilbur Ahrens, Age: 36 Weights: [25, -5, -32, 117] - Lines Cleared:0
+Jane Hutchinson, Age: 36 Weights: [125, -101, -58, -24] - Lines Cleared:0
+Harry Janda, Age: 36 Weights: [32, 16, 40, 97] - Lines Cleared:0
+Leonard Miller, Age: 0 Weights: [199, 28, 3, 130] - Lines Cleared:0
+Carol Baker, Age: 0 Weights: [72, 115, 147, 7] - Lines Cleared:0
+Leonard Miller DIED
+Carol Baker DIED
+
+Generation: 0 , Average Lines Cleared: 7
+William Moreno, Age: 0 Weights: [-91, -39, -92, 55] - Lines Cleared:38
+Bradley Colter, Age: 0 Weights: [-120, -46, -93, 13] - Lines Cleared:28
+Edwin Oktavec, Age: 0 Weights: [-10, -74, -83, 68] - Lines Cleared:6
+Abraham Barber, Age: 0 Weights: [-76, -122, 20, -123] - Lines Cleared:1
+Daniel Pennington, Age: 0 Weights: [35, -80, 76, 41] - Lines Cleared:0
+Gordon Crumpton, Age: 0 Weights: [-1, -8, 82, 77] - Lines Cleared:0
+William Sumpter, Age: 0 Weights: [6, -93, 45, -22] - Lines Cleared:0
+Francine Cobb, Age: 0 Weights: [29, -82, 3, -105] - Lines Cleared:0
+Elizabeth Lynch, Age: 0 Weights: [87, 48, -57, -63] - Lines Cleared:0
+William Schear, Age: 0 Weights: [37, 117, -80, 38] - Lines Cleared:0
+Elizabeth Lynch DIED
+William Schear DIED
+
+Generation: 0 , Average Lines Cleared: 1
+Joy Davis, Age: 0 Weights: [-119, -21, -71, -57] - Lines Cleared:8
+Maria Faulkner, Age: 0 Weights: [-2, -83, -29, -108] - Lines Cleared:6
+Linda Finnemore, Age: 0 Weights: [-14, -121, 41, 52] - Lines Cleared:1
+Caitlin Fox, Age: 0 Weights: [36, -121, 71, 26] - Lines Cleared:0
+Carl Banks, Age: 0 Weights: [-89, 118, -82, 117] - Lines Cleared:0
+Fred Beckham, Age: 0 Weights: [-4, -73, 127, 27] - Lines Cleared:0
+Daniel Barber, Age: 0 Weights: [-115, 86, -88, -74] - Lines Cleared:0
+Rodney Chesterfield, Age: 0 Weights: [10, 7, 119, 98] - Lines Cleared:0
+Paul Blue, Age: 0 Weights: [6, 98, -25, -38] - Lines Cleared:0
+James Madden, Age: 0 Weights: [-42, -89, 103, 89] - Lines Cleared:0
+Paul Blue DIED
+James Madden DIED
+
+Generation: 1 , Average Lines Cleared: 2
+Joy Davis, Age: 1 Weights: [-119, -21, -71, -57] - Lines Cleared:18
+Maria Faulkner, Age: 1 Weights: [-2, -83, -29, -108] - Lines Cleared:5
+Linda Finnemore, Age: 1 Weights: [-14, -121, 41, 52] - Lines Cleared:1
+Caitlin Fox, Age: 1 Weights: [36, -121, 71, 26] - Lines Cleared:1
+Jill Gentles, Age: 0 Weights: [102, -96, -115, 57] - Lines Cleared:1
+Carl Banks, Age: 1 Weights: [-89, 118, -82, 117] - Lines Cleared:0
+Fred Beckham, Age: 1 Weights: [-4, -73, 127, 27] - Lines Cleared:0
+Daniel Barber, Age: 1 Weights: [-115, 86, -88, -74] - Lines Cleared:0
+Rodney Chesterfield, Age: 1 Weights: [10, 7, 119, 98] - Lines Cleared:0
+Melissa Dedeke, Age: 0 Weights: [86, -6, -116, -90] - Lines Cleared:0
+Rodney Chesterfield DIED
+Melissa Dedeke DIED
+
+Generation: 2 , Average Lines Cleared: 7
+Joy Davis, Age: 2 Weights: [-119, -21, -71, -57] - Lines Cleared:31
+Sharon Vandestreek, Age: 0 Weights: [-28, -108, -118, -21] - Lines Cleared:23
+Maria Faulkner, Age: 2 Weights: [-2, -83, -29, -108] - Lines Cleared:12
+Mamie Rosas, Age: 0 Weights: [-75, -119, 26, 113] - Lines Cleared:3
+Linda Finnemore, Age: 2 Weights: [-14, -121, 41, 52] - Lines Cleared:1
+Caitlin Fox, Age: 2 Weights: [36, -121, 71, 26] - Lines Cleared:1
+Jill Gentles, Age: 1 Weights: [102, -96, -115, 57] - Lines Cleared:1
+Carl Banks, Age: 2 Weights: [-89, 118, -82, 117] - Lines Cleared:0
+Fred Beckham, Age: 2 Weights: [-4, -73, 127, 27] - Lines Cleared:0
+Daniel Barber, Age: 2 Weights: [-115, 86, -88, -74] - Lines Cleared:0
+Fred Beckham DIED
+Daniel Barber DIED
+
+Generation: 3 , Average Lines Cleared: 4
+Joy Davis, Age: 3 Weights: [-119, -21, -71, -57] - Lines Cleared:21
+Sharon Vandestreek, Age: 1 Weights: [-28, -108, -118, -21] - Lines Cleared:13
+Maria Faulkner, Age: 3 Weights: [-2, -83, -29, -108] - Lines Cleared:5
+Linda Finnemore, Age: 3 Weights: [-14, -121, 41, 52] - Lines Cleared:2
+Mamie Rosas, Age: 1 Weights: [-75, -119, 26, 113] - Lines Cleared:0
+Caitlin Fox, Age: 3 Weights: [36, -121, 71, 26] - Lines Cleared:0
+Jill Gentles, Age: 2 Weights: [102, -96, -115, 57] - Lines Cleared:0
+Carl Banks, Age: 3 Weights: [-89, 118, -82, 117] - Lines Cleared:0
+Phyllis Whitt, Age: 0 Weights: [92, 0, 120, 18] - Lines Cleared:0
+Lori Langham, Age: 0 Weights: [99, 48, -93, -53] - Lines Cleared:0
+Phyllis Whitt DIED
+Lori Langham DIED
+
+Generation: 0 , Average Lines Cleared: 1
+Thomas Romon, Age: 0 Weights: [-11, -77, -73, -121] - Lines Cleared:12
+Tracy Marsingill, Age: 0 Weights: [-64, 72, -78, 14] - Lines Cleared:0
+Arlene Utley, Age: 0 Weights: [8, -112, -28, 104] - Lines Cleared:0
+Clayton Ward, Age: 0 Weights: [-65, 43, 111, -116] - Lines Cleared:0
+Anita Davis, Age: 0 Weights: [-53, 52, 93, -74] - Lines Cleared:0
+Mildred Bunch, Age: 0 Weights: [-27, 81, 32, -44] - Lines Cleared:0
+David Szydlowski, Age: 0 Weights: [63, -5, 29, -99] - Lines Cleared:0
+Dana Stocking, Age: 0 Weights: [91, 29, -27, -83] - Lines Cleared:0
+Matthew Butler, Age: 0 Weights: [28, 86, 91, 59] - Lines Cleared:0
+Jose Belknap, Age: 0 Weights: [-40, 17, 9, 11] - Lines Cleared:0
+Matthew Butler DIED
+Jose Belknap DIED
+
+Generation: 1 , Average Lines Cleared: 2
+Robert Mcilwain, Age: 0 Weights: [-103, -80, -110, 50] - Lines Cleared:9
+Thomas Romon, Age: 1 Weights: [-11, -77, -73, -121] - Lines Cleared:8
+Arlene Utley, Age: 1 Weights: [8, -112, -28, 104] - Lines Cleared:6
+Tracy Marsingill, Age: 1 Weights: [-64, 72, -78, 14] - Lines Cleared:0
+Clayton Ward, Age: 1 Weights: [-65, 43, 111, -116] - Lines Cleared:0
+Anita Davis, Age: 1 Weights: [-53, 52, 93, -74] - Lines Cleared:0
+Mildred Bunch, Age: 1 Weights: [-27, 81, 32, -44] - Lines Cleared:0
+David Szydlowski, Age: 1 Weights: [63, -5, 29, -99] - Lines Cleared:0
+Dana Stocking, Age: 1 Weights: [91, 29, -27, -83] - Lines Cleared:0
+Juanita Johnson, Age: 0 Weights: [114, -29, -85, -51] - Lines Cleared:0
+Dana Stocking DIED
+Juanita Johnson DIED
+
+Generation: 2 , Average Lines Cleared: 6
+Jacob Postal, Age: 0 Weights: [-43, -39, -111, 71] - Lines Cleared:32
+Robert Mcilwain, Age: 1 Weights: [-103, -80, -110, 50] - Lines Cleared:14
+Thomas Romon, Age: 2 Weights: [-11, -77, -73, -121] - Lines Cleared:12
+Arlene Utley, Age: 2 Weights: [8, -112, -28, 104] - Lines Cleared:7
+David Luke, Age: 0 Weights: [-54, -112, 5, -119] - Lines Cleared:3
+Tracy Marsingill, Age: 2 Weights: [-64, 72, -78, 14] - Lines Cleared:0
+Clayton Ward, Age: 2 Weights: [-65, 43, 111, -116] - Lines Cleared:0
+Anita Davis, Age: 2 Weights: [-53, 52, 93, -74] - Lines Cleared:0
+Mildred Bunch, Age: 2 Weights: [-27, 81, 32, -44] - Lines Cleared:0
+David Szydlowski, Age: 2 Weights: [63, -5, 29, -99] - Lines Cleared:0
+Mildred Bunch DIED
+David Szydlowski DIED

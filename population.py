@@ -77,27 +77,7 @@ class GA(object):
         self.app.ai = self.ai
 
     #start running the game
-    def Run(self):
-        
-        """ mutation & crossover tests
-        a = Organism([9,32,4,222])
-        print("before mutation")
-        print(a.heuristics)
-        print("\n")
-        self.mutate(a,20)
-        print("after mutation: \n")
-        print(a.heuristics)
-        
-        b = Organism([21,7,62,100])
-        c = self.Crossover(a,b)
-        print(c.heuristics)
-        """
-        """ pruning test
-        self.SelectSurvivors()
-        for i in self.population:
-            print(i.heuristics)
-        """
-        
+    def Run(self):   
         self.app.run()
 
     #This def 
@@ -123,13 +103,7 @@ class GA(object):
         self.app.start_game(self.current_generation)
 
     #check if the population has converged
-    """
-    def PopConvergenced(self):
-        pop = self.population
-        #check each organism in the population and see if the genes in the population
-        #are close to each other (have similar values)
-        return all(all(pop[0].heuristics[f]-self.convergence_threshold < weights < pop[0].heuristics[f] + self.convergence_threshold for f, weights in self.current_organism.heuristics.items()) for organism in pop)
-    """
+
     #this def takes the current population, removes the worst two organisms and 
     #re-produces two new ones to add to the population
     def NextGeneration(self):
@@ -144,11 +118,6 @@ class GA(object):
             for a in self.population:
                 f.write("%s, Age: %s Weights: %s - Lines Cleared:%s\n" % (a.name, a.age, a.heuristics, a.fitness))
                 
-        #if the population has converged, dont need another generation, print out
-        #the genes and weights for each organism in the converged population
-        #if self.PopConvergenced():
-        #    print("The Population has converged on generation %s\n", self.current_generation)
-        #else the population has not converged, remove two worst organisms
         #increment the generation
         self.current_generation += 1
         #create the new population with only the survivors

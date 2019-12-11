@@ -159,7 +159,7 @@ class TetrisApp(object):
 							pygame.Rect((off_x+x)*CELL_SIZE, (off_y+y)*CELL_SIZE, CELL_SIZE, CELL_SIZE), 0)
 					except IndexError:
 						print("Corrupted board") 
-						self.print_board()
+						#self.print_board()
 						
 	
 	def add_cl_lines(self, n):

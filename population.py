@@ -59,7 +59,7 @@ class GA(object):
         self.num_of_organisms = 100
         self.survivors = 70
         self.new_organisms = self.num_of_organisms - self.survivors
-        self.mutation_rate = .5
+        self.mutation_rate = .2
         self.convergence_threshold = 85
         #initialize the population
         self.population = InitPop(self.num_of_organisms)   
@@ -210,9 +210,15 @@ class GA(object):
             binWeight = numpy.binary_repr(weight, width=8)
             temp = list(binWeight)
             #temp2 = list(numpy.binary_repr(randomNew.heuristics[num], width=8))
-            #print(temp)
-            for i in range(0,len(temp)):
-                if random.random() < (1 - self.mutation_rate):
+
+            #we want to lower the frequency of mutating the signed bit (too large a change)
+            if random.random() < .05:
+                if temp[0] == '0':
+                        temp[0] = '1'
+                else:
+                        temp[0] = '0'
+            for i in range(1,len(temp)):
+                if random.random() < self.mutation_rate:
                     if temp[i] == '0':
                         temp[i] = '1'
                     else:

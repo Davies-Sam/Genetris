@@ -85,6 +85,40 @@ def LinesCleared(board):
             cleared += 1
     return cleared
 
+
+
+#Vertically connected holes
+def ConnectedHoles(board):
+    height = len(board) - 1 
+    width = len(board[1])
+    holes = 0
+    holeInColumn = {0: 0, 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0}
+    for row, rowElements in enumerate(board):
+        x=0
+        for cell in rowElements:
+            #if the height of the column is > height of 0 cell, we know we have a hole
+            if cell == 0 and ColumnHeight(board, x) > (height - row):
+                holeInColumn[x] += 1
+                holes += 1
+            x += 1
+    return holes
+
+#Altitude difference
+
+#Maximum well depth
+
+#Number of wells
+
+#Height of placed piece
+
+#Weighted Blocks (sum of occupied blocks, n-th row counts n times)
+
+#Horizontal Transitions (adjacent blocks arent either both empty or both occupied)
+
+#Vertical Transitions (adjacent blocks aren't either both empty or both occupied)
+
+
+
 #This is the 'main' function of the file, the only one to be called externally.
 #It will return the score of a placement by checking the weighted heuristics
 #On the board and weights that is passed to this utility function.

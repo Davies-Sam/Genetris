@@ -12,3 +12,4 @@
 12) Let the Algorithm run for a day at least: Created: 12/9 Completed: 12/10
 13) Name the organisms so we can track them more easily in the logs  Created: 12/9 Completed: 12/10
 14) Consider fixing the piece sequence Created: 12/10 Completed: 12/10
+15) Add more heuristics Created: 12/11 Completed:

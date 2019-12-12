@@ -13,19 +13,21 @@ import heuristics
 import numpy
 import names
 import struct 
-
+################################################################################
+#currently unused - ran into issue with floating point mutations
 ################################################################################
 def float_to_bin(num):
     return format(struct.unpack('!I', struct.pack('!f', num))[0], '032b')
 
 def bin_to_float(binary):
     return struct.unpack('!f',struct.pack('!I', int(binary, 2)))[0]
+#################################################################################
     
 def RandomOrganism():
     nums = []
     for j in range(0, 10):
-        #a = random.randint(-128, 127)
-        a = round(random.uniform(-10, 10),1)
+        a = random.randint(-128, 127)
+        #a = round(random.uniform(-5, 5),1)
         nums.append(a)
     organism = Organism(nums)
     return organism
@@ -60,8 +62,8 @@ class Organism(object):
 ###################################################################################
 class GA(object):
     def __init__(self):
-        self.num_of_organisms = 150
-        self.survivors = 120
+        self.num_of_organisms = 10
+        self.survivors = 8
         self.new_organisms = self.num_of_organisms - self.survivors
         self.mutation_rate = .1
         #initialize the population
@@ -179,8 +181,8 @@ class GA(object):
     def mutate(self, organism, mutation_chance):
         #randomNew = RandomOrganism()
         for num, weight in enumerate(organism.heuristics):
-            #binWeight = numpy.binary_repr(int(weight), width=8)
-            binWeight = float_to_bin(weight)
+            binWeight = numpy.binary_repr(int(weight), width=8)
+            #binWeight = float_to_bin(weight)
             temp = list(binWeight)
             #temp2 = list(numpy.binary_repr(randomNew.heuristics[num], width=8))
 
@@ -191,24 +193,26 @@ class GA(object):
                 else:
                         temp[0] = '0'
             #mutate the mantissa
-            for i in range(9,len(temp)):
+            for i in range(1,len(temp)):
                 if random.random() < self.mutation_rate:
                     if temp[i] == '0':
                         temp[i] = '1'
                     else:
                         temp[i] = '0'
-            """
+            
             x = int(''.join(str(i) for i in temp[1:]), 2)
             if temp[0] == '1':
                 organism.heuristics[num] = -x
             else:
                 organism.heuristics[num] = x
-            """
+            
+            """ floating point
             x = round(bin_to_float(''.join(str(i) for i in temp[1:])),4)
             if temp[0] == '1':
                 organism.heuristics[num] = -x
             else:
                 organism.heuristics[num] = x
+            """
             
             #print(organism.heuristics[num])
                     

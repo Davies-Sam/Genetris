@@ -31,7 +31,7 @@ class Agent(object):
         self.tetris = tetris
         self.best_move = None
         #self.organism = organism
-        self.instantPlay = False
+        self.instantPlay = True
 
         #this var will contain the heuristics of a single organism, will be updated
         #when we work on a different organism

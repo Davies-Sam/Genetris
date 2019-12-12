@@ -1,2 +1,62 @@
 Weights: TotalHeight, Bumpiness, Holes, LinesCleared, Connected Holes, Blockades, Altitude Delta, Weighted Blocks, H-Roughness, V-Roughness.
- Mutation Rate: 0.1 , Replacement Per Cycle: 100
+ Mutation Rate: 0.1 , Replacement Per Cycle: 2
+
+Generation: 0 , Average Lines Cleared: 6
+Jospeh Clement, Age: 0 Weights: [5, -69, -61, -70, -45, -107, -99, -18, -128, 64] - Lines Cleared:19
+Bonnie Logan, Age: 0 Weights: [32, 32, -52, -19, -110, -113, -60, -33, -80, 64] - Lines Cleared:17
+Monserrate Merriman, Age: 0 Weights: [-81, 37, -88, -118, -29, -11, -35, -83, -116, -40] - Lines Cleared:13
+Brandon Range, Age: 0 Weights: [-42, -128, -67, -1, -52, 43, -112, -21, -124, -126] - Lines Cleared:8
+Nellie Rio, Age: 0 Weights: [-115, 107, -31, -121, -12, -13, 7, -81, -115, 81] - Lines Cleared:3
+Ashley Cox, Age: 0 Weights: [67, 39, -54, 96, 97, -14, 18, 54, 33, 32] - Lines Cleared:0
+Anita Jones, Age: 0 Weights: [59, 92, -82, 16, 108, -55, -35, 55, 120, -80] - Lines Cleared:0
+Jessica Alston, Age: 0 Weights: [64, -101, 53, 58, -1, 103, -45, 116, 37, -96] - Lines Cleared:0
+Tom Coan, Age: 0 Weights: [119, 79, -24, -67, 123, -67, 30, -88, -54, -30] - Lines Cleared:0
+Alfred Speaks, Age: 0 Weights: [-36, 69, -92, 124, 122, -106, -127, 117, -26, -43] - Lines Cleared:0
+
+Generation: 1 , Average Lines Cleared: 9
+Haywood Youngman, Age: 0 Weights: [-62, 39, -72, 96, 69, -12, -16, -87, -124, 34] - Lines Cleared:20
+Jospeh Clement, Age: 1 Weights: [5, -69, -61, -70, -45, -107, -99, -18, -128, 64] - Lines Cleared:19
+Bonnie Logan, Age: 1 Weights: [32, 32, -52, -19, -110, -113, -60, -33, -80, 64] - Lines Cleared:17
+Monserrate Merriman, Age: 1 Weights: [-81, 37, -88, -118, -29, -11, -35, -83, -116, -40] - Lines Cleared:13
+Don Soto, Age: 0 Weights: [-86, 39, -66, 96, -76, -116, -18, -105, -4, 34] - Lines Cleared:11
+Brandon Range, Age: 1 Weights: [-42, -128, -67, -1, -52, 43, -112, -21, -124, -126] - Lines Cleared:8
+Nellie Rio, Age: 1 Weights: [-115, 107, -31, -121, -12, -13, 7, -81, -115, 81] - Lines Cleared:3
+Ashley Cox, Age: 1 Weights: [67, 39, -54, 96, 97, -14, 18, 54, 33, 32] - Lines Cleared:0
+Anita Jones, Age: 1 Weights: [59, 92, -82, 16, 108, -55, -35, 55, 120, -80] - Lines Cleared:0
+Jessica Alston, Age: 1 Weights: [64, -101, 53, 58, -1, 103, -45, 116, 37, -96] - Lines Cleared:0
+
+Generation: 2 , Average Lines Cleared: 10
+Haywood Youngman, Age: 1 Weights: [-62, 39, -72, 96, 69, -12, -16, -87, -124, 34] - Lines Cleared:20
+Jospeh Clement, Age: 2 Weights: [5, -69, -61, -70, -45, -107, -99, -18, -128, 64] - Lines Cleared:19
+Bonnie Logan, Age: 2 Weights: [32, 32, -52, -19, -110, -113, -60, -33, -80, 64] - Lines Cleared:17
+Kylie Tenorio, Age: 0 Weights: [-86, -1, -76, -109, 18, 59, 70, -106, 20, -2] - Lines Cleared:14
+Monserrate Merriman, Age: 2 Weights: [-81, 37, -88, -118, -29, -11, -35, -83, -116, -40] - Lines Cleared:13
+Don Soto, Age: 1 Weights: [-86, 39, -66, 96, -76, -116, -18, -105, -4, 34] - Lines Cleared:11
+Brandon Range, Age: 2 Weights: [-42, -128, -67, -1, -52, 43, -112, -21, -124, -126] - Lines Cleared:8
+Nellie Rio, Age: 2 Weights: [-115, 107, -31, -121, -12, -13, 7, -81, -115, 81] - Lines Cleared:3
+James Reeves, Age: 0 Weights: [-13, 107, -73, -58, -112, -21, -85, -46, -4, 81] - Lines Cleared:2
+Ashley Cox, Age: 2 Weights: [67, 39, -54, 96, 97, -14, 18, 54, 33, 32] - Lines Cleared:0
+
+Generation: 3 , Average Lines Cleared: 10
+Haywood Youngman, Age: 2 Weights: [-62, 39, -72, 96, 69, -12, -16, -87, -124, 34] - Lines Cleared:20
+Jospeh Clement, Age: 3 Weights: [5, -69, -61, -70, -45, -107, -99, -18, -128, 64] - Lines Cleared:19
+Bonnie Logan, Age: 3 Weights: [32, 32, -52, -19, -110, -113, -60, -33, -80, 64] - Lines Cleared:17
+Kylie Tenorio, Age: 1 Weights: [-86, -1, -76, -109, 18, 59, 70, -106, 20, -2] - Lines Cleared:14
+Monserrate Merriman, Age: 3 Weights: [-81, 37, -88, -118, -29, -11, -35, -83, -116, -40] - Lines Cleared:13
+Don Soto, Age: 2 Weights: [-86, 39, -66, 96, -76, -116, -18, -105, -4, 34] - Lines Cleared:11
+Brandon Range, Age: 3 Weights: [-42, -128, -67, -1, -52, 43, -112, -21, -124, -126] - Lines Cleared:8
+Nellie Rio, Age: 3 Weights: [-115, 107, -31, -121, -12, -13, 7, -81, -115, 81] - Lines Cleared:3
+Thomas Mayo, Age: 0 Weights: [-66, 39, -40, 96, -69, -117, -29, -33, -77, -24] - Lines Cleared:2
+Amanda Johnson, Age: 0 Weights: [-42, -126, -52, 96, -32, -12, -108, -23, -88, -126] - Lines Cleared:1
+
+Generation: 4 , Average Lines Cleared: 12
+Haywood Youngman, Age: 3 Weights: [-62, 39, -72, 96, 69, -12, -16, -87, -124, 34] - Lines Cleared:20
+Jospeh Clement, Age: 4 Weights: [5, -69, -61, -70, -45, -107, -99, -18, -128, 64] - Lines Cleared:19
+Bonnie Logan, Age: 4 Weights: [32, 32, -52, -19, -110, -113, -60, -33, -80, 64] - Lines Cleared:17
+Kylie Tenorio, Age: 2 Weights: [-86, -1, -76, -109, 18, 59, 70, -106, 20, -2] - Lines Cleared:14
+Stacie Pfeiffer, Age: 0 Weights: [-46, -39, -113, 40, -116, -115, 7, -23, -92, 34] - Lines Cleared:14
+Monserrate Merriman, Age: 4 Weights: [-81, 37, -88, -118, -29, -11, -35, -83, -116, -40] - Lines Cleared:13
+Don Soto, Age: 3 Weights: [-86, 39, -66, 96, -76, -116, -18, -105, -4, 34] - Lines Cleared:11
+Brandon Range, Age: 4 Weights: [-42, -128, -67, -1, -52, 43, -112, -21, -124, -126] - Lines Cleared:8
+Nellie Rio, Age: 4 Weights: [-115, 107, -31, -121, -12, -13, 7, -81, -115, 81] - Lines Cleared:3
+Michelle Twilley, Age: 0 Weights: [-42, 39, -125, 32, -12, 43, -46, -23, -1, -2] - Lines Cleared:2

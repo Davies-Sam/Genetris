@@ -8,7 +8,7 @@ ROWS =		22
 MAXFPS = 	30
 PIECELIMIT = 300
 DROP_TIME = 20
-DRAW = True
+DRAW = False
 
 tetris_shapes = [
 	[[1, 1, 1],

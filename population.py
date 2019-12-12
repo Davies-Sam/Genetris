@@ -62,10 +62,10 @@ class Organism(object):
 ###################################################################################
 class GA(object):
     def __init__(self):
-        self.num_of_organisms = 10
-        self.survivors = 8
+        self.num_of_organisms = 100
+        self.survivors = 85
         self.new_organisms = self.num_of_organisms - self.survivors
-        self.mutation_rate = .1
+        self.mutation_rate = .05
         #initialize the population
         self.population = InitPop(self.num_of_organisms)   
         #keep track of which organism in the population we are working on

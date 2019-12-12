@@ -21,8 +21,8 @@ import heuristics
 from tetris import check_collision, COLS, rotate_clockwise, join_matrixes
 from collections import namedtuple
 Move = namedtuple('Move', ['x_pos', 'rotation', 'result'])
-#pass an organism
 
+#weights = [-1.99,-1.99,-1.4,3.0,-2.5,-2.6,-2.59,-2.4,-1.39,-1.55]
 class Agent(object):
     #################################################################################
         #################################################################################
@@ -31,7 +31,7 @@ class Agent(object):
         self.tetris = tetris
         self.best_move = None
         #self.organism = organism
-        self.instantPlay = True
+        self.instantPlay = False
 
         #this var will contain the heuristics of a single organism, will be updated
         #when we work on a different organism
@@ -43,12 +43,13 @@ class Agent(object):
     def find_best_move(self):
         all_moves = []
         piece = self.tetris.stone
-
+        
         #want to use the same rotation shape for each column,
         #saves time so we dont have to re-rotate a piece each time
         for rotation in range(self.rotations_per_piece(piece)):
             #now that we have a config of a piece/tetromino/stone,
             #check each column with it
+            #print(len(piece[0]))
             for x in range( ( COLS - len(piece[0]) ) + 1 ):
                 y = self.top_of_column(x, piece)
                 #get a new board config after adding the current piece's rotation
@@ -71,13 +72,15 @@ class Agent(object):
         best_board_state = None
 
         #check how good each placement is for each placement
-        
-        for a_move in all_moves:
-            #passing the new_board var into the util function
-            #NEEDS TO BE UPDATED!!!! WILL WORK ON LATER.
-            pop = self.tetris.genetics.population
-            curOrgIndex = self.tetris.genetics.current_organism
-            workingOrganism = pop[curOrgIndex]
+
+        pop = self.tetris.genetics.population
+        curOrgIndex = self.tetris.genetics.current_organism
+        workingOrganism = pop[curOrgIndex]
+
+
+        #iterate over the moves and choose the best one.
+        #temp = float("-inf")
+        for a_move in all_moves:    
             temp = heuristics.Utility_Function(a_move[2], workingOrganism.heuristics)
             if temp > max_util:
                 max_util = temp
@@ -93,7 +96,7 @@ class Agent(object):
         #max_util has the utility of the best board state
         #best_board_state contains x_coord, rotation of the piece, and how the board
         #will look after the piece is placed on the current board
-        self.best_move = best_board_state
+        #self.best_move = best_board_state
         return best_board_state
 
     #################################################################################
@@ -107,20 +110,16 @@ class Agent(object):
         #move = [x_coord, rotation, new_board]
         move = self.find_best_move()
 
-        #lock so we are working on something that is running
-        tetris.lock.acquire()
-
         #rotate the piece until it is in the config we want
         for r in range(move[1]):
             tetris.stone = rotate_clockwise(tetris.stone)
 
         #move the piece over to the correct column
-        tetris.move_to(move[0])
+        tetris.move_to(move.x_pos)
         #if we are still playing, not paused
         if self.instantPlay:
-            tetris.stone_y = self.top_of_column(move[0], tetris.stone)
+            tetris.stone_y = self.top_of_column(move.x_pos, tetris.stone)
         #free the board
-        tetris.lock.release()
 
     #################################################################################
     #this function finds how far down the piece needs to go before a collision
@@ -139,8 +138,8 @@ class Agent(object):
     #This definition calculates the number of times we can rotate a piece without
     #getting a duplicate configuration, depends on which piece we are looking at
     #good.
-    
-    def rotations_per_piece(self, piece):
+    @staticmethod
+    def rotations_per_piece(piece):
         #pieces contains a list of each configuration
         pieces = [piece]
 

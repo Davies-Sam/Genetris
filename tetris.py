@@ -1,8 +1,6 @@
 import random
 import pygame, sys
 from copy import deepcopy
-from threading import Lock
-
 
 CELL_SIZE =	20
 COLS =		10
@@ -86,7 +84,7 @@ class TetrisApp(object):
 	def __init__(self, genetics):
 		self.DROPEVENT = pygame.USEREVENT + 1
 		pygame.init()
-		pygame.display.set_caption("Tetris AI")
+		pygame.display.set_caption("Final Project")
 		pygame.key.set_repeat(250,25)
 		self.width = CELL_SIZE * (COLS+10)
 		self.height = CELL_SIZE * ROWS
@@ -100,7 +98,8 @@ class TetrisApp(object):
 		self.gameover = False
 		self.genetics = genetics
 		self.ai = None
-		self.lock = Lock()
+		#
+		# self.lock = Lock()
 		
 		self.init_game(0)
 	
@@ -122,12 +121,9 @@ class TetrisApp(object):
 		self.board = new_board()
 		self.score = 0	
 		self.linesCleared = 0
-		#start ever game with a flat piece
-		self.next_stone = tetris_shapes[5]
-		#print("NEW GAME!")
-		#print(self.next_stone)
+		#start every game with a flat piece
+		self.next_stone = tetris_shapes[6]
 		self.new_stone()
-	
 		pygame.time.set_timer(self.DROPEVENT, DROP_TIME)
 	
 	def disp_msg(self, msg, topleft):
@@ -183,7 +179,7 @@ class TetrisApp(object):
 				self.stone_x = new_x
 	
 	def drop(self):
-		self.lock.acquire()
+		
 		if not self.gameover:
 			self.stone_y += 1
 			if check_collision(self.board, self.stone, (self.stone_x, self.stone_y)):
@@ -196,12 +192,11 @@ class TetrisApp(object):
 						cleared_rows += 1
 				self.add_cl_lines(cleared_rows)
 
-				self.lock.release()				
+								
 				if self.ai:
 					self.ai.update_board()
 
 				return True
-		self.lock.release()
 		return False
 	
 	def insta_drop(self):
@@ -217,7 +212,7 @@ class TetrisApp(object):
 
 	def start_game(self,seed):
 		if self.gameover:
-			self.init_game(seed)
+			self.init_game(432)
 			self.gameover = False
 
 	def quit(self):
@@ -241,12 +236,18 @@ class TetrisApp(object):
 			print('\n')
 			i+=1
 		"""
-		a = self.genetics.RandomOrganism()
-		b = self.genetics.RandomOrganism()
-		print(a.heuristics)
-		print(b.heuristics)
+		import heuristics
+		print("height %s" % heuristics.TotalHeight(self.board))
+		print("bump %s" % heuristics.Bumpiness(self.board))
+		print("holes %s" % heuristics.HolesCreated(self.board))
+		print("linesc %s" % heuristics.LinesCleared(self.board))
+		print("connectedholes %s" % heuristics.ConnectedHoles(self.board))
+		print("blockade %s" % heuristics.Blockades(self.board))
+		print("altDelta %s" % heuristics.AltitudeDelta(self.board))
+		print("WeighteBlocks %s" % heuristics.WeightedBlocks(self.board))
+		print("Horiz R %s" % heuristics.HorizontalRoughness(self.board))
+		print("Vert R %s" % heuristics.VerticalRoughness(self.board))
 		"""
-		#print(heuristics.WeightedBlocks(self.board))
 
 	def run(self):
 		key_actions = {
@@ -263,8 +264,7 @@ class TetrisApp(object):
 		
 		#clock = pygame.time.Clock()
 		while True:
-			if DRAW:
-				
+			if DRAW:		
 				self.screen.fill((0,0,0))
 				if self.gameover:
 					self.center_msg("Game Over!\nYour score: %d\nPress space to continue" % self.score)

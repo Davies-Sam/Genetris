@@ -232,5 +232,5 @@ def Utility_Function(board, weights):
     wVroughness = vRoughness * weights[9]
 
     #sum the weighted heurstics to get the score of a piece placement
-    score = wHeight + wBump + wHoles + wCleared + wConnectedHoles + wBlockades + wAltitudeDelta + wWeightedBlocks + wHroughness + wVroughness
+    score = (wHeight + wBump + wHoles + wCleared + wConnectedHoles + wBlockades + wAltitudeDelta + wWeightedBlocks + wHroughness + wVroughness)
     return score

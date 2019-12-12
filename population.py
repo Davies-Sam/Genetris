@@ -62,8 +62,8 @@ class Organism(object):
 ###################################################################################
 class GA(object):
     def __init__(self):
-        self.num_of_organisms = 100
-        self.survivors = 85
+        self.num_of_organisms = 10
+        self.survivors = 8
         self.new_organisms = self.num_of_organisms - self.survivors
         self.mutation_rate = .05
         #initialize the population
@@ -169,11 +169,19 @@ class GA(object):
     #returns an Organism
     def Crossover(self, parent1, parent2):
         weights = []
-        for i in range(0, len(parent1.heuristics)):
-            if random.random() < .5:
-                weights.append(parent1.heuristics[i])
-            else:
-                weights.append(parent2.heuristics[i])
+
+        for x in range(0, len(parent1.heuristics)):
+            p1 = list(numpy.binary_repr(int(parent1.heuristics[x]), width=8))
+            p2 = list(numpy.binary_repr(int(parent2.heuristics[x]), width=8))
+            temp = p1
+            for i in range(0, len(p1)):
+                if random.random() < .5:
+                    temp[i] = p1[i]
+                else:
+                    temp[i] = p2[i]
+            x = int(''.join(str(i) for i in temp), 2)
+            weights.append(x)
+
         return Organism(weights)
 
 
@@ -185,7 +193,6 @@ class GA(object):
             #binWeight = float_to_bin(weight)
             temp = list(binWeight)
             #temp2 = list(numpy.binary_repr(randomNew.heuristics[num], width=8))
-
             #we want to lower the frequency of mutating the signed bit (too large a change)
             if random.random() < .05:
                 if temp[0] == '0':

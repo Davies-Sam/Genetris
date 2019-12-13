@@ -8,6 +8,12 @@ http://www.cs.uml.edu/ecg/uploads/AIfall10/eshahar_rwest_GATetris.pdf
 
 https://ieeexplore.ieee.org/document/8247067
  , also available at: https://www.researchgate.net/publication/322321608_Playing_the_Original_Game_Boy_Tetris_Using_a_Real_Coded_Genetic_Algorithm
+ 
+http://www.cs.umsl.edu/~janikow/publications/1991/GAbin/text.pdf
+
+https://karczmarczuk.users.greyc.fr/TEACH/IAD/GenDoc/FlPointChromosome.pdf
+
+http://wpmedia.wolfram.com/uploads/sites/13/2018/02/09-6-1.pdf
 
 https://codemyroad.wordpress.com/2013/04/14/tetris-ai-the-near-perfect-player/
 

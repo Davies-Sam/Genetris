@@ -26,8 +26,8 @@ def bin_to_float(binary):
 def RandomOrganism():
     nums = []
     for j in range(0, 10):
-        a = random.randint(-128, 127)
-        #a = round(random.uniform(-5, 5),1)
+        #a = random.randint(-128, 127)
+        a = round(random.uniform(-1, 1),4)
         nums.append(a)
     organism = Organism(nums)
     return organism
@@ -62,8 +62,8 @@ class Organism(object):
 ###################################################################################
 class GA(object):
     def __init__(self):
-        self.num_of_organisms = 10
-        self.survivors = 8
+        self.num_of_organisms = 20
+        self.survivors = 4
         self.new_organisms = self.num_of_organisms - self.survivors
         self.mutation_rate = .05
         #initialize the population
@@ -81,7 +81,7 @@ class GA(object):
 
     #start running the game
     def Run(self):
-        with open('results.txt', 'w') as f:
+        with open('resultsFixed.txt', 'w') as f:
             f.write("Weights: TotalHeight, Bumpiness, Holes, LinesCleared, Connected Holes, Blockades, Altitude Delta, Weighted Blocks, H-Roughness, V-Roughness.\n Mutation Rate: %s , Replacement Per Cycle: %s\n" % (self.mutation_rate, self.new_organisms))
         self.app.run()
 
@@ -105,9 +105,25 @@ class GA(object):
         #load the next organism into the algo
         self.NextAI()
         #restart the game
-        self.app.start_game(self.current_generation)
+        self.app.start_game(1)
 
     #check if the population has converged
+    
+
+    # roulette selection 
+    def roulette(self):
+        fSum = float(sum([org.fitness for org in self.population]))
+        relativeFitness = []
+        for x in range(0, len(self.population)):
+            relativeFitness.append(self.population[x].fitness/fSum)
+        #worse organisms are more likey to miss in roulette
+        probs = [sum(relativeFitness[:i+1]) for i in range(len(relativeFitness))]
+        r = random.random()
+        for i, organism in enumerate(self.population):
+            if r <= probs[i]:
+                
+                return organism
+        
 
     #this def takes the current population, removes the worst two organisms and 
     #re-produces two new ones to add to the population
@@ -118,7 +134,7 @@ class GA(object):
         averageScore = averageScore/len(self.population)
         self.population.sort(key=lambda x: x.fitness, reverse=True)
         #print the last generation out
-        with open('results.txt', 'a') as f:
+        with open('resultsFixed.txt', 'a') as f:
             f.write("\nGeneration: %s , Average Lines Cleared: %s\n" % (self.current_generation, averageScore))
             for a in self.population:
                 f.write("%s, Age: %s Weights: %s - Lines Cleared:%s\n" % (a.name, a.age, a.heuristics, a.fitness))
@@ -131,10 +147,14 @@ class GA(object):
         #create the new organisms to add to the new_pop
         for x in range (0, self.new_organisms):
             #select two parents
-            parents = random.sample(self.population, 2)
+            parent1 = self.roulette()
+            parent2 = self.roulette()
+            while parent1 == parent2:
+                parent2 = self.roulette()
+            print("p1: %s , p2: %s" % (parent1.name, parent2.name))
             #print("SELECTED PARENTS %s %s" % (parents[0].name, parents[1].name))
             #create the new organism
-            a = self.Crossover(parents[0],parents[1])
+            a = self.Crossover(parent1,parent2)
             #mutate the child
             #print("child: %s\n" % a.heuristics)
             self.mutate(a,self.mutation_rate)
@@ -153,33 +173,30 @@ class GA(object):
         #sort the population by Organism.fitness
      
         self.population.sort(key=lambda x: x.fitness, reverse=True)
-        for organism in self.population:
-            organism.age += 1
-            """
-        #temp for logging
-        kill = self.population[-self.new_organisms:] 
-        with open('results.txt', 'a') as f:
-            for organism in kill:
-                f.write("%s DIED\n" % organism.name)
-        """
+        
+   
         #kill off amount needed to introduce specified amount of new organisms
         self.population = self.population[:len(self.population)-(self.new_organisms)]
+
+        for organism in self.population:
+            organism.age += 1
 
     #takes two parents and does uniform crossover
     #returns an Organism
     def Crossover(self, parent1, parent2):
         weights = []
-
+    
         for x in range(0, len(parent1.heuristics)):
-            p1 = list(numpy.binary_repr(int(parent1.heuristics[x]), width=8))
-            p2 = list(numpy.binary_repr(int(parent2.heuristics[x]), width=8))
+            p1 = list(float_to_bin(parent1.heuristics[x]))
+            p2 = list(float_to_bin(parent1.heuristics[x]))
             temp = p1
-            for i in range(0, len(p1)):
+            m = 16
+            for i in range(0, 16):
                 if random.random() < .5:
-                    temp[i] = p1[i]
+                    temp[m] = p1[m]
                 else:
-                    temp[i] = p2[i]
-            x = int(''.join(str(i) for i in temp), 2)
+                    temp[m] = p2[m]
+            x = round(bin_to_float(''.join(str(i) for i in temp)), 2)
             weights.append(x)
 
         return Organism(weights)
@@ -187,41 +204,26 @@ class GA(object):
 
     #mutates the weights of a chromosome
     def mutate(self, organism, mutation_chance):
-        #randomNew = RandomOrganism()
-        for num, weight in enumerate(organism.heuristics):
-            binWeight = numpy.binary_repr(int(weight), width=8)
-            #binWeight = float_to_bin(weight)
-            temp = list(binWeight)
-            #temp2 = list(numpy.binary_repr(randomNew.heuristics[num], width=8))
+        for num, weight in enumerate(organism.heuristics):    
+            binWeight = float_to_bin(weight)
+            temp = list(binWeight)     
             #we want to lower the frequency of mutating the signed bit (too large a change)
-            if random.random() < .05:
+            if random.random() < self.mutation_rate/2:
                 if temp[0] == '0':
                         temp[0] = '1'
                 else:
                         temp[0] = '0'
-            #mutate the mantissa
-            for i in range(1,len(temp)):
+            x = 16
+            for i in range(0,16):
                 if random.random() < self.mutation_rate:
-                    if temp[i] == '0':
-                        temp[i] = '1'
+                    if temp[x] == '0':
+                        temp[x] = '1'
                     else:
-                        temp[i] = '0'
-            
-            x = int(''.join(str(i) for i in temp[1:]), 2)
-            if temp[0] == '1':
-                organism.heuristics[num] = -x
-            else:
-                organism.heuristics[num] = x
-            
-            """ floating point
-            x = round(bin_to_float(''.join(str(i) for i in temp[1:])),4)
-            if temp[0] == '1':
-                organism.heuristics[num] = -x
-            else:
-                organism.heuristics[num] = x
-            """
-            
-            #print(organism.heuristics[num])
+                        temp[x] = '0'
+                x += 1          
+            x = round(bin_to_float(''.join(str(i) for i in temp)),4)
+            organism.heuristics[num] = x
+
                     
   
 if __name__ == "__main__":

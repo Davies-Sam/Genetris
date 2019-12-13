@@ -8,7 +8,7 @@ ROWS =		22
 MAXFPS = 	30
 PIECELIMIT = 300
 DROP_TIME = 20
-DRAW = False
+DRAW = True
 
 tetris_shapes = [
 	[[1, 1, 1],
@@ -117,7 +117,7 @@ class TetrisApp(object):
 				self.genetics.GameOver(self.linesCleared)
 
 	def init_game(self,seed):
-		random.seed(seed)	
+		random.seed(1)	
 		self.board = new_board()
 		self.score = 0	
 		self.linesCleared = 0
@@ -212,7 +212,7 @@ class TetrisApp(object):
 
 	def start_game(self,seed):
 		if self.gameover:
-			self.init_game(432)
+			self.init_game(1)
 			self.gameover = False
 
 	def quit(self):
@@ -262,7 +262,7 @@ class TetrisApp(object):
 			't' : self.print_board
 		}
 		
-		#clock = pygame.time.Clock()
+		clock = pygame.time.Clock()
 		while True:
 			if DRAW:		
 				self.screen.fill((0,0,0))
@@ -307,7 +307,7 @@ class TetrisApp(object):
 						if event.key == eval("pygame.K_" + key):
 							key_actions[key]()
 					
-			#clock.tick(MAX_FPS)
+			clock.tick(145)
 
 if __name__ == "__main__":
 	from agent import Agent

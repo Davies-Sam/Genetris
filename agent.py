@@ -77,7 +77,6 @@ class Agent(object):
         curOrgIndex = self.tetris.genetics.current_organism
         workingOrganism = pop[curOrgIndex]
 
-
         #iterate over the moves and choose the best one.
         #temp = float("-inf")
         for a_move in all_moves:    

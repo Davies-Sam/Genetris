@@ -15,7 +15,6 @@ import names
 import struct
 
 PLAYLIMIT = 3
-
 ################################################################################
 #currently unused - ran into issue with floating point mutations
 ################################################################################
@@ -29,7 +28,7 @@ def bin_to_float(binary):
 def RandomOrganism():
     nums = []
     for j in range(0, 12):
-        a = numpy.random.randint(-32, 31)
+        a = round(numpy.random.uniform(-5,5),5)
         nums.append(a)
     organism = Organism(nums)
     return organism
@@ -59,8 +58,8 @@ class Organism(object):
 ###################################################################################
 class GA(object):
     def __init__(self):
-        self.num_of_organisms = 60
-        self.survivors = 6
+        self.num_of_organisms = 100
+        self.survivors = 10
         self.new_organisms = self.num_of_organisms - self.survivors
         self.mutation_rate = .1
         #initialize the population
@@ -142,9 +141,10 @@ class GA(object):
         self.current_generation += 1
         #create the new population with only the survivors
         self.SelectSurvivors()
-  
+
         #create the new organisms to add to the new_pop
-        for x in range (0, self.new_organisms):
+      
+        for x in range (0, int(self.new_organisms/2)):
             #select two parents
             parent1 = self.roulette()
             parent2 = self.roulette()
@@ -152,11 +152,26 @@ class GA(object):
                 parent2 = self.roulette()
             #print("p1: %s , p2: %s" % (parent1.name, parent2.name))
             #create the new organism
-            a = self.Crossover(parent1,parent2)
-            #mutate the child       
-            self.mutate(a,self.mutation_rate)   
+            a, b = self.Crossover(parent1,parent2)
+            #mutate the children       
+            self.mutate(a)
+            self.mutate(b)  
             #add to population  
             self.population.append(a)
+            self.population.append(b)
+        #add last one
+        if self.new_organisms % 2 == 1:
+            parent1 = self.roulette()
+            parent2 = self.roulette()
+            while parent1 == parent2:
+                parent2 = self.roulette()
+            #print("p1: %s , p2: %s" % (parent1.name, parent2.name))
+            #create the new organism
+            a, b = self.Crossover(parent1,parent2)
+            #mutate the children       
+            self.mutate(a)
+            self.population.append(a)
+  
         #reset the fitness to 0
         for org in self.population:
                 org.played = 0
@@ -164,7 +179,7 @@ class GA(object):
         
         #check to make sure we have the correct number of organisms in the new
         #population
-        assert self.num_of_organisms == len(self.population), "ERROR: new population doesnt have enough organisms"
+        assert self.num_of_organisms == len(self.population), "ERROR: new population doesnt the correct number of organisms have %s, want %s" % (len(self.population),self.num_of_organisms)
 
     #Will return the survivors of a population, will return self.survivors number of organisms 
     def SelectSurvivors(self):
@@ -178,30 +193,36 @@ class GA(object):
     #takes two parents and does uniform crossover
     #returns an Organism
     def Crossover(self, parent1, parent2):
-        weights = []
-        for i in range(0, len(parent1.heuristics)):
-            if random.random() < .5:
-                weights.append(parent1.heuristics[i])
-            else:
-                weights.append(parent2.heuristics[i])
-        return Organism(weights)
+        child1 = []
+        child2 = []
+        #2 two point crossover options, equally likely
+        if numpy.random.random() < .5:
+        #first otion is two point at alleles 3, 7 resulting in the regeion 4 - 7 (middle genes)
+            for x in range(0, len(parent1.heuristics)):
+                if x > 3 and x < 8:
+                    child2.append(parent1.heuristics[x])
+                    child1.append(parent2.heuristics[x])
+                else:
+                    child1.append(parent1.heuristics[x])
+                    child2.append(parent2.heuristics[x])
+        else:
+        #second option two point at alleles 3, 7 resulting in regions 0-3, 8-11 (end genes) 
+            for x in range(0, len(parent1.heuristics)):
+                if x <= 3 or x >= 8:
+                    child2.append(parent1.heuristics[x])
+                    child1.append(parent2.heuristics[x])
+                else:
+                    child1.append(parent1.heuristics[x])
+                    child2.append(parent2.heuristics[x])        
+        return Organism(child1), Organism(child2)
             
     #mutates the weights of a chromosome
-    def mutate(self, organism, mutation_chance):
+    def mutate(self, organism):
         for num, weight in enumerate(organism.heuristics):
-            binWeight = numpy.binary_repr(weight, width=6)
-            temp = list(binWeight)
-            for i in range(0,len(temp)):
-                if random.random() < (1 - self.mutation_rate):
-                    if temp[i] == '0':
-                        temp[i] = '1'
-                    else:
-                        temp[i] = '0'
-            x = int(''.join(str(i) for i in temp[1:]), 2)
-            if temp[0] == '1':
-                organism.heuristics[num] = -x
-            else:
-                organism.heuristics[num] = x          
+            if numpy.random.random() < self.mutation_rate:
+                rVal = numpy.random.uniform(-1.0,1.0, 1)
+                organism.heuristics[num] = round(weight + rVal, 5)
+                
 if __name__ == "__main__":
     GA().Run()
                 

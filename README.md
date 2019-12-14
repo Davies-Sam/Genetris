@@ -13,6 +13,8 @@ http://www.cs.umsl.edu/~janikow/publications/1991/GAbin/text.pdf
 
 https://karczmarczuk.users.greyc.fr/TEACH/IAD/GenDoc/FlPointChromosome.pdf
 
+https://towardsdatascience.com/continuous-genetic-algorithm-from-scratch-with-python-ff29deedd099
+
 http://wpmedia.wolfram.com/uploads/sites/13/2018/02/09-6-1.pdf
 
 https://codemyroad.wordpress.com/2013/04/14/tetris-ai-the-near-perfect-player/

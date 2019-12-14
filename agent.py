@@ -84,14 +84,6 @@ class Agent(object):
             if temp > max_util:
                 max_util = temp
                 best_board_state = a_move
-        """
-        pop = self.tetris.genetics.population
-        curOrgIndex = self.tetris.genetics.current_organism
-        workingOrganism = pop[curOrgIndex]
-
-        return max(all_moves, key=lambda m: heuristics.Utility_Function(m.result,workingOrganism.heuristics))
-        """
-
         #max_util has the utility of the best board state
         #best_board_state contains x_coord, rotation of the piece, and how the board
         #will look after the piece is placed on the current board

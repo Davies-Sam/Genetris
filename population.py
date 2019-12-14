@@ -12,7 +12,10 @@ from enum import Enum
 import heuristics
 import numpy
 import names
-import struct 
+import struct
+
+PLAYLIMIT = 3
+
 ################################################################################
 #currently unused - ran into issue with floating point mutations
 ################################################################################
@@ -25,9 +28,8 @@ def bin_to_float(binary):
     
 def RandomOrganism():
     nums = []
-    for j in range(0, 10):
-        #a = random.randint(-128, 127)
-        a = round(random.uniform(-1, 1),4)
+    for j in range(0, 12):
+        a = numpy.random.randint(-32, 31)
         nums.append(a)
     organism = Organism(nums)
     return organism
@@ -38,7 +40,6 @@ def InitPop(populationSize):
     #init population with a seed
     #random.seed(7)
     population = []
-
     #for each organism in the population
     for i in range(0, populationSize):
         organism = RandomOrganism()
@@ -52,20 +53,16 @@ class Organism(object):
         self.fitness = 0
         self.name = names.get_full_name()
         self.age = 0
+        self.played = 0
 
-#population is a list of lists(the organisms) which contain the genes(bitarrays)
-#
-#population -> [organism0, organism1, .. , organism99]
-#organism -> [BitArray0, BitArray1, BitArray2, BitArray3]
-#
 
 ###################################################################################
 class GA(object):
     def __init__(self):
-        self.num_of_organisms = 20
-        self.survivors = 4
+        self.num_of_organisms = 60
+        self.survivors = 6
         self.new_organisms = self.num_of_organisms - self.survivors
-        self.mutation_rate = .05
+        self.mutation_rate = .1
         #initialize the population
         self.population = InitPop(self.num_of_organisms)   
         #keep track of which organism in the population we are working on
@@ -91,7 +88,7 @@ class GA(object):
         #if we have worked on every organism in the current population, get the next
         #generation
         if self.current_organism >= self.num_of_organisms:
-            self.current_organism = 0
+            self.current_organism = 0   
             self.NextGeneration()
 
         #update the heuristics for the organism we are working on
@@ -100,17 +97,19 @@ class GA(object):
     #handles when a game we are testing the current organism on ends
     def GameOver(self, lines_cleared):
         organism = self.population[self.current_organism]     
-        organism.fitness = lines_cleared
-       
+        organism.fitness += lines_cleared   
         #load the next organism into the algo
-        self.NextAI()
-        #restart the game
-        self.app.start_game(1)
+        organism.played +=1
+        if organism.played == PLAYLIMIT:
+            self.NextAI()
+            self.app.start_game(numpy.random.random())
+        else:       
+            #restart the game
+            self.app.start_game(numpy.random.random())
 
-    #check if the population has converged
+    #check if the population has converged -- TOD0 
     
-
-    # roulette selection 
+    #roulette selection 
     def roulette(self):
         fSum = float(sum([org.fitness for org in self.population]))
         relativeFitness = []
@@ -120,22 +119,22 @@ class GA(object):
         probs = [sum(relativeFitness[:i+1]) for i in range(len(relativeFitness))]
         r = random.random()
         for i, organism in enumerate(self.population):
-            if r <= probs[i]:
-                
+            if r <= probs[i]:              
                 return organism
         
-
     #this def takes the current population, removes the worst two organisms and 
     #re-produces two new ones to add to the population
     def NextGeneration(self):
-        averageScore = 0 
-        for a in self.population:
-            averageScore += a.fitness
-        averageScore = averageScore/len(self.population)
         self.population.sort(key=lambda x: x.fitness, reverse=True)
+        averageScore = 0 
+        elite = self.population[:self.survivors]
+        for a in elite:
+            averageScore += a.fitness
+        averageScore = averageScore/len(elite)
+        
         #print the last generation out
         with open('resultsFixed.txt', 'a') as f:
-            f.write("\nGeneration: %s , Average Lines Cleared: %s\n" % (self.current_generation, averageScore))
+            f.write("\nGeneration: %s , Elite Average Lines Cleared in %s Games: %s\n" % (self.current_generation, PLAYLIMIT, averageScore))
             for a in self.population:
                 f.write("%s, Age: %s Weights: %s - Lines Cleared:%s\n" % (a.name, a.age, a.heuristics, a.fitness))
                 
@@ -151,33 +150,28 @@ class GA(object):
             parent2 = self.roulette()
             while parent1 == parent2:
                 parent2 = self.roulette()
-            print("p1: %s , p2: %s" % (parent1.name, parent2.name))
-            #print("SELECTED PARENTS %s %s" % (parents[0].name, parents[1].name))
+            #print("p1: %s , p2: %s" % (parent1.name, parent2.name))
             #create the new organism
             a = self.Crossover(parent1,parent2)
-            #mutate the child
-            #print("child: %s\n" % a.heuristics)
-            self.mutate(a,self.mutation_rate)
-            #print("mutated: %s\n" % a.heuristics)
+            #mutate the child       
+            self.mutate(a,self.mutation_rate)   
             #add to population  
             self.population.append(a)
+        #reset the fitness to 0
+        for org in self.population:
+                org.played = 0
+                org.fitness = 0
         
         #check to make sure we have the correct number of organisms in the new
         #population
-       
         assert self.num_of_organisms == len(self.population), "ERROR: new population doesnt have enough organisms"
-
 
     #Will return the survivors of a population, will return self.survivors number of organisms 
     def SelectSurvivors(self):
-        #sort the population by Organism.fitness
-     
-        self.population.sort(key=lambda x: x.fitness, reverse=True)
-        
-   
+        #sort the population by Organism.fitness    
+        self.population.sort(key=lambda x: x.fitness, reverse=True)  
         #kill off amount needed to introduce specified amount of new organisms
         self.population = self.population[:len(self.population)-(self.new_organisms)]
-
         for organism in self.population:
             organism.age += 1
 
@@ -185,47 +179,29 @@ class GA(object):
     #returns an Organism
     def Crossover(self, parent1, parent2):
         weights = []
-    
-        for x in range(0, len(parent1.heuristics)):
-            p1 = list(float_to_bin(parent1.heuristics[x]))
-            p2 = list(float_to_bin(parent1.heuristics[x]))
-            temp = p1
-            m = 16
-            for i in range(0, 16):
-                if random.random() < .5:
-                    temp[m] = p1[m]
-                else:
-                    temp[m] = p2[m]
-            x = round(bin_to_float(''.join(str(i) for i in temp)), 2)
-            weights.append(x)
-
+        for i in range(0, len(parent1.heuristics)):
+            if random.random() < .5:
+                weights.append(parent1.heuristics[i])
+            else:
+                weights.append(parent2.heuristics[i])
         return Organism(weights)
-
-
+            
     #mutates the weights of a chromosome
     def mutate(self, organism, mutation_chance):
-        for num, weight in enumerate(organism.heuristics):    
-            binWeight = float_to_bin(weight)
-            temp = list(binWeight)     
-            #we want to lower the frequency of mutating the signed bit (too large a change)
-            if random.random() < self.mutation_rate/2:
-                if temp[0] == '0':
-                        temp[0] = '1'
-                else:
-                        temp[0] = '0'
-            x = 16
-            for i in range(0,16):
-                if random.random() < self.mutation_rate:
-                    if temp[x] == '0':
-                        temp[x] = '1'
+        for num, weight in enumerate(organism.heuristics):
+            binWeight = numpy.binary_repr(weight, width=6)
+            temp = list(binWeight)
+            for i in range(0,len(temp)):
+                if random.random() < (1 - self.mutation_rate):
+                    if temp[i] == '0':
+                        temp[i] = '1'
                     else:
-                        temp[x] = '0'
-                x += 1          
-            x = round(bin_to_float(''.join(str(i) for i in temp)),4)
-            organism.heuristics[num] = x
-
-                    
-  
+                        temp[i] = '0'
+            x = int(''.join(str(i) for i in temp[1:]), 2)
+            if temp[0] == '1':
+                organism.heuristics[num] = -x
+            else:
+                organism.heuristics[num] = x          
 if __name__ == "__main__":
     GA().Run()
                 

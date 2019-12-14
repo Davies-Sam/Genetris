@@ -149,9 +149,61 @@ def AltitudeDelta(board):
 #not implemented
 #Maximum well depth
 #
+
+def MaxWell(board):
+    height = len(board) - 1 
+    width = len(board[1])
+    coords = {}
+
+    for row, rowElements in enumerate(board):
+        for x in range(0, len(rowElements)):
+            coords[(x,row)] = rowElements[x]
+    wellMap = {0 : 0, 1 : 0, 2 : 0, 3 : 0, 4 : 0, 5 : 0, 6 : 0, 7 : 0, 8 : 0, 9 : 0}
+    wells = 0
+    for row, rowElements in enumerate(board):    
+        for x in range(0,len(rowElements)):
+            #if the height of the column is > height of 0 cell, we know we have a hole
+            if rowElements[x] == 0:
+                if x > 0 and x < 9:
+                    if (rowElements[x-1] != 0 and rowElements[x+1] != 0) and ColumnHeight(board, x) < (height - row):   
+                        wells +=1
+                        wellMap[x] += 1
+                elif x==0:
+                    if rowElements[x+1] != 0 and ColumnHeight(board, x) < (height - row):
+                        wells +=1
+                        wellMap[x] += 1
+                elif x==9:
+                    if rowElements[x-1] != 0 and ColumnHeight(board, x) < (height - row):
+                        wells +=1
+                        wellMap[x] += 1
+    return max(wellMap.values())
+
 #Number of wells
 ##################
+def Wells(board):
+    height = len(board) - 1 
+    width = len(board[1])
+    coords = {}
 
+    for row, rowElements in enumerate(board):
+        for x in range(0, len(rowElements)):
+            coords[(x,row)] = rowElements[x]
+
+    wells = 0
+    for row, rowElements in enumerate(board):    
+        for x in range(0,len(rowElements)):
+            #if the height of the column is > height of 0 cell, we know we have a hole
+            if rowElements[x] == 0:
+                if x > 0 and x < 9:
+                    if (rowElements[x-1] != 0 and rowElements[x+1] != 0) and ColumnHeight(board, x) < (height - row) :   
+                        wells +=1
+                elif x==0:
+                    if rowElements[x+1] != 0 and ColumnHeight(board, x) < (height - row):
+                        wells +=1
+                elif x==9:
+                    if rowElements[x-1] != 0 and ColumnHeight(board, x) < (height - row):
+                        wells +=1
+    return wells
 
 #Weighted Blocks (sum of occupied blocks, n-th row counts n times)
 def WeightedBlocks(board):
@@ -218,6 +270,8 @@ def Utility_Function(board, weights):
     weightedBlocks = WeightedBlocks(board)
     hRoughness = HorizontalRoughness(board)
     vRoughness = VerticalRoughness(board)
+    wells = Wells(board)
+    biggestWell = MaxWell(board)
 
     #now we weight the heuristics
     wHeight = height * weights[0]
@@ -230,7 +284,9 @@ def Utility_Function(board, weights):
     wWeightedBlocks = weightedBlocks * weights[7]
     wHroughness = hRoughness * weights[8]
     wVroughness = vRoughness * weights[9]
+    wWells = wells * weights[10]
+    wbiggestWell = biggestWell * weights[11]
 
     #sum the weighted heurstics to get the score of a piece placement
-    score = (wHeight + wBump + wHoles + wCleared + wConnectedHoles + wBlockades + wAltitudeDelta + wWeightedBlocks + wHroughness + wVroughness)
+    score = (wHeight + wBump + wHoles + wCleared + wConnectedHoles + wBlockades + wAltitudeDelta + wWeightedBlocks + wHroughness + wVroughness + wWells + wbiggestWell)
     return score

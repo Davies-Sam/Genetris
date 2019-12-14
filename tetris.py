@@ -1,8 +1,9 @@
 import random
 import pygame, sys
 from copy import deepcopy
+import numpy
 
-CELL_SIZE =	20
+CELL_SIZE =	30
 COLS =		10
 ROWS =		22
 MAXFPS = 	30
@@ -98,10 +99,8 @@ class TetrisApp(object):
 		self.gameover = False
 		self.genetics = genetics
 		self.ai = None
-		#
-		# self.lock = Lock()
 		
-		self.init_game(0)
+		self.init_game(numpy.random.random())
 	
 	def new_stone(self):
 		self.stone = self.next_stone
@@ -117,7 +116,7 @@ class TetrisApp(object):
 				self.genetics.GameOver(self.linesCleared)
 
 	def init_game(self,seed):
-		random.seed(1)	
+		random.seed(seed)	
 		self.board = new_board()
 		self.score = 0	
 		self.linesCleared = 0
@@ -145,18 +144,19 @@ class TetrisApp(object):
 			  self.width // 2-msgim_center_x,
 			  self.height // 2-msgim_center_y+i*22))
 		
-	#Adopted this function from Jgardner to fix corrupt boards
-	#https://github.com/jgardner8/genetic-tetris-ai/blob/8853f0ef3af83e90d5ddd386627c0e437cfaf573/tetris.py#L181
+	
 	def draw_matrix(self, matrix, offset):
 		off_x, off_y  = offset
 		for y, row in enumerate(matrix):
 			for x, val in enumerate(row):
 				if val:
+					#corrupt board exception from https://tinyurl.com/wu7gl48
 					try:
 						pygame.draw.rect(self.screen, colors[val], 
 							pygame.Rect((off_x+x)*CELL_SIZE, (off_y+y)*CELL_SIZE, CELL_SIZE, CELL_SIZE), 0)
 					except IndexError:
-						print("Corrupted board") 
+						pass
+						#print("Corrupted board") 
 						#self.print_board()
 						
 	
@@ -212,7 +212,7 @@ class TetrisApp(object):
 
 	def start_game(self,seed):
 		if self.gameover:
-			self.init_game(1)
+			self.init_game(seed)
 			self.gameover = False
 
 	def quit(self):
@@ -247,8 +247,9 @@ class TetrisApp(object):
 		print("WeighteBlocks %s" % heuristics.WeightedBlocks(self.board))
 		print("Horiz R %s" % heuristics.HorizontalRoughness(self.board))
 		print("Vert R %s" % heuristics.VerticalRoughness(self.board))
-		"""
-
+		print("wells %s" % heuristics.Wells(self.board))
+		print("max well %s" % heuristics.MaxWell(self.board))
+		""" 
 	def run(self):
 		key_actions = {
 			'ESCAPE':	self.quit,
@@ -275,9 +276,12 @@ class TetrisApp(object):
 					self.disp_msg("Score: %d" % self.score, (self.rlim+CELL_SIZE, CELL_SIZE*5))
 					if self.ai and self.genetics:
 						chromosome = self.genetics.population[self.genetics.current_organism]
-						self.disp_msg("Generation: %s" % self.genetics.current_generation, (self.rlim+CELL_SIZE, CELL_SIZE*11))
-						self.disp_msg("\n  %s: %s\n  %s: %s\n  %s: %s\n  %s: %s\n %s: %s\n %s: %s\n %s: %s\n %s: %s\n %s: %s\n %s: %s\n %s: %s\n %s: %s\n %s: %s\n" % (
+						self.disp_msg("Generation: %s" % self.genetics.current_generation, (self.rlim+CELL_SIZE, CELL_SIZE*5))
+						self.disp_msg("\n %s: %s\n %s: %s\n  %s: %s\n  %s: %s\n  %s: %s\n %s: %s\n %s: %s\n %s: %s\n %s: %s\n %s: %s\n %s: %s\n %s: %s\n %s: %s\n %s: %s\n %s: %s\n %s: %s\n %s: %s\n %s: %s\n" % (
+							"Organism #", self.genetics.current_organism,
 							"Name", chromosome.name,
+							"Played", chromosome.played,
+							"Fitness", chromosome.fitness,
 							"Age", chromosome.age,
 							"Height", chromosome.heuristics[0],
 							"Bumpiness", chromosome.heuristics[1],
@@ -289,8 +293,10 @@ class TetrisApp(object):
 							"Weighted Blocks", chromosome.heuristics[7],
 							"Horizonal Roughness", chromosome.heuristics[8],
 							"Vertical Roughness", chromosome.heuristics[9],
+							"Wells", chromosome.heuristics[10],
+							"Biggest Well", chromosome.heuristics[11],
 							"Lines Cleared", self.linesCleared
-						), (self.rlim+CELL_SIZE, CELL_SIZE*12.1))
+						), (self.rlim+CELL_SIZE, CELL_SIZE*7))
 					self.draw_matrix(self.bground_grid, (0,0))
 					self.draw_matrix(self.board, (0,0))
 					self.draw_matrix(self.stone, (self.stone_x, self.stone_y))

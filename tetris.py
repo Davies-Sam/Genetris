@@ -9,7 +9,7 @@ ROWS =		22
 MAXFPS = 	30
 PIECELIMIT = 300
 DROP_TIME = 20
-DRAW = True
+DRAW = False
 
 tetris_shapes = [
 	[[1, 1, 1],
@@ -178,8 +178,7 @@ class TetrisApp(object):
 			if not check_collision(self.board, self.stone, (new_x, self.stone_y)):
 				self.stone_x = new_x
 	
-	def drop(self):
-		
+	def drop(self):	
 		if not self.gameover:
 			self.stone_y += 1
 			if check_collision(self.board, self.stone, (self.stone_x, self.stone_y)):
@@ -212,7 +211,7 @@ class TetrisApp(object):
 
 	def start_game(self,seed):
 		if self.gameover:
-			self.init_game(seed)
+			self.init_game(117)
 			self.gameover = False
 
 	def quit(self):

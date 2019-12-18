@@ -41,7 +41,11 @@ def AllHeights(board):
     for x in range (0, width):
         if heights[x] == None:
             heights[x] = 0
-    return heights    
+    return heights 
+
+# returns the sum of the heights
+def AggregateHeigh(board):
+    return sum(AllHeights(board))   
 
 #returns the sum of the column height differences
 def Bumpiness(board):
@@ -224,11 +228,11 @@ def HorizontalRoughness(board):
     gaps = 0
     for row, rowElements in enumerate(board):
         for x in range(0, len(rowElements)):
-            if (x>0 and x<9) and rowElements[x] == 0 and rowElements[x-1] != 0 and rowElements[x+1] != 0:
+            if (x>0 and x<9) and rowElements[x] != 0 and rowElements[x-1] == 0 and rowElements[x+1] == 0:
                 gaps +=1
-            elif x == 0 and rowElements[x] == 0 and rowElements[x+1] != 0 :
+            elif x == 0 and rowElements[x] == 0 and rowElements[x+1] != 0 and rowElements[x+2] == 0:
                 gaps +=1
-            elif x == 9 and rowElements[x] == 0 and rowElements[x-1] != 0:
+            elif x == 9 and rowElements[x] == 0 and rowElements[x-1] != 0 and rowElements[x-2] == 0:
                 gaps +=1
 
     return gaps
@@ -246,7 +250,7 @@ def VerticalRoughness(board):
     for y in range (0, 23):
         for x in range(0,10):
             if y > 1 and y < 22:
-                if coords[(x,y)] == 0 and coords[(x,y+1)]!= 0 and coords[(x,y-1)]!= 0:
+                if coords[(x,y)] != 0 and coords[(x,y+1)]== 0 and coords[(x,y-1)]== 0:
                     vGaps += 1
 
 
@@ -260,10 +264,11 @@ def VerticalRoughness(board):
 #FOR LEGIBILITY WE WILL ATTACH NAMES TO THE WEIGHTS LATER
 def Utility_Function(board, weights):
     #get the heurstics
-    height = TotalHeight(board)
+    aggHeight = AggregateHeigh(board)
     bump = Bumpiness(board)
     holes = HolesCreated(board)
     cleared = LinesCleared(board)
+    
     connectedHoles = ConnectedHoles(board)
     blockades = Blockades(board)
     altituteDelta = AltitudeDelta(board)
@@ -272,12 +277,14 @@ def Utility_Function(board, weights):
     vRoughness = VerticalRoughness(board)
     wells = Wells(board)
     biggestWell = MaxWell(board)
-
+    totalHeight = TotalHeight(board)
+   
     #now we weight the heuristics
-    wHeight = height * weights[0]
+    wHeight = aggHeight * weights[0]
     wBump = bump * weights[1]
     wHoles = holes * weights[2]
     wCleared = cleared * weights[3]
+    
     wConnectedHoles = connectedHoles * weights[4]
     wBlockades = blockades * weights[5]
     wAltitudeDelta = altituteDelta * weights[6]
@@ -286,7 +293,9 @@ def Utility_Function(board, weights):
     wVroughness = vRoughness * weights[9]
     wWells = wells * weights[10]
     wbiggestWell = biggestWell * weights[11]
+    wTotalHeight = totalHeight * weights[12]
+    
 
     #sum the weighted heurstics to get the score of a piece placement
-    score = (wHeight + wBump + wHoles + wCleared + wConnectedHoles + wBlockades + wAltitudeDelta + wWeightedBlocks + wHroughness + wVroughness + wWells + wbiggestWell)
+    score = (wHeight + wBump + wHoles + wCleared + wConnectedHoles + wBlockades + wAltitudeDelta + wWeightedBlocks + wHroughness + wVroughness + wWells + wbiggestWell + wTotalHeight)
     return score

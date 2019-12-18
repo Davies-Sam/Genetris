@@ -13,7 +13,7 @@ the higheest score using the weightings. We wil rotate and sweep over the column
 #utility_function() will return the heuristic value for the board at that time with
 #that piece
 import heuristics
-
+import numpy
 #file that holds and initializes our population
 #import population
 import heuristics
@@ -22,20 +22,13 @@ from tetris import check_collision, COLS, rotate_clockwise, join_matrixes
 from collections import namedtuple
 Move = namedtuple('Move', ['x_pos', 'rotation', 'result'])
 
-#weights = [-1.99,-1.99,-1.4,3.0,-2.5,-2.6,-2.59,-2.4,-1.39,-1.55]
+
 class Agent(object):
-    #################################################################################
-        #################################################################################
-    #initialize the AI agent with the current organism's heuristics
     def __init__(self, tetris):
         self.tetris = tetris
-        self.best_move = None
-        #self.organism = organism
+        self.best_move = None 
         self.instantPlay = True
 
-        #this var will contain the heuristics of a single organism, will be updated
-        #when we work on a different organism
-        
         
     #################################################################################
     #finds the best move from all possible moves. calls rotations_per_piece()
@@ -81,7 +74,11 @@ class Agent(object):
         #temp = float("-inf")
         for a_move in all_moves:    
             temp = heuristics.Utility_Function(a_move[2], workingOrganism.heuristics)
-            if temp > max_util:
+            if temp == max_util:
+                if numpy.random.random() < .5:
+                    max_util = temp
+                    best_board_state = a_move
+            elif temp > max_util:    
                 max_util = temp
                 best_board_state = a_move
         #max_util has the utility of the best board state

@@ -17,28 +17,17 @@ import time
 import datetime
 
 results = "%s-%s-%s-%s" % (sys.argv[1],sys.argv[2],sys.argv[3],sys.argv[4])
-RESULTS = "%s.txt" % results
+RESULTS = "%s.txt" % names.get_full_name()
 PLAYLIMIT = 1
 
 POPSIZE = int(sys.argv[1])
 ELITE = int(sys.argv[2])
 CROSSRATE = float(sys.argv[3])
 MUTRATE = float(sys.argv[4])
-
-################################################################################
-#binary format not used. gaussian mutation added.
-################################################################################
-def float_to_bin(num):
-    return format(struct.unpack('!I', struct.pack('!f', num))[0], '032b')
-
-def bin_to_float(binary):
-    return struct.unpack('!f',struct.pack('!I', int(binary, 2)))[0]
-#################################################################################
-    
 def RandomOrganism():
     nums = []
-    for j in range(0, 12):
-        a = round(numpy.random.uniform(-1.0,1.0),4)
+    for j in range(0, 13):
+        a = int(numpy.random.uniform(-1000,1000))
         nums.append(a)
     organism = Organism(nums)
     return organism
@@ -88,11 +77,12 @@ class GA(object):
         self.cycleStart = 0
         self.cycleEnd = 0
         self.fitnessDictionary = {}
+        self.lastBest = []
 
     #start running the game
     def Run(self):
         with open(RESULTS, 'w') as f:
-            f.write("Weights: TotalHeight, Bumpiness, Holes, LinesCleared, Connected Holes, Blockades, Altitude Delta, Weighted Blocks, H-Roughness, V-Roughness.\n Mutation Rate: %s , Replacement Per Cycle: %s\n" % (self.mutation_rate, self.new_organisms))
+            f.write("Weights: Aggregate Height, Bumpiness, Holes, LinesCleared, Connected Holes, Blockades, Altitude Delta, Weighted Blocks, H-Roughness, V-Roughness.\n Mutation Rate: %s , Replacement Per Cycle: %s\n" % (self.mutation_rate, self.new_organisms))
         self.cycleStart = time.time()
         self.app.run()
 
@@ -105,13 +95,13 @@ class GA(object):
         if self.current_organism >= self.num_of_organisms:
             self.current_organism = 0 
             self.NextGeneration()
-
+        
         while self.current_organism < self.num_of_organisms and tuple(self.population[self.current_organism].heuristics) in self.fitnessDictionary.keys():
             #print("ALREADY SEEN %s" % self.population[self.current_organism].heuristics)
             self.population[self.current_organism].fitness = self.fitnessDictionary[tuple(self.population[self.current_organism].heuristics)]
             self.current_organism += 1
 
-        if self.current_organism > self.num_of_organisms:
+        if self.current_organism >= self.num_of_organisms:
             self.current_organism = 0 
             self.NextGeneration()
         
@@ -165,19 +155,22 @@ class GA(object):
             
             for a in self.population:
                 f.write("%s, Age: %s Weights: %s - Lines Cleared:%s\n" % (a.name, a.age, a.heuristics, a.fitness))
-
+        
         for key in self.fitnessDictionary.keys():
             if key not in [tuple(org.heuristics) for org in self.population]:
                 del self.fitnessDictionary[key]
-
+       
         #increment the generation
         self.current_generation += 1
         #create the new population with only the survivors
         self.SelectSurvivors()
 
+        eliteScores = [org.fitness for org in self.population[:ELITE]]
+        if eliteScores == self.lastBest:
+            self.mutation_rate += .05
         #create the new organisms to add to the new_pop
       
-        for x in range (0, int(self.new_organisms/2)):
+        for x in range (0, self.new_organisms):
             #select two parents
             parent1 = self.roulette()
             parent2 = self.roulette()
@@ -185,31 +178,19 @@ class GA(object):
                 parent2 = self.roulette()
             #print("p1: %s , p2: %s" % (parent1.name, parent2.name))
             #create the new organism
-            a, b = self.Crossover(parent1,parent2)
+            a = self.Crossover(parent1,parent2)
             #mutate the children       
             self.mutate(a)
-            self.mutate(b)  
             #add to population  
             self.population.append(a)
-            self.population.append(b)
-        #add last one
-        if self.new_organisms % 2 == 1:
-            parent1 = self.roulette()
-            parent2 = self.roulette()
-            while parent1 == parent2:
-                parent2 = self.roulette()
-            #print("p1: %s , p2: %s" % (parent1.name, parent2.name))
-            #create the new organism
-            a, b = self.Crossover(parent1,parent2)
-            #mutate the children       
-            self.mutate(a)
-            self.population.append(a)
+        
   
         #reset the fitness to 0
         for org in self.population:
                 org.played = 0
                 org.fitness = 0
 
+        self.lastBest = eliteScores
         self.cycleStart = time.time()
         
         #check to make sure we have the correct number of organisms in the new
@@ -228,37 +209,32 @@ class GA(object):
     #takes two parents and does uniform crossover
     #returns an Organism
     def Crossover(self, parent1, parent2):
-        child1 = []
-        child2 = []
+        child = []
         #two point 
-        """
-        if numpy.random.random() < .5:
-        #first otion is two point at alleles 3, 7 resulting in the regeion 4 - 7 (middle genes)
-            for x in range(0, len(parent1.heuristics)):
-                if x > 3 and x < 8:
-                    child2.append(parent1.heuristics[x])
-                    child1.append(parent2.heuristics[x])
-                else:
-                    child1.append(parent1.heuristics[x])
-                    child2.append(parent2.heuristics[x])
-        else:
-            """
        #crossover based on the crossover rate 
         for x in range(0, len(parent1.heuristics)):
+            #if crossover criteria is met, average the parents heuristics
             if numpy.random.random() < self.crossover_rate:
-                child2.append(parent1.heuristics[x])
-                child1.append(parent2.heuristics[x])
+                result = int( (parent1.heuristics[x] + parent2.heuristics[x]) / 2 )
+                child.append(result) 
+            #else take the weight from the fittest parent      
             else:
-                child1.append(parent1.heuristics[x])
-                child2.append(parent2.heuristics[x])        
-        return Organism(child1), Organism(child2)
+                if parent1.fitness > parent2.fitness:
+                    child.append(parent1.heuristics[x])
+                else:
+                    child.append(parent2.heuristics[x])                 
+        return Organism(child)
             
     #mutates the weights of a chromosome
     def mutate(self, organism):
         for num, weight in enumerate(organism.heuristics):
             if numpy.random.random() < self.mutation_rate:
-                rVal = numpy.random.uniform(-1.0,1.0, 1)
-                organism.heuristics[num] = round(weight + rVal, 4)
+                rVal = numpy.random.normal(weight,1)
+                #print("weight is %s" % weight)
+                #print("rval is %s" % rVal)
+                while rVal > 1000 or rVal < -1000:
+                    rVal = numpy.random.normal(weight,1)
+                organism.heuristics[num] = int(rVal)
                 
 if __name__ == "__main__":
     GA().Run()

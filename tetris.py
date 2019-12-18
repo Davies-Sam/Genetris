@@ -100,7 +100,7 @@ class TetrisApp(object):
 		self.genetics = genetics
 		self.ai = None
 		
-		self.init_game(numpy.random.random())
+		self.init_game(33)
 	
 	def new_stone(self):
 		self.stone = self.next_stone
@@ -113,6 +113,7 @@ class TetrisApp(object):
 		if check_collision(self.board, self.stone, (self.stone_x, self.stone_y)):
 			self.gameover = True
 			if self.genetics:
+				#print(self.linesCleared)
 				self.genetics.GameOver(self.linesCleared)
 
 	def init_game(self,seed):
@@ -211,7 +212,7 @@ class TetrisApp(object):
 
 	def start_game(self,seed):
 		if self.gameover:
-			self.init_game(117)
+			self.init_game(33)
 			self.gameover = False
 
 	def quit(self):
@@ -276,7 +277,7 @@ class TetrisApp(object):
 					if self.ai and self.genetics:
 						chromosome = self.genetics.population[self.genetics.current_organism]
 						self.disp_msg("Generation: %s" % self.genetics.current_generation, (self.rlim+CELL_SIZE, CELL_SIZE*5))
-						self.disp_msg("\n %s: %s\n %s: %s\n  %s: %s\n  %s: %s\n  %s: %s\n %s: %s\n %s: %s\n %s: %s\n %s: %s\n %s: %s\n %s: %s\n %s: %s\n %s: %s\n %s: %s\n %s: %s\n %s: %s\n %s: %s\n %s: %s\n" % (
+						self.disp_msg("\n %s: %s\n %s: %s\n  %s: %s\n  %s: %s\n  %s: %s\n %s: %s\n %s: %s\n %s: %s\n %s: %s\n %s: %s\n %s: %s\n  %s: %s\n  %s: %s\n %s: %s\n %s: %s\n %s: %s\n %s: %s\n %s: %s\n %s: %s\n" % (
 							"Organism #", self.genetics.current_organism,
 							"Name", chromosome.name,
 							"Played", chromosome.played,
@@ -294,6 +295,7 @@ class TetrisApp(object):
 							"Vertical Roughness", chromosome.heuristics[9],
 							"Wells", chromosome.heuristics[10],
 							"Biggest Well", chromosome.heuristics[11],
+							"Total Height", chromosome.heuristics[12],
 							"Lines Cleared", self.linesCleared
 						), (self.rlim+CELL_SIZE, CELL_SIZE*7))
 					self.draw_matrix(self.bground_grid, (0,0))

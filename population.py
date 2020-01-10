@@ -18,16 +18,25 @@ import datetime
 
 results = "%s-%s-%s-%s" % (sys.argv[1],sys.argv[2],sys.argv[3],sys.argv[4])
 RESULTS = "%s.txt" % names.get_full_name()
-PLAYLIMIT = 1
+
+UPPERBOUND = 1
+LOWERBOUND = -1
 
 POPSIZE = int(sys.argv[1])
 ELITE = int(sys.argv[2])
 CROSSRATE = float(sys.argv[3])
 MUTRATE = float(sys.argv[4])
+SEQUENCE = sys.argv[5]
+
+if SEQUENCE == "fixed":
+    NUMGAMES = 1
+elif SEQUENCE == "random":
+    NUMGAMES = int(sys.argv[6])
+
 def RandomOrganism():
     nums = []
     for j in range(0, 13):
-        a = int(numpy.random.uniform(-1000,1000))
+        a = round(numpy.random.uniform(LOWERBOUND, UPPERBOUND), 5)
         nums.append(a)
     organism = Organism(nums)
     return organism
@@ -82,7 +91,7 @@ class GA(object):
     #start running the game
     def Run(self):
         with open(RESULTS, 'w') as f:
-            f.write("Weights: Aggregate Height, Bumpiness, Holes, LinesCleared, Connected Holes, Blockades, Altitude Delta, Weighted Blocks, H-Roughness, V-Roughness.\n Mutation Rate: %s , Replacement Per Cycle: %s\n" % (self.mutation_rate, self.new_organisms))
+            f.write("Weights: Aggregate Height, Bumpiness, Holes, LinesCleared, Connected Holes, Blockades, Altitude Delta, Weighted Blocks, H-Roughness, V-Roughness, Wells, Biggest Well, Total Height.\n Mutation Rate: %s , Replacement Per Cycle: %s\n" % (self.mutation_rate, self.new_organisms))
         self.cycleStart = time.time()
         self.app.run()
 
@@ -95,12 +104,14 @@ class GA(object):
         if self.current_organism >= self.num_of_organisms:
             self.current_organism = 0 
             self.NextGeneration()
-        
-        while self.current_organism < self.num_of_organisms and tuple(self.population[self.current_organism].heuristics) in self.fitnessDictionary.keys():
-            #print("ALREADY SEEN %s" % self.population[self.current_organism].heuristics)
-            self.population[self.current_organism].fitness = self.fitnessDictionary[tuple(self.population[self.current_organism].heuristics)]
-            self.current_organism += 1
 
+        #this is for if we keep the same sequence for every generation and each organism only plays 1 game - we can use this to skip playing the elites
+        if SEQUENCE == "fixed" and NUMGAMES == 1:
+            while self.current_organism < self.num_of_organisms and tuple(self.population[self.current_organism].heuristics) in self.fitnessDictionary.keys():
+                #print("ALREADY SEEN %s" % self.population[self.current_organism].heuristics)
+                self.population[self.current_organism].fitness = self.fitnessDictionary[tuple(self.population[self.current_organism].heuristics)]
+                self.current_organism += 1
+        
         if self.current_organism >= self.num_of_organisms:
             self.current_organism = 0 
             self.NextGeneration()
@@ -114,13 +125,19 @@ class GA(object):
         organism.fitness += lines_cleared   
         #load the next organism into the algo
         organism.played +=1
-        if organism.played == PLAYLIMIT:
+        if organism.played == NUMGAMES:
             self.fitnessDictionary[tuple(organism.heuristics)] = organism.fitness
             self.NextAI()
-            self.app.start_game(numpy.random.random())
+            if SEQUENCE == "fixed":
+                self.app.start_game(777)
+            elif SEQUENCE == "random":
+                self.app.start_game(numpy.random.random())
         else:       
             #restart the game
-            self.app.start_game(numpy.random.random())
+            if SEQUENCE == "fixed":
+                self.app.start_game(777)
+            elif SEQUENCE == "random":
+                self.app.start_game(numpy.random.random())
 
     #check if the population has converged -- TOD0 
     
@@ -151,7 +168,7 @@ class GA(object):
 
         #print the last generation out
         with open(RESULTS, 'a') as f:
-            f.write("\nGeneration: %s, Cycle Time: %s  Elite Average Lines Cleared in %s Games: %s\n" % (self.current_generation, str(datetime.timedelta(seconds = self.cycleEnd)), PLAYLIMIT, averageScore))
+            f.write("\nGeneration: %s,  Sequence Type: %s, Cycle Time: %s  Elite Average Lines Cleared in %s Games: %s\n" % (self.current_generation, SEQUENCE, str(datetime.timedelta(seconds = self.cycleEnd)), NUMGAMES, averageScore))
             
             for a in self.population:
                 f.write("%s, Age: %s Weights: %s - Lines Cleared:%s\n" % (a.name, a.age, a.heuristics, a.fitness))
@@ -165,7 +182,7 @@ class GA(object):
         #create the new population with only the survivors
         self.SelectSurvivors()
 
-        eliteScores = [org.fitness for org in self.population[:ELITE]]
+        eliteScores = [org.fitness for org in self.population[:self.survivors]]
         if eliteScores == self.lastBest:
             self.mutation_rate += .05
         #create the new organisms to add to the new_pop
@@ -202,7 +219,7 @@ class GA(object):
         #sort the population by Organism.fitness    
         self.population.sort(key=lambda x: x.fitness, reverse=True)  
         #kill off amount needed to introduce specified amount of new organisms
-        self.population = self.population[:len(self.population)-(self.new_organisms)]
+        self.population = self.population[:self.survivors]
         for organism in self.population:
             organism.age += 1
 
@@ -215,7 +232,7 @@ class GA(object):
         for x in range(0, len(parent1.heuristics)):
             #if crossover criteria is met, average the parents heuristics
             if numpy.random.random() < self.crossover_rate:
-                result = int( (parent1.heuristics[x] + parent2.heuristics[x]) / 2 )
+                result = round( ((parent1.heuristics[x] + parent2.heuristics[x]) / 2 ), 5)
                 child.append(result) 
             #else take the weight from the fittest parent      
             else:
@@ -229,12 +246,12 @@ class GA(object):
     def mutate(self, organism):
         for num, weight in enumerate(organism.heuristics):
             if numpy.random.random() < self.mutation_rate:
-                rVal = numpy.random.normal(weight,1)
+                rVal = round(numpy.random.normal(weight,1), 5)
                 #print("weight is %s" % weight)
                 #print("rval is %s" % rVal)
-                while rVal > 1000 or rVal < -1000:
-                    rVal = numpy.random.normal(weight,1)
-                organism.heuristics[num] = int(rVal)
+                while rVal > UPPERBOUND or rVal < LOWERBOUND:
+                    rVal = round(numpy.random.normal(weight,1),5)
+                organism.heuristics[num] = rVal
                 
 if __name__ == "__main__":
     GA().Run()

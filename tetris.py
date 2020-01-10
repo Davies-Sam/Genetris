@@ -8,8 +8,8 @@ COLS =		10
 ROWS =		22
 MAXFPS = 	30
 PIECELIMIT = 300
-DROP_TIME = 20
-DRAW = False
+DROP_TIME = 60
+DRAW = True
 
 tetris_shapes = [
 	[[1, 1, 1],
@@ -100,7 +100,7 @@ class TetrisApp(object):
 		self.genetics = genetics
 		self.ai = None
 		
-		self.init_game(33)
+		self.init_game(numpy.random.random())
 	
 	def new_stone(self):
 		self.stone = self.next_stone
@@ -212,7 +212,7 @@ class TetrisApp(object):
 
 	def start_game(self,seed):
 		if self.gameover:
-			self.init_game(33)
+			self.init_game(seed)
 			self.gameover = False
 
 	def quit(self):
@@ -277,7 +277,7 @@ class TetrisApp(object):
 					if self.ai and self.genetics:
 						chromosome = self.genetics.population[self.genetics.current_organism]
 						self.disp_msg("Generation: %s" % self.genetics.current_generation, (self.rlim+CELL_SIZE, CELL_SIZE*5))
-						self.disp_msg("\n %s: %s\n %s: %s\n  %s: %s\n  %s: %s\n  %s: %s\n %s: %s\n %s: %s\n %s: %s\n %s: %s\n %s: %s\n %s: %s\n  %s: %s\n  %s: %s\n %s: %s\n %s: %s\n %s: %s\n %s: %s\n %s: %s\n %s: %s\n" % (
+						self.disp_msg("\n %s: %s\n %s: %s\n  %s: %s\n  %s: %s\n  %s: %s\n %s: %s\n %s: %s\n  %s: %s\n  %s: %s\n  %s: %s\n %s: %s\n  %s: %s\n  %s: %s\n %s: %s\n %s: %s\n %s: %s\n %s: %s\n %s: %s\n %s: %s\n"  % (
 							"Organism #", self.genetics.current_organism,
 							"Name", chromosome.name,
 							"Played", chromosome.played,

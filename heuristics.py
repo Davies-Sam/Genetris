@@ -294,8 +294,9 @@ def Utility_Function(board, weights):
     wWells = wells * weights[10]
     wbiggestWell = biggestWell * weights[11]
     wTotalHeight = totalHeight * weights[12]
-    
+   
 
     #sum the weighted heurstics to get the score of a piece placement
+    #score = (wHeight + wBump + wHoles + wCleared)
     score = (wHeight + wBump + wHoles + wCleared + wConnectedHoles + wBlockades + wAltitudeDelta + wWeightedBlocks + wHroughness + wVroughness + wWells + wbiggestWell + wTotalHeight)
     return score

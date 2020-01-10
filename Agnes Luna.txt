@@ -1,0 +1,2 @@
+Weights: Aggregate Height, Bumpiness, Holes, LinesCleared, Connected Holes, Blockades, Altitude Delta, Weighted Blocks, H-Roughness, V-Roughness, Wells, Biggest Well, Total Height.
+ Mutation Rate: 0.3 , Replacement Per Cycle: 40

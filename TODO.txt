@@ -14,3 +14,4 @@
 14) Consider fixing the piece sequence Created: 12/10 Completed: 12/10
 15) Add more heuristics Created: 12/11 Completed: 12/13
 16) Add mutliprocessing to split the time on populations in half Created: 12/15 Completed:
+17) Add a GUI to select which heuristics are used Created: 1/10 Completed:

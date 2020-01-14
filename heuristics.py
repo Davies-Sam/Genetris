@@ -277,14 +277,14 @@ def Utility_Function(board, weights):
     vRoughness = VerticalRoughness(board)
     wells = Wells(board)
     biggestWell = MaxWell(board)
-    totalHeight = TotalHeight(board)
+    
+    #totalHeight = TotalHeight(board)
    
     #now we weight the heuristics
     wHeight = aggHeight * weights[0]
     wBump = bump * weights[1]
     wHoles = holes * weights[2]
     wCleared = cleared * weights[3]
-    
     wConnectedHoles = connectedHoles * weights[4]
     wBlockades = blockades * weights[5]
     wAltitudeDelta = altituteDelta * weights[6]
@@ -293,10 +293,10 @@ def Utility_Function(board, weights):
     wVroughness = vRoughness * weights[9]
     wWells = wells * weights[10]
     wbiggestWell = biggestWell * weights[11]
-    wTotalHeight = totalHeight * weights[12]
+    #wTotalHeight = totalHeight * weights[12]S
    
 
     #sum the weighted heurstics to get the score of a piece placement
-    #score = (wHeight + wBump + wHoles + wCleared)
-    score = (wHeight + wBump + wHoles + wCleared + wConnectedHoles + wBlockades + wAltitudeDelta + wWeightedBlocks + wHroughness + wVroughness + wWells + wbiggestWell + wTotalHeight)
+    #score = (wHeight + wBump + wHoles + wCleared + wTotalHeight)
+    score = (wHeight + wBump + wHoles + wCleared + wConnectedHoles + wBlockades + wAltitudeDelta + wWeightedBlocks + wHroughness + wVroughness + wWells + wbiggestWell)
     return score

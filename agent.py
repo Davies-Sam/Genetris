@@ -23,6 +23,29 @@ from collections import namedtuple
 Move = namedtuple('Move', ['x_pos', 'rotation', 'result'])
 
 
+tetris_shapes = [
+	[[1, 1, 1],
+	 [0, 1, 0]],
+	
+	[[0, 2, 2],
+	 [2, 2, 0]],
+	
+	[[3, 3, 0],
+	 [0, 3, 3]],
+	
+	[[4, 0, 0],
+	 [4, 4, 4]],
+	
+	[[0, 0, 5],
+	 [5, 5, 5]],
+	
+	[[6, 6, 6, 6]],
+	
+	[[7, 7],
+	 [7, 7]]
+]
+
+
 class Agent(object):
     def __init__(self, tetris):
         self.tetris = tetris
@@ -123,18 +146,20 @@ class Agent(object):
         return y_coord - 1
 
     #################################################################################
-    #This definition calculates the number of times we can rotate a piece without
-    #getting a duplicate configuration, depends on which piece we are looking at
-    #good.
-    @staticmethod
-    def rotations_per_piece(piece):
-        #pieces contains a list of each configuration
-        pieces = [piece]
-
-        while 1:
-            new_configuration = rotate_clockwise(piece)
-            #checks if the rotation got a different configuration
-            #e.g. an "O" piece wont have any rotations, it only have one configuration
-            if new_configuration in pieces:
-                return len(pieces)
-            pieces.append(new_configuration)
+    #replaced with hardcoded rotation limits
+    def rotations_per_piece(self, piece):
+        if piece == tetris_shapes[0]:
+            return 4
+        elif piece == tetris_shapes[1]:
+            return 2
+        elif piece == tetris_shapes[2]:
+            return 2
+        elif piece == tetris_shapes[3]:
+            return 4
+        elif piece == tetris_shapes[4]:
+            return 4
+        elif piece == tetris_shapes[5]:
+            return 2
+        elif piece == tetris_shapes[6]:
+            return 1
+        

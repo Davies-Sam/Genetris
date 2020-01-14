@@ -7,7 +7,7 @@ CELL_SIZE =	30
 COLS =		10
 ROWS =		22
 MAXFPS = 	30
-PIECELIMIT = 300
+PIECELIMIT = 10
 DROP_TIME = 60
 DRAW = True
 
@@ -99,8 +99,11 @@ class TetrisApp(object):
 		self.gameover = False
 		self.genetics = genetics
 		self.ai = None
-		
-		self.init_game(numpy.random.random())
+		self.piecesPlayed = 0
+		if self.genetics.sequenceType == "fixed":
+			self.init_game(self.genetics.seed)
+		elif self.genetics.sequenceType == "random":
+			self.init_game(numpy.random.random())
 	
 	def new_stone(self):
 		self.stone = self.next_stone
@@ -109,12 +112,14 @@ class TetrisApp(object):
 		self.stone_x = COLS//2 - len(self.stone[0])//2
 		self.stone_y = 0
 		self.score += 1
+		self.piecesPlayed += 1
 		
 		if check_collision(self.board, self.stone, (self.stone_x, self.stone_y)):
 			self.gameover = True
 			if self.genetics:
 				#print(self.linesCleared)
 				self.genetics.GameOver(self.linesCleared)
+		
 
 	def init_game(self,seed):
 		random.seed(seed)	
@@ -276,8 +281,8 @@ class TetrisApp(object):
 					self.disp_msg("Score: %d" % self.score, (self.rlim+CELL_SIZE, CELL_SIZE*5))
 					if self.ai and self.genetics:
 						chromosome = self.genetics.population[self.genetics.current_organism]
-						self.disp_msg("Generation: %s" % self.genetics.current_generation, (self.rlim+CELL_SIZE, CELL_SIZE*5))
-						self.disp_msg("\n %s: %s\n %s: %s\n  %s: %s\n  %s: %s\n  %s: %s\n %s: %s\n %s: %s\n  %s: %s\n  %s: %s\n  %s: %s\n %s: %s\n  %s: %s\n  %s: %s\n %s: %s\n %s: %s\n %s: %s\n %s: %s\n %s: %s\n %s: %s\n"  % (
+						self.disp_msg("Generation: %s" % self.genetics.current_generation, (self.rlim+CELL_SIZE, CELL_SIZE*5))				
+						self.disp_msg("\n %s: %s\n %s: %s\n  %s: %s\n  %s: %s\n  %s: %s\n %s: %s\n %s: %s\n  %s: %s\n  %s: %s\n  %s: %s\n %s: %s\n %s: %s\n  %s: %s\n %s: %s\n %s: %s\n  %s: %s\n  %s: %s\n  %s: %s\n"  % (
 							"Organism #", self.genetics.current_organism,
 							"Name", chromosome.name,
 							"Played", chromosome.played,
@@ -295,7 +300,6 @@ class TetrisApp(object):
 							"Vertical Roughness", chromosome.heuristics[9],
 							"Wells", chromosome.heuristics[10],
 							"Biggest Well", chromosome.heuristics[11],
-							"Total Height", chromosome.heuristics[12],
 							"Lines Cleared", self.linesCleared
 						), (self.rlim+CELL_SIZE, CELL_SIZE*7))
 					self.draw_matrix(self.bground_grid, (0,0))
@@ -313,7 +317,11 @@ class TetrisApp(object):
 					for key in key_actions:
 						if event.key == eval("pygame.K_" + key):
 							key_actions[key]()
-					
+			if self.piecesPlayed > PIECELIMIT:
+				self.gameover = True
+				if self.genetics:
+				#print(self.linesCleared)
+					self.genetics.GameOver(self.linesCleared)
 			clock.tick(145)
 
 if __name__ == "__main__":

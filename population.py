@@ -1,13 +1,7 @@
-#Our organisms and Evolutionary functions live here#
-
-#AI FINAL PROJECT BRAINSTORMING
-#need to store genes using a list of bitstrings
-#https://pypi.org/project/bitstring/
 import sys
 import random
 from tetris import TetrisApp
 from agent import Agent
-#from bitstring import BitArray
 from enum import Enum
 import heuristics
 import numpy
@@ -15,44 +9,49 @@ import names
 import struct
 import time
 import datetime
+import Tkinter as tk
 
-results = "%s-%s-%s-%s" % (sys.argv[1],sys.argv[2],sys.argv[3],sys.argv[4])
+import os
+
+root = tk.Tk()
+canvas = tk.Canvas(root, height=700, width=700, bg="red")
+canvas.pack()
+
 RESULTS = "%s.txt" % names.get_full_name()
 
 UPPERBOUND = 1
 LOWERBOUND = -1
 
-POPSIZE = int(sys.argv[1])
-ELITE = int(sys.argv[2])
-CROSSRATE = float(sys.argv[3])
-MUTRATE = float(sys.argv[4])
-SEQUENCE = sys.argv[5]
 
-if SEQUENCE == "fixed":
+if len(sys.argv) == 1:
+    POPSIZE = 100
+    ELITE = 70
+    CROSSRATE = 1
+    MUTRATE = .2
+    SEQUENCE = "fixed"
     NUMGAMES = 1
-elif SEQUENCE == "random":
-    NUMGAMES = int(sys.argv[6])
+    SELECTIONTYPE = "tournament"
+    CROSSTYPE = "average"
+else:
+    POPSIZE = int(sys.argv[1])
+    ELITE = int(sys.argv[2])
+    CROSSRATE = float(sys.argv[3])
+    MUTRATE = float(sys.argv[4])
+    SEQUENCE = sys.argv[5] 
+    if SEQUENCE == "fixed":
+        NUMGAMES = 1
+        SELECTIONTYPE = sys.argv[6]
+        CROSSTYPE = sys.argv[7]
+    elif SEQUENCE == "random":
+        NUMGAMES = int(sys.argv[6])
+        SELECTIONTYPE = sys.argv[7]
+        CROSSTYPE = sys.argv[8]
 
-def RandomOrganism():
-    nums = []
-    for j in range(0, 13):
-        a = round(numpy.random.uniform(LOWERBOUND, UPPERBOUND), 5)
-        nums.append(a)
-    organism = Organism(nums)
-    return organism
+
 
 #initialize the entire population
 
-def InitPop(populationSize):
-    #init population with a seed
-    #random.seed(7)
-    population = []
-    #for each organism in the population
-    for i in range(0, populationSize):
-        organism = RandomOrganism()
-        population.append(organism)
-    #returns a list of a list of 4 bitarrays
-    return population
+
 
 class Organism(object):
     def __init__(self, heuristics): 
@@ -72,12 +71,14 @@ class GA(object):
         self.mutation_rate = MUTRATE
         self.crossover_rate = CROSSRATE
         #initialize the population
-        self.population = InitPop(self.num_of_organisms)   
+        self.population = self.InitPop(self.num_of_organisms)   
         #keep track of which organism in the population we are working on
         self.current_organism = 0
         #keeps track of what generation we are on
         self.current_generation = 0
         #GA gets the application
+        self.sequenceType = SEQUENCE
+        self.seed = numpy.random.random()
         self.app = TetrisApp(self)
         #GA gets our agent, which needs the organism 
         #so it can access weights of the organism
@@ -88,10 +89,32 @@ class GA(object):
         self.fitnessDictionary = {}
         self.lastBest = []
 
+    def RandomOrganism(self):
+        nums = []
+        for j in range(0, 12):
+            a = numpy.random.uniform(LOWERBOUND, UPPERBOUND)
+            nums.append(a)
+        organism = Organism(nums)
+        self.normalize(organism)
+        return organism
+
+    def InitPop(self, populationSize):
+        #init population with a seed
+        #random.seed(7)
+        population = []
+        #for each organism in the population
+        for i in range(0, populationSize):
+            organism = self.RandomOrganism()
+            population.append(organism)
+        #returns a list of a list of 4 bitarrays
+        return population
+
     #start running the game
     def Run(self):
         with open(RESULTS, 'w') as f:
-            f.write("Weights: Aggregate Height, Bumpiness, Holes, LinesCleared, Connected Holes, Blockades, Altitude Delta, Weighted Blocks, H-Roughness, V-Roughness, Wells, Biggest Well, Total Height.\n Mutation Rate: %s , Replacement Per Cycle: %s\n" % (self.mutation_rate, self.new_organisms))
+            f.write("\n Cross Type: %s, Selection Type: %s, Crossover Rate: %s, Mutation Rate: %s , Replacement Per Cycle: %s\n" % (CROSSTYPE, SELECTIONTYPE, self.crossover_rate, self.mutation_rate, self.new_organisms))
+            #all heuristics
+            #f.write("Weights: Aggregate Height, Bumpiness, Holes, LinesCleared, Connected Holes, Blockades, Altitude Delta, Weighted Blocks, H-Roughness, V-Roughness, Wells, Biggest Well, Total Height.\n Mutation Rate: %s , Replacement Per Cycle: %s\n" % (self.mutation_rate, self.new_organisms))
         self.cycleStart = time.time()
         self.app.run()
 
@@ -100,7 +123,7 @@ class GA(object):
         self.current_organism += 1
         #if we have worked on every organism in the current population, get the next
         #generation
-        
+        self.app.piecesPlayed = 0
         if self.current_organism >= self.num_of_organisms:
             self.current_organism = 0 
             self.NextGeneration()
@@ -129,17 +152,45 @@ class GA(object):
             self.fitnessDictionary[tuple(organism.heuristics)] = organism.fitness
             self.NextAI()
             if SEQUENCE == "fixed":
-                self.app.start_game(777)
+                self.app.start_game(self.seed)
             elif SEQUENCE == "random":
                 self.app.start_game(numpy.random.random())
         else:       
             #restart the game
             if SEQUENCE == "fixed":
-                self.app.start_game(777)
+                self.app.start_game(self.seed)
             elif SEQUENCE == "random":
                 self.app.start_game(numpy.random.random())
 
+    #add normalization
+    def normalize(self, org):
+        squared = []
+        for h in org.heuristics:
+            squared.append(h*h)
+        norm = numpy.sqrt(sum(squared))
+        for i, weight in enumerate(org.heuristics):
+            org.heuristics[i] /= norm
+
     #check if the population has converged -- TOD0 
+    
+    #tournament selection might be more valuable. add this 
+    def tournament(self):
+        indices = [ i for i in range(0,len(self.population))]
+        #since the population is sorted, just select the two smallest indices from the pool.
+        v1 = None 
+        v2 = None
+
+        x = int(self.num_of_organisms * .1 )
+       
+        for a in range(0, x):
+            selected = numpy.random.choice(indices)
+            if v1 == None or selected < v1 :
+                v2 = v1
+                v1 = selected
+            elif v2 == None or selected < v2:
+                v2 = selected
+       
+        return self.population[v1], self.population[v2]
     
     #roulette selection 
     def roulette(self):
@@ -154,8 +205,6 @@ class GA(object):
             if r <= probs[i]:              
                 return organism
         
-    #this def takes the current population, removes the worst two organisms and 
-    #re-produces two new ones to add to the population
     def NextGeneration(self):
         self.population.sort(key=lambda x: x.fitness, reverse=True)
         averageScore = 0 
@@ -186,20 +235,33 @@ class GA(object):
         if eliteScores == self.lastBest:
             self.mutation_rate += .05
         #create the new organisms to add to the new_pop
-      
-        for x in range (0, self.new_organisms):
-            #select two parents
-            parent1 = self.roulette()
-            parent2 = self.roulette()
-            while parent1 == parent2:
+
+      #roulette selction
+        if SELECTIONTYPE == "roulette":
+            for x in range (0, self.new_organisms):
+                #select two parents
+                parent1 = self.roulette()
                 parent2 = self.roulette()
-            #print("p1: %s , p2: %s" % (parent1.name, parent2.name))
-            #create the new organism
-            a = self.Crossover(parent1,parent2)
-            #mutate the children       
-            self.mutate(a)
-            #add to population  
-            self.population.append(a)
+                while parent1 == parent2:
+                    parent2 = self.roulette()
+                #print("p1: %s , p2: %s" % (parent1.name, parent2.name))
+                #create the new organism
+                a = self.Crossover(parent1,parent2)
+                #mutate the children
+                if numpy.random.random() < MUTRATE:       
+                    self.mutate(a)
+                #add to population  
+                self.population.append(a)
+        elif SELECTIONTYPE == "tournament":
+            #tounament selection
+            for x in range (0, self.new_organisms):
+                p1, p2 = self.tournament()
+                while p1 == p2 or p1.fitness == 0 or p2.fitness == 0:
+                    p1, p2 = self.tournament()
+                new = self.Crossover(p1,p2)
+                if numpy.random.random() < MUTRATE: 
+                    self.mutate(new)
+                self.population.append(new)
         
   
         #reset the fitness to 0
@@ -228,30 +290,37 @@ class GA(object):
     def Crossover(self, parent1, parent2):
         child = []
         #two point 
-       #crossover based on the crossover rate 
-        for x in range(0, len(parent1.heuristics)):
-            #if crossover criteria is met, average the parents heuristics
-            if numpy.random.random() < self.crossover_rate:
-                result = round( ((parent1.heuristics[x] + parent2.heuristics[x]) / 2 ), 5)
-                child.append(result) 
-            #else take the weight from the fittest parent      
-            else:
-                if parent1.fitness > parent2.fitness:
+
+        # add other crossover methods that can be specified at launch and crossover using the CROSSRATE
+
+        #uniform crossover
+        if CROSSTYPE == "uniform":
+            for x in range(0, len(parent1.heuristics)):
+                if numpy.random.random() < .5:
                     child.append(parent1.heuristics[x])
                 else:
-                    child.append(parent2.heuristics[x])                 
-        return Organism(child)
+                    child.append(parent2.heuristics[x])
+
+        elif CROSSTYPE == "average":
+        #weighted average crossover 
+            a = parent1.fitness
+            b = parent2.fitness
+            for x in range(0, len(parent1.heuristics)):
+               child.append( (a * parent1.heuristics[x] ) + ( b * parent2.heuristics[x] ) )
+        
+        offspring = Organism(child)
+        #print("CROSSOVER NORMALIZING %s" % offspring.heuristics)
+        self.normalize(offspring)
+        return offspring
             
     #mutates the weights of a chromosome
     def mutate(self, organism):
-        for num, weight in enumerate(organism.heuristics):
-            if numpy.random.random() < self.mutation_rate:
-                rVal = round(numpy.random.normal(weight,1), 5)
-                #print("weight is %s" % weight)
-                #print("rval is %s" % rVal)
-                while rVal > UPPERBOUND or rVal < LOWERBOUND:
-                    rVal = round(numpy.random.normal(weight,1),5)
-                organism.heuristics[num] = rVal
+        #mutation range of -.2 to +.2
+        mutation = numpy.random.random() * .4 - .2
+        #choose a random weight to mutate
+        x = numpy.random.randint(0,12)
+        organism.heuristics[x] += mutation
+        self.normalize(organism)
                 
 if __name__ == "__main__":
     GA().Run()

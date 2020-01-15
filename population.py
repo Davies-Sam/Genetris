@@ -1,21 +1,16 @@
+import os
+os.environ['SDL_AUDIODRIVER'] = 'dsp'
 import sys
 import random
 from tetris import TetrisApp
 from agent import Agent
-from enum import Enum
 import heuristics
 import numpy
 import names
 import struct
 import time
 import datetime
-import Tkinter as tk
 
-import os
-
-root = tk.Tk()
-canvas = tk.Canvas(root, height=700, width=700, bg="red")
-canvas.pack()
 
 RESULTS = "%s.txt" % names.get_full_name()
 
@@ -24,14 +19,14 @@ LOWERBOUND = -1
 
 
 if len(sys.argv) == 1:
-    POPSIZE = 100
-    ELITE = 20
+    POPSIZE = 1000
+    ELITE = 100
     CROSSRATE = 1
     MUTRATE = .3
     SEQUENCE = "fixed"
-    NUMGAMES = 1
-    SELECTIONTYPE = "tournament"
-    CROSSTYPE = "average"
+    NUMGAMES = 10
+    SELECTIONTYPE = "roulette"
+    CROSSTYPE = "uniform"
 else:
     POPSIZE = int(sys.argv[1])
     ELITE = int(sys.argv[2])
@@ -103,8 +98,8 @@ class GA(object):
         #random.seed(7)
         population = []
         #for each organism in the population
-        population.append(Organism([-0.25835108880355967, -0.18873479853738032, -0.6081190254748627, -0.5281331622290867, -0.0936639080926526, -0.10826897335053938, 0.15010957868145391, -0.21161009827721672, -0.04113776799016001, 0.2957493369775496, -0.07093022881256028, -0.2586553756116776]))
-        for i in range(0, populationSize-1):
+        #population.append(Organism([-0.25835108880355967, -0.18873479853738032, -0.6081190254748627, -0.5281331622290867, -0.0936639080926526, -0.10826897335053938, 0.15010957868145391, -0.21161009827721672, -0.04113776799016001, 0.2957493369775496, -0.07093022881256028, -0.2586553756116776]))
+        for i in range(0, populationSize):
             organism = self.RandomOrganism()
             population.append(organism)
         #returns a list of a list of 4 bitarrays
@@ -158,6 +153,7 @@ class GA(object):
                 self.app.start_game(numpy.random.random())
         else:       
             #restart the game
+            self.app.piecesPlayed = 0
             if SEQUENCE == "fixed":
                 self.app.start_game(self.seed)
             elif SEQUENCE == "random":
@@ -326,5 +322,5 @@ class GA(object):
 if __name__ == "__main__":
     GA().Run()
 
-# Theoretical fitness limit = rounds * pieces * 4 / 10
+# Theoretical fitness limit = rounds * pieces * piece size / columns
 #Theoretical fitness limit = 1 * 500 * 4 / 10 = 200 

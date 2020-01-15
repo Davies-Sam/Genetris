@@ -7,9 +7,9 @@ CELL_SIZE =	30
 COLS =		10
 ROWS =		22
 MAXFPS = 	30
-PIECELIMIT = 1000
+PIECELIMIT = 5000
 DROP_TIME = 60
-DRAW = True
+DRAW = False
 
 tetris_shapes = [
 	[[1, 1, 1],

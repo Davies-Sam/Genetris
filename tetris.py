@@ -7,7 +7,7 @@ CELL_SIZE =	30
 COLS =		10
 ROWS =		22
 MAXFPS = 	30
-PIECELIMIT = 10
+PIECELIMIT = 1000
 DROP_TIME = 60
 DRAW = True
 
@@ -262,7 +262,6 @@ class TetrisApp(object):
 			'RIGHT': lambda: self.move(+1),
 			'DOWN': self.drop,
 			'UP': self.rotate_stone,
-			'SPACE': self.start_game,
 			'RETURN': self.insta_drop,
 			'p': self.ai_toggle_instantPlay,
 			't' : self.print_board
@@ -330,5 +329,3 @@ if __name__ == "__main__":
 	app.ai = Agent(app)
 	app.ai.instantPlay = True
 	app.run()
-
-	

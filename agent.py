@@ -51,7 +51,7 @@ class Agent(object):
         self.tetris = tetris
         self.best_move = None 
         self.instantPlay = True
-
+        
         
     #################################################################################
     #finds the best move from all possible moves. calls rotations_per_piece()

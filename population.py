@@ -25,9 +25,9 @@ LOWERBOUND = -1
 
 if len(sys.argv) == 1:
     POPSIZE = 100
-    ELITE = 70
+    ELITE = 20
     CROSSRATE = 1
-    MUTRATE = .2
+    MUTRATE = .3
     SEQUENCE = "fixed"
     NUMGAMES = 1
     SELECTIONTYPE = "tournament"
@@ -103,7 +103,8 @@ class GA(object):
         #random.seed(7)
         population = []
         #for each organism in the population
-        for i in range(0, populationSize):
+        population.append(Organism([-0.25835108880355967, -0.18873479853738032, -0.6081190254748627, -0.5281331622290867, -0.0936639080926526, -0.10826897335053938, 0.15010957868145391, -0.21161009827721672, -0.04113776799016001, 0.2957493369775496, -0.07093022881256028, -0.2586553756116776]))
+        for i in range(0, populationSize-1):
             organism = self.RandomOrganism()
             population.append(organism)
         #returns a list of a list of 4 bitarrays
@@ -324,4 +325,6 @@ class GA(object):
                 
 if __name__ == "__main__":
     GA().Run()
-                
+
+# Theoretical fitness limit = rounds * pieces * 4 / 10
+#Theoretical fitness limit = 1 * 500 * 4 / 10 = 200 

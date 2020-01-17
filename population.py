@@ -19,12 +19,21 @@ LOWERBOUND = -1
 
 
 if len(sys.argv) == 1:
-    POPSIZE = 1000
-    ELITE = 100
+    POPSIZE = 50
+    ELITE = 10
     CROSSRATE = 1
     MUTRATE = .3
-    SEQUENCE = "fixed"
-    NUMGAMES = 10
+    SEQUENCE = "random"
+    NUMGAMES = 2
+    SELECTIONTYPE = "roulette"
+    CROSSTYPE = "uniform"
+elif len(sys.argv) == 3:
+    POPSIZE = int(sys.argv[1])
+    ELITE = int(sys.argv[2])
+    CROSSRATE = 1
+    MUTRATE = .3
+    SEQUENCE = "random"
+    NUMGAMES = 3
     SELECTIONTYPE = "roulette"
     CROSSTYPE = "uniform"
 else:
@@ -108,7 +117,7 @@ class GA(object):
     #start running the game
     def Run(self):
         with open(RESULTS, 'w') as f:
-            f.write("\n Cross Type: %s, Selection Type: %s, Crossover Rate: %s, Mutation Rate: %s , Replacement Per Cycle: %s\n" % (CROSSTYPE, SELECTIONTYPE, self.crossover_rate, self.mutation_rate, self.new_organisms))
+            f.write("\n Cross Type: %s, Selection Type: %s, Crossover Rate: %s, Mutation Rate: %s , Replacement Per Cycle: %s\n Theoretical Line limit: %s " % (CROSSTYPE, SELECTIONTYPE, self.crossover_rate, self.mutation_rate, self.new_organisms, ( NUMGAMES * self.app.limit * 4 / 10) ))
             #all heuristics
             #f.write("Weights: Aggregate Height, Bumpiness, Holes, LinesCleared, Connected Holes, Blockades, Altitude Delta, Weighted Blocks, H-Roughness, V-Roughness, Wells, Biggest Well, Total Height.\n Mutation Rate: %s , Replacement Per Cycle: %s\n" % (self.mutation_rate, self.new_organisms))
         self.cycleStart = time.time()

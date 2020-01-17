@@ -7,9 +7,9 @@ CELL_SIZE =	30
 COLS =		10
 ROWS =		22
 MAXFPS = 	30
-PIECELIMIT = 5000
+PIECELIMIT = 3000
 DROP_TIME = 60
-DRAW = False
+DRAW = True
 
 tetris_shapes = [
 	[[1, 1, 1],
@@ -99,6 +99,7 @@ class TetrisApp(object):
 		self.gameover = False
 		self.genetics = genetics
 		self.ai = None
+		self.limit = PIECELIMIT
 		self.piecesPlayed = 0
 		if self.genetics.sequenceType == "fixed":
 			self.init_game(self.genetics.seed)

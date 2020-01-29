@@ -19,12 +19,12 @@ LOWERBOUND = -1
 
 
 if len(sys.argv) == 1:
-    POPSIZE = 50
+    POPSIZE = 100
     ELITE = 10
     CROSSRATE = 1
     MUTRATE = .3
     SEQUENCE = "random"
-    NUMGAMES = 2
+    NUMGAMES = 3
     SELECTIONTYPE = "roulette"
     CROSSTYPE = "uniform"
 elif len(sys.argv) == 3:

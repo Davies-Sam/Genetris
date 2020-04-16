@@ -1,6 +1,7 @@
 # Genetris
 Training an AI to play Tetris using a Genetic Algorithm 
 
+run population.py to watch a trained agent play tetris
 
 # References
 

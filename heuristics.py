@@ -9,9 +9,10 @@ We will start by using only 4 Heuristics
 """
 
 #returns the height of the board
-#we use this method because its faster than getting max from AllHeights.
+
 def TotalHeight(board):
-    #we subtract 1 because layer 22 is the base layer used for debugging (all 1's)
+    """returns the heighest column height"""
+    #we subtract 1 because layer 22 is the base layer  (all 1's)
     height = len(board) -1
     width = len(board[1])
     #go row by row and check for a non empty board block
@@ -20,17 +21,20 @@ def TotalHeight(board):
             if cell != 0:
                 return height - rowNum 
 
-#returns the heights a single column
+
 def ColumnHeight(board, col):
+    """#returns the heights a single column"""
     height = len(board) -1
     width = len(board[1])
     #for every row in the column check for non empty board block
     for x in range (0, height):
         if(board[x][col] != 0):
             return height - x 
+    return 0
 
-#returns an array of all the column heights
+
 def AllHeights(board):
+    """returns an array of all the column heights"""
     heights = []
     height = len(board) -1
     width = len(board[1])
@@ -43,29 +47,22 @@ def AllHeights(board):
             heights[x] = 0
     return heights 
 
-# returns the sum of the heights
 def AggregateHeigh(board):
+    """returns the sum of the column heights"""
     return sum(AllHeights(board))   
 
-#returns the sum of the column height differences
 def Bumpiness(board):
+    """returns the sum of the column height differences"""
     height = len(board) -1
     width = len(board[1])
     heights = AllHeights(board)
     result = 0
-    """
-    width-1 because we check adjacent columns and the next would be out of bounds
-    i.e, for every column except the last, get the absolute value of the 
-    differeces between the columns
-    this implementation of bumpiness also considers single column towers or wells to be very bumpy
-    Interestingly this implementation also discourages the AI to strategies going for multiple line clears in 1 piece placement
-    """
     for x in range (0, width-1):
         result += (abs(heights[x] - heights[x+1]))
     return result
 
-#returns the total number of holes present after a placement
 def HolesCreated(board):
+    """returns the total number of holes present"""
     height = len(board) - 1 
     width = len(board[1])
     holes = 0
@@ -78,8 +75,8 @@ def HolesCreated(board):
             x += 1
     return holes
 
-#Ponder: LinesCleared might be emergent behavior from following the other heuristics
 def LinesCleared(board):
+    """returns the number of lines cleared"""
     height = len(board) - 1 
     width = len(board[1])
     cleared = 0
@@ -90,8 +87,9 @@ def LinesCleared(board):
     return cleared
 
 
-#Vertically connected holes
+#
 def ConnectedHoles(board):
+    """returns number of vertically connected holes"""
     height = len(board) - 1 
     width = len(board[1])
     coords = {}
@@ -115,11 +113,8 @@ def ConnectedHoles(board):
 
     return connected
 
-
-    
-
-#Blockades (number of pieces placed above a hole)
 def Blockades(board):
+    """returns number of pieces placed above holes"""
     height = len(board) - 1 
     width = len(board[1])
     coords = {}
@@ -143,18 +138,14 @@ def Blockades(board):
     return blockades
     
 
-#Altitude difference
 def AltitudeDelta(board):
+    """returns the difference in height between the tallest and shortest column"""
     tallest = max(AllHeights(board))
     shortest = min(AllHeights(board))
     return tallest - shortest
 
-##################
-#not implemented
-#Maximum well depth
-#
-
 def MaxWell(board):
+    """returns the depth of the biggest well"""
     height = len(board) - 1 
     width = len(board[1])
     coords = {}
@@ -182,9 +173,8 @@ def MaxWell(board):
                         wellMap[x] += 1
     return max(wellMap.values())
 
-#Number of wells
-##################
 def Wells(board):
+    """returns the number of wells"""
     height = len(board) - 1 
     width = len(board[1])
     coords = {}
@@ -209,8 +199,8 @@ def Wells(board):
                         wells +=1
     return wells
 
-#Weighted Blocks (sum of occupied blocks, n-th row counts n times)
 def WeightedBlocks(board):
+    """returns the sum of occupied blocks, n-th row counts n times"""
     height = len(board) - 1 
     width = len(board[1])
     blockScore = 0
@@ -221,8 +211,9 @@ def WeightedBlocks(board):
     return blockScore
     
 
-#Horizontal Transitions (adjacent blocks arent either both empty or both occupied)
+
 def HorizontalRoughness(board):
+    """returns the number of horizontal transitions (adjacent blocks arent either both empty or both occupied)"""
     height = len(board) - 1 
     width = len(board[1])
     gaps = 0
@@ -237,8 +228,9 @@ def HorizontalRoughness(board):
 
     return gaps
 
-#Vertical Transitions (adjacent blocks aren't either both empty or both occupied)
+#
 def VerticalRoughness(board):
+    """return the number of vertical transitions (adjacent blocks aren't either both empty or both occupied)"""
     height = len(board) - 1 
     width = len(board[1])
     coords = {}
@@ -263,6 +255,7 @@ def VerticalRoughness(board):
 #THIS FUNCTION HOLDS THE CORRECT ORDER OF THE WEIGHTS
 #FOR LEGIBILITY WE WILL ATTACH NAMES TO THE WEIGHTS LATER
 def Utility_Function(board, weights):
+    """returns the utility score of a board state"""
     #get the heurstics
     aggHeight = AggregateHeigh(board)
     bump = Bumpiness(board)

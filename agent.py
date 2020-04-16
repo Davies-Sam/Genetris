@@ -92,11 +92,11 @@ class Agent(object):
         pop = self.tetris.genetics.population
         curOrgIndex = self.tetris.genetics.current_organism
         workingOrganism = pop[curOrgIndex]
-
+        trained = [-0.42288086451739565, -0.20602799801145819, -0.33535728489031424, 0.2413838337524669, -0.46690981318268, -0.06051542450985892, 0.28699447592371874, -0.16251189239909392, 0.023842910473495273, 0.45812789704427803, -0.25722297728881605, 0.03061740725841887]
         #iterate over the moves and choose the best one.
         #temp = float("-inf")
         for a_move in all_moves:    
-            temp = heuristics.Utility_Function(a_move[2], workingOrganism.heuristics)
+            temp = heuristics.Utility_Function(a_move[2], trained)
             if temp == max_util:
                 if numpy.random.random() < .5:
                     max_util = temp

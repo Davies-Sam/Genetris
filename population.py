@@ -111,7 +111,7 @@ class GA(object):
         for i in range(0, populationSize):
             organism = self.RandomOrganism()
             population.append(organism)
-        #returns a list of a list of 4 bitarrays
+        #returns a list of a list of 4 bitarraysc\
         return population
 
     #start running the game
@@ -123,7 +123,6 @@ class GA(object):
         self.cycleStart = time.time()
         self.app.run()
 
-    #This def 
     def NextAI(self):
         self.current_organism += 1
         #if we have worked on every organism in the current population, get the next
@@ -296,9 +295,7 @@ class GA(object):
     def Crossover(self, parent1, parent2):
         child = []
         #two point 
-
         # add other crossover methods that can be specified at launch and crossover using the CROSSRATE
-
         #uniform crossover
         if CROSSTYPE == "uniform":
             for x in range(0, len(parent1.heuristics)):

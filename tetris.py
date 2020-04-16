@@ -7,9 +7,9 @@ CELL_SIZE =	30
 COLS =		10
 ROWS =		22
 MAXFPS = 	30
-PIECELIMIT = 3000
+PIECELIMIT = float("inf")
 DROP_TIME = 60
-DRAW = False
+DRAW = True
 
 tetris_shapes = [
 	[[1, 1, 1],
@@ -47,7 +47,7 @@ colors = [
 
 #rotates the pieces clockwise
 def rotate_clockwise(shape):
-	return [ [ shape[y][x] for y in xrange(len(shape)) ] for x in xrange(len(shape[0]) - 1, -1, -1) ]
+	return [ [ shape[y][x] for y in range(len(shape)) ] for x in range(len(shape[0]) - 1, -1, -1) ]
 
 #checks that no pieces are overlapping
 def check_collision(board, shape, offset):
@@ -64,7 +64,7 @@ def check_collision(board, shape, offset):
 #removes a row from the board
 def remove_row(board, row):
 	del board[row]
-	return [[0 for i in xrange(COLS)]] + board
+	return [[0 for i in range(COLS)]] + board
 
 #adds a placed piece to the board
 def join_matrixes(mat1, mat2, mat2_off):
@@ -77,9 +77,9 @@ def join_matrixes(mat1, mat2, mat2_off):
 
 #create the board
 def new_board():
-	board = [ [ 0 for x in xrange(COLS) ] for y in xrange(ROWS) ]
+	board = [ [ 0 for x in range(COLS) ] for y in range(ROWS) ]
 	#next line not needed, just there for clarity (adds a base row to the grid)
-	board += [[ 1 for x in xrange(COLS)]]
+	board += [[ 1 for x in range(COLS)]]
 	return board
 class TetrisApp(object):
 	def __init__(self, genetics):
@@ -241,7 +241,7 @@ class TetrisApp(object):
 			print(self.board[i])
 			print('\n')
 			i+=1
-		"""
+		"""for testing
 		import heuristics
 		print("height %s" % heuristics.TotalHeight(self.board))
 		print("bump %s" % heuristics.Bumpiness(self.board))

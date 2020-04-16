@@ -1,3 +1,0 @@
-
- Cross Type: uniform, Selection Type: roulette, Crossover Rate: 1, Mutation Rate: 0.3 , Replacement Per Cycle: 90
- Theoretical Line limit: 3600.0 

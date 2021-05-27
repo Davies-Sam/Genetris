@@ -3,6 +3,8 @@ Training an AI to play Tetris using a Genetic Algorithm
 
 run population.py to watch a trained agent play tetris
 
+Please read our paper "Evolving a Tetris Agent" to learn more.
+
 # References
 
 http://www.cs.uml.edu/ecg/uploads/AIfall10/eshahar_rwest_GATetris.pdf
